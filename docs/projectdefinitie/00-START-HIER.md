@@ -10,9 +10,12 @@ Dit is de start van je Comakership documentatie. Dit document helpt je om de pro
 
 De projectdefinitie legt de basis voor je hele project. Het geeft antwoord op:
 - **Waarom** doe je dit project? (Context, probleem)
+Ik doe dit project omdat dit mijn stageopdracht is, binnen babcock word er veel handmatig gedaan met excel documenten en dat kost veel tijd. Om tijd te besparen heb ik samen met Matthijs Meijer en Rick Kramer bedacht dat ik dus een tussenkoppeling maak om 
 - **Wat** ga je precies doen? (Doelstellingen, scope)
+Uitzoeken wat ik precies moet doen en met wat voor MSG-3 Documenten en wat er in staat
+daarnaast ga ik kijken hoe lang ik er over doe.
 - **Voor wie** doe je het? (Stakeholders)
-
+De stakeholders zijn denk ik het bedrijf babcock, matthijs en rick, en het projecten team die vooral werkt met msg-3 documenten. en natuurlijk voor school of mijn docenten
 ---
 
 ## 📋 Documenten om te Maken
@@ -23,10 +26,17 @@ De projectdefinitie legt de basis voor je hele project. Het geeft antwoord op:
 
 **Vragen om te beantwoorden:**
 - Wat doet Babcock Schiphol?
-- Wat is MSG-3 en waarom is het belangrijk?
-- Wat is IBM Maximo en hoe wordt het gebruikt?
-- Wat is de huidige situatie?
+Babcock schiphol heeft de helft van het bagagesysteem in controle, ze zorgen ervoor dat het systeem zo vaak mogelijk foutloos blijft draaien en als er problemen zijn proberen hun er zo snel mogelijk bij te zijn.
 
+- Wat is MSG-3 en waarom is het belangrijk?
+het msg-3 document is belangrijk want daar staat veel informatie in zoals:
+object codes, routes die gelopen worden tijdens inspecties, configuraties - msi's (route + motivatie bij vragen 1 t/m 4)
+- Wat is IBM Maximo en hoe wordt het gebruikt?
+IBM Maximo is een systeem die door veel bedrijven wordt gebruikt
+hierin worden werkbonnen/inspecties bijgehouden ook word er veel andere soort data in opgeslagen zoals items in het magazijn. Inspecties worden duidelijk opgeschreven met veel informatie en ook als er dingen mis gaan in het systeem kan dat ook vermeld worden in maximo. als voorbeeld Loop inspectie bij band 1, check de motor, check de rollerband, check voor geluiden etc. als de inspectie is gelopen word daarna de inspectie ingevuld door de monteurs met evt fouten of dat het juist helemaal goed is. Er zijn super veel inspecties en daarom word het dus ook bijgehouden en wat voor materialen er bij zijn gebruikt welke supervisor en welk team er aan het werk is en ook word er duidelijk geschreven wat er gedaan is aan bepaalde situaties
+
+- Wat is de huidige situatie?
+(Ik weet niet wat er word bedoeld met deze vraag dus stel m opnieuw aan mij met extra uitleg)
 **Template:**
 ```markdown
 # Context Analyse - Babcock Schiphol
@@ -49,13 +59,18 @@ Op dit moment wordt MSG-3 data...
 ### 2. Probleemstelling (`02-probleemstelling.md`)
 
 **Doel:** Beschrijf het probleem dat je gaat oplossen.
+Het doel van de tussenkoppeling creeeren van msg-3 en maximo is dat er super veel tijd word bespaard, er word ervoor gezorgd dat het msg-3 automatisch word overgelezen en ingevuld in maximo door 1 druk op de knop (zo gezegd)
 
 **Vragen om te beantwoorden:**
 - Wat gaat er nu mis/inefficiënt?
-- Hoeveel tijd kost het huidige proces?
-- Wat zijn de pijnpunten?
-- Wat zijn de gevolgen van het probleem?
+MSG-3 documenten moeten vaak handmatig ingevuld worden en dat kost veel tijd.
 
+- Hoeveel tijd kost het huidige proces?
+(gok 1 dag)
+- Wat zijn de pijnpunten?
+Het handmatig invullen en veel verloren tijd.
+- Wat zijn de gevolgen van het probleem?
+Veel kostbare tijd verloren door het handmatig invullen
 **Template:**
 ```markdown
 # Probleemstelling
@@ -85,11 +100,11 @@ Ideaal zou het proces...
 **Doel:** Formuleer SMART doelen voor je project.
 
 **SMART criteria:**
-- **S**pecifiek: Wat ga je precies maken?
-- **M**eetbaar: Hoe meet je succes?
-- **A**cceptabel: Is het realistisch?
-- **R**elevant: Draagt het bij aan het doel?
-- **T**ijdgebonden: Wanneer moet het klaar zijn?
+- **S**pecifiek: Wat ga je precies maken? Een tussenkoppeling voor MSG-3 en Maximo
+- **M**eetbaar: Hoe meet je succes? Als ik succesvol een msg-3 automatisch kan implementeren in maximo
+- **A**cceptabel: Is het realistisch? Ja
+- **R**elevant: Draagt het bij aan het doel? Ja het doel is dat er uiteindelijk veel tijd word bespaard door deze tussenkoppeling
+- **T**ijdgebonden: Wanneer moet het klaar zijn? Het lieft zo snel mogelijk maar de echte eindtijd zou het einde van mijn stage zijn
 
 **Template:**
 ```markdown
@@ -140,9 +155,21 @@ Het project is geslaagd als:
 **Doel:** Definieer wat WEL en NIET in scope is.
 
 **Waarom belangrijk:**
-- Voorkomt "scope creep"
-- Zorgt voor realistische planning
-- Maakt verwachtingen duidelijk
+### Functioneel
+- MSG-3 Excel parsing (original + redesign format)
+- Data validatie (structuur + business rules)
+- Change detection (added/modified/deleted tasks)
+- Mapping naar Maximo PM en JobPlan objecten
+- Maximo REST API integratie
+- MSG-3 Excel redesign en template
+- Documentatie (technisch + gebruikershandleiding)
+
+### Technisch
+- Python 3.11+ applicatie
+- Command-line interface
+- Logging en error handling
+- Unit en integration tests
+
 
 **Template:**
 ```markdown
@@ -202,7 +229,21 @@ Het project is geslaagd als:
 
 ### 5. Stakeholders (`05-stakeholders.md`)
 
-**Doel:** Identificeer alle belanghebbenden.
+**Doel:** 
+
+Pedro (Student)
+- **Rol**: Developer, projecteigenaar
+- **Belang**: Succesvol afronden Comakership
+- **Betrokkenheid**: Dagelijks, volledige betrokkenheid
+- **Verwachtingen**: Leren, deliveren, goed cijfer
+Matthijs Meijer (sr. maintanance engineer)(Zelfde verwachting als rick en roy)
+Rick Kramer (Maintanace Service Coordinator)
+Roy Minkels (Maintance Engineer)
+Arie Ismaiel(Docent)
+Dat het product goed is
+Dat student stage goed doet
+documentatie bijhouden
+etc.
 
 **Template:**
 ```markdown

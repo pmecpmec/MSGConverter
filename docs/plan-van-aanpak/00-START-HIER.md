@@ -10,10 +10,11 @@ Het PvA beschrijft **HOE** je het project gaat aanpakken.
 
 Het PvA geeft antwoord op:
 - **Hoe** ga je het project uitvoeren? (Methodiek)
-- **Wanneer** doe je wat? (Planning)
-- **Wat kan er misgaan?** (Risico's)
-- **Wat heb je nodig?** (Randvoorwaarden)
-- **Wat lever je op?** (Deliverables)
+Ik ga op mijn laptop aan het werk samen met AI, ik beantwoord alle vragen en check of de code goed werkt. Aan de hand van AI kan ik goed samenwerken omdat ik een goed plan voor mezelf kan maken en dan goed aan het werk kan gaan
+- **Wanneer** Ik doe het aan de hand van de planning die de AI voor me maakt, (als er een planning ergens is geef de file door zo niet maak ff een planning aan)
+- **Wat kan er misgaan?** Fouten binnen de code, concentratie problemen en netwerk problemen meer problemen kan ik nu nog niet inzien
+- **Wat heb je nodig?** Permissies vanuit babcock, permissies vanuit schiphol, internet connectie, een laptop, en concenctratie
+- **Wat lever je op?** Een werkende tussenkoppeling
 
 ---
 
@@ -106,7 +107,7 @@ Dit project volgt een **iteratieve aanpak** met 2-weekse sprints:
 
 ### 2. Planning (`02-planning.md`)
 
-**Doel:** Maak een gedetailleerde tijdlijn met milestones.
+**Doel:** (Cursor kan dat het beste voor mij doen)
 
 **Template:**
 ```markdown
@@ -330,8 +331,9 @@ Phase 8: Afronding       [                 █] Week 18
 ### 3. Risicoanalyse (`03-risicoanalyse.md`)
 
 **Doel:** Identificeer risico's en bedenk mitigatie strategieën.
+Bedenken welke talen het beste werken ipv meteen aan het werk gaan met coderen, vergelijken wat de plus en minpunten zijn aan bepaalde dingen en of het uberhaupt wel samenwerkt met maximo (hiervoor ga ik nog een meeting inplannen)
 
-**Template:** (zie apart document voor volledig voorbeeld)
+**Template:**
 
 Key risico's om te overwegen:
 - Technische risico's (API changes, Excel parsing complexity)
