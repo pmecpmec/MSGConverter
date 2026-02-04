@@ -1,0 +1,256 @@
+@startuml MSG3_Maximo_ClassDiagram
+!theme plain
+
+title MSG-3 → Maximo Integration - Class Diagram
+
+' Domain Models
+package "Domain Models" {
+  
+  class MSG3Task {
+    + task_code: str
+    + ata_chapter: str
+    + description: str
+    + task_type: str
+    + interval: int
+    + interval_unit: str
+    + zone: str
+    + man_hours: float
+    + skills: List[str]
+    + revision: int
+    + last_modified: datetime
+    --
+    + to_dict(): dict
+    + validate(): bool
+  }
+  
+  class MaximoPM {
+    + PMNUM: str
+    + DESCRIPTION: str
+    + FREQUENCY: int
+    + FREQUNIT: str
+    + LOCATION: str
+    + WORKTYPE: str
+    + STATUS: str
+    --
+    + to_json(): str
+    + from_msg3_task(task): MaximoPM
+  }
+  
+  class MaximoJobPlan {
+    + JPNUM: str
+    + DESCRIPTION: str
+    + PLUSCJPREVDUR: float
+    + STATUS: str
+    --
+    + to_json(): str
+  }
+  
+  class Change {
+    + change_type: ChangeType
+    + task_code: str
+    + field: str
+    + old_value: Any
+    + new_value: Any
+    + timestamp: datetime
+    --
+    + to_dict(): dict
+  }
+  
+  enum ChangeType {
+    ADDED
+    MODIFIED
+    DELETED
+  }
+  
+  class ChangeReport {
+    + changes: List[Change]
+    + added_count: int
+    + modified_count: int
+    + deleted_count: int
+    --
+    + get_summary(): str
+    + to_json(): str
+  }
+  
+  class ValidationResult {
+    + is_valid: bool
+    + errors: List[ValidationError]
+    + warnings: List[ValidationError]
+    + info_messages: List[str]
+    --
+    + get_error_summary(): str
+  }
+  
+  class ValidationError {
+    + field: str
+    + error_type: str
+    + message: str
+    + severity: str
+  }
+}
+
+' Parser Module
+package "Parser" {
+  
+  class MSG3Parser {
+    + supported_versions: List[str]
+    --
+    + parse(excel_path): dict
+    - _detect_version(excel_path): str
+    - _parse_original(excel_path): dict
+    - _parse_redesign(excel_path): dict
+    - _extract_tasks(worksheet): List[MSG3Task]
+  }
+  
+  class ExcelReader {
+    --
+    + get_sheet_names(excel_path): List[str]
+    + read_range(excel_path, sheet, range): List[List[Any]]
+    + find_header_row(excel_path, sheet, headers): int
+  }
+}
+
+' Validator Module
+package "Validator" {
+  
+  class MSG3Validator {
+    - schema_validator: SchemaValidator
+    - business_rules_validator: BusinessRulesValidator
+    --
+    + validate(data): ValidationResult
+    - _check_data_quality(data): List[ValidationError]
+  }
+  
+  class SchemaValidator {
+    --
+    + validate(data): List[ValidationError]
+    - _load_schemas(): void
+  }
+  
+  class BusinessRulesValidator {
+    --
+    + validate(data): List[ValidationError]
+    - _load_rules(): void
+  }
+}
+
+' Change Detection Module
+package "Change Detection" {
+  
+  class ChangeDetector {
+    - diff_engine: DiffEngine
+    --
+    + detect_changes(old_data, new_data): ChangeReport
+    - _detect_added(old_tasks, new_tasks): List[Change]
+    - _detect_deleted(old_tasks, new_tasks): List[Change]
+    - _detect_modified(old_tasks, new_tasks): List[Change]
+  }
+  
+  class DiffEngine {
+    --
+    + deep_diff(obj1, obj2): dict
+    + hash_object(obj): str
+  }
+}
+
+' Mapping Module
+package "Mapping" {
+  
+  class MSG3MaximoMapper {
+    - pm_mapper: PMMapper
+    - jobplan_mapper: JobPlanMapper
+    --
+    + map(msg3_data, changes): dict
+  }
+  
+  class PMMapper {
+    --
+    + map_task(msg3_task): MaximoPM
+    + map_tasks(msg3_tasks): List[MaximoPM]
+    - _map_interval_unit(msg3_unit): str
+  }
+  
+  class JobPlanMapper {
+    --
+    + map_task(msg3_task): MaximoJobPlan
+    + map_tasks(msg3_tasks): List[MaximoJobPlan]
+  }
+}
+
+' Maximo Connector Module
+package "Maximo Connector" {
+  
+  class MaximoClient {
+    - base_url: str
+    - username: str
+    - password: str
+    - rest_client: RestClient
+    - authenticated: bool
+    --
+    + authenticate(): bool
+    + create_pm(pm_data): dict
+    + update_pm(pmnum, pm_data): dict
+    + create_jobplan(jobplan_data): dict
+    + batch_create(object_type, records): List[dict]
+  }
+  
+  class RestClient {
+    - base_url: str
+    - verify_ssl: bool
+    - session: Session
+    --
+    + get(endpoint, params): dict
+    + post(endpoint, data): dict
+    + patch(endpoint, data): dict
+    + delete(endpoint): dict
+  }
+}
+
+' Main Application
+class MSG3MaximoIntegration {
+  - config_path: Path
+  - parser: MSG3Parser
+  - validator: MSG3Validator
+  - change_detector: ChangeDetector
+  - mapper: MSG3MaximoMapper
+  - maximo_connector: MaximoClient
+  --
+  + process_msg3_file(excel_path): bool
+  + validate_only(excel_path): bool
+  - _load_config(): void
+  - _initialize_components(): void
+}
+
+' Relationships
+MSG3Task "1" -- "*" Change : tracked by
+Change "*" -- "1" ChangeReport : contains
+Change -- ChangeType : uses
+
+MSG3Parser --> MSG3Task : creates
+MSG3Parser --> ExcelReader : uses
+
+MSG3Validator --> ValidationResult : returns
+MSG3Validator --> SchemaValidator : uses
+MSG3Validator --> BusinessRulesValidator : uses
+ValidationResult "*" -- "*" ValidationError : contains
+
+ChangeDetector --> ChangeReport : creates
+ChangeDetector --> DiffEngine : uses
+ChangeReport "*" -- "*" Change : contains
+
+MSG3MaximoMapper --> PMMapper : uses
+MSG3MaximoMapper --> JobPlanMapper : uses
+PMMapper --> MaximoPM : creates
+JobPlanMapper --> MaximoJobPlan : creates
+
+MaximoClient --> RestClient : uses
+MaximoClient --> MaximoPM : sends
+MaximoClient --> MaximoJobPlan : sends
+
+MSG3MaximoIntegration --> MSG3Parser : uses
+MSG3MaximoIntegration --> MSG3Validator : uses
+MSG3MaximoIntegration --> ChangeDetector : uses
+MSG3MaximoIntegration --> MSG3MaximoMapper : uses
+MSG3MaximoIntegration --> MaximoClient : uses
+
+@enduml

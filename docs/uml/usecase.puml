@@ -1,0 +1,90 @@
+@startuml MSG3_Maximo_UseCases
+!theme plain
+skinparam actorStyle awesome
+
+title MSG-3 → Maximo Integration - Use Cases
+
+left to right direction
+
+actor "Engineering\nTeam" as engineer
+actor "Maintenance\nPlanner" as planner
+actor "System Admin" as admin
+actor "Maximo\nSystem" as maximo
+
+rectangle "MSG-3 Maximo Integration" {
+  
+  usecase (Upload MSG-3 Excel) as UC1
+  usecase (Validate MSG-3 Data) as UC2
+  usecase (Detect Changes) as UC3
+  usecase (Map to Maximo) as UC4
+  usecase (Send to Maximo) as UC5
+  usecase (View Integration Report) as UC6
+  usecase (Configure Mapping Rules) as UC7
+  usecase (View Integration History) as UC8
+  usecase (Handle Errors) as UC9
+  usecase (Redesign MSG-3 Template) as UC10
+  
+  UC1 ..> UC2 : <<include>>
+  UC2 ..> UC3 : <<include>>
+  UC3 ..> UC4 : <<include>>
+  UC4 ..> UC5 : <<include>>
+  UC5 ..> UC6 : <<include>>
+  
+  UC2 ..> UC9 : <<extend>>
+  UC5 ..> UC9 : <<extend>>
+}
+
+engineer --> UC1
+engineer --> UC6
+engineer --> UC10
+planner --> UC6
+admin --> UC7
+admin --> UC8
+UC5 --> maximo
+
+note right of UC1
+  FE1: Gebruiker kan MSG-3 Excel uploaden
+  - Original formaat
+  - Redesign formaat
+  - Valideer bestandsformaat
+end note
+
+note right of UC2
+  FE2: Validatie van structuur en inhoud
+  - Verplichte velden
+  - Datatypes
+  - Business rules
+  - ATA codes
+end note
+
+note right of UC3
+  FE3: Wijzigingsregistratie
+  - Vergelijk met vorige versie
+  - Detecteer: added, modified, deleted
+  - Genereer changelog
+end note
+
+note right of UC4
+  FE4: Mapping naar Maximo objecten
+  - MSG-3 Task → PM
+  - MSG-3 Task → JobPlan
+  - Configureerbare mappingregels
+end note
+
+note right of UC5
+  FE5: Versturen naar Maximo
+  - REST API calls
+  - Create/Update PM's
+  - Create/Update JobPlans
+  - Error handling & retry
+end note
+
+note right of UC6
+  FE6: Rapportage
+  - Aantal verwerkte taken
+  - Aantal fouten
+  - Changelog overzicht
+  - Logging details
+end note
+
+@enduml

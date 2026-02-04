@@ -1,0 +1,173 @@
+@startuml MSG3_Maximo_Components
+!theme plain
+
+title MSG-3 → Maximo Integration - Component Diagram
+
+!define RECTANGLE class
+
+skinparam component {
+  BackgroundColor<<parser>> LightBlue
+  BackgroundColor<<validator>> LightGreen
+  BackgroundColor<<change>> LightYellow
+  BackgroundColor<<mapping>> LightPink
+  BackgroundColor<<connector>> LightCoral
+  BackgroundColor<<storage>> LightGray
+  BackgroundColor<<external>> Wheat
+}
+
+' External Systems
+component "MSG-3 Excel File" as excel <<external>>
+component "IBM Maximo\nREST API" as maximo_api <<external>>
+database "Snapshot\nDatabase" as db <<storage>>
+
+' Main Application
+package "MSG3 Maximo Integration Service" {
+  
+  component "Main Controller" as main {
+    [MSG3MaximoIntegration]
+    [Configuration Manager]
+    [Logger]
+  }
+  
+  ' Parser Module
+  package "Parser Module" <<parser>> {
+    [MSG3Parser]
+    [ExcelReader]
+    [Format Detector]
+  }
+  
+  ' Validator Module
+  package "Validator Module" <<validator>> {
+    [MSG3Validator]
+    [SchemaValidator]
+    [BusinessRulesValidator]
+    [Data Quality Checker]
+  }
+  
+  ' Change Detection Module
+  package "Change Detection Module" <<change>> {
+    [ChangeDetector]
+    [DiffEngine]
+    [ChangeReport Generator]
+  }
+  
+  ' Mapping Module
+  package "Mapping Module" <<mapping>> {
+    [MSG3MaximoMapper]
+    [PMMapper]
+    [JobPlanMapper]
+    [Mapping Config Loader]
+  }
+  
+  ' Maximo Connector Module
+  package "Maximo Connector Module" <<connector>> {
+    [MaximoClient]
+    [RestClient]
+    [Authentication Handler]
+    [Retry Handler]
+    [Error Handler]
+  }
+  
+  ' Support Modules
+  package "Support Modules" {
+    [Report Generator]
+    [Notification Service]
+    [Metrics Collector]
+  }
+}
+
+' Interfaces
+interface "Excel Input" as IExcel
+interface "Validation API" as IValidation
+interface "Change Detection API" as IChange
+interface "Mapping API" as IMapping
+interface "Maximo API" as IMaximo
+interface "Storage API" as IStorage
+interface "Reporting API" as IReport
+
+' Connections - External to System
+excel -down-> IExcel
+IExcel -down-> [MSG3Parser]
+
+[MaximoClient] -down-> IMaximo
+IMaximo -down-> maximo_api
+
+[ChangeDetector] -down-> IStorage
+IStorage -down-> db
+
+[ChangeDetector] -up-> IStorage
+db -up-> IStorage
+
+' Connections - Internal
+main -down-> [MSG3Parser] : parse()
+main -down-> [MSG3Validator] : validate()
+main -down-> [ChangeDetector] : detect_changes()
+main -down-> [MSG3MaximoMapper] : map()
+main -down-> [MaximoClient] : create_pm()\ncreate_jobplan()
+main -down-> [Report Generator] : generate_report()
+
+[MSG3Parser] -down-> [ExcelReader]
+[MSG3Parser] -down-> [Format Detector]
+
+[MSG3Validator] -down-> [SchemaValidator]
+[MSG3Validator] -down-> [BusinessRulesValidator]
+[MSG3Validator] -down-> [Data Quality Checker]
+
+[ChangeDetector] -down-> [DiffEngine]
+[ChangeDetector] -down-> [ChangeReport Generator]
+
+[MSG3MaximoMapper] -down-> [PMMapper]
+[MSG3MaximoMapper] -down-> [JobPlanMapper]
+[MSG3MaximoMapper] -down-> [Mapping Config Loader]
+
+[MaximoClient] -down-> [RestClient]
+[MaximoClient] -down-> [Authentication Handler]
+[MaximoClient] -down-> [Retry Handler]
+[MaximoClient] -down-> [Error Handler]
+
+[Report Generator] -down-> [Metrics Collector]
+main -down-> [Notification Service]
+
+' Notes
+note right of excel
+  **Input Formats:**
+  - Original MSG-3 Excel
+  - Redesigned MSG-3 Excel
+  
+  **Validation:**
+  - File format check
+  - Required sheets check
+end note
+
+note right of maximo_api
+  **Endpoints:**
+  - /maximo/oslc/os/mxpm (PM)
+  - /maximo/oslc/os/mxjobplan (JobPlan)
+  
+  **Authentication:**
+  - Form-based (MAXAUTH)
+  - API Key (optional)
+end note
+
+note bottom of db
+  **Stores:**
+  - MSG-3 snapshots
+  - Integration logs
+  - Mapping configurations
+  - Error history
+end note
+
+note left of main
+  **Configuration:**
+  - .env file
+  - Maximo credentials
+  - Mapping rules
+  - Logging settings
+  
+  **Error Handling:**
+  - Fail-safe approach
+  - Continue on non-critical errors
+  - Comprehensive logging
+end note
+
+@enduml

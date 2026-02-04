@@ -1,0 +1,142 @@
+@startuml MSG3_Maximo_Activity
+!theme plain
+
+title MSG-3 → Maximo Integration - Activity Diagram
+
+start
+
+:User selects MSG-3 Excel file;
+
+:Load configuration\n(.env, mapping rules);
+
+partition "Parse Excel" {
+  :Read Excel file;
+  
+  :Detect MSG-3 version\n(original vs redesign);
+  
+  if (Valid Excel format?) then (yes)
+    :Extract tasks from rows;
+    :Convert to MSG3Task objects;
+  else (no)
+    :Log structural error;
+    stop
+  endif
+}
+
+partition "Validate Data" {
+  :Schema validation\n(structure, datatypes);
+  
+  :Business rules validation\n(intervals, ATA codes);
+  
+  if (Validation passed?) then (yes)
+    :Continue processing;
+  else (no - critical errors)
+    :Generate error report;
+    :Send notification;
+    stop
+  endif
+  
+  if (Warnings present?) then (yes)
+    :Log warnings;
+    note right: Soft errors - continue processing
+  endif
+}
+
+partition "Change Detection" {
+  :Load previous MSG-3 snapshot\nfrom database;
+  
+  fork
+    :Detect added tasks;
+  fork again
+    :Detect modified tasks\n(field-level comparison);
+  fork again
+    :Detect deleted tasks;
+  end fork
+  
+  :Generate ChangeReport\n{added, modified, deleted};
+  
+  if (No changes detected?) then (yes)
+    :Log "No changes";
+    :Generate report;
+    stop
+  endif
+}
+
+partition "Mapping to Maximo" {
+  :Initialize mapper with config;
+  
+  repeat
+    :Get next changed task;
+    
+    :Map MSG3Task → MaximoPM;
+    note right
+      Apply mapping rules:
+      - task_code → PMNUM
+      - interval → FREQUENCY
+      - interval_unit → FREQUNIT
+    end note
+    
+    :Map MSG3Task → JobPlan\n(if applicable);
+    
+  repeat while (More changed tasks?)
+  
+  :Collect all Maximo objects;
+}
+
+partition "Send to Maximo" {
+  :Authenticate with Maximo API;
+  
+  if (Authentication successful?) then (yes)
+    :Continue;
+  else (no)
+    :Log authentication error;
+    :Send alert notification;
+    stop
+  endif
+  
+  repeat
+    :Get next Maximo object;
+    
+    :Send API request\nPOST/PATCH to Maximo;
+    
+    if (API call successful?) then (yes)
+      :Log success;
+      :Increment success counter;
+    else (no)
+      if (Retry-able error?) then (yes)
+        :Wait and retry\n(max 3 attempts);
+      else (no)
+        :Log error;
+        :Increment error counter;
+        note right: Continue with next object\n(fail-safe approach)
+      endif
+    endif
+    
+  repeat while (More objects to send?)
+}
+
+partition "Finalize" {
+  :Save new MSG-3 snapshot\nto database;
+  
+  :Generate integration report;
+  note right
+    Report includes:
+    - Total tasks processed
+    - Success count
+    - Error count
+    - Changelog summary
+    - Detailed error log
+  end note
+  
+  :Send report to user;
+  
+  if (Errors occurred?) then (yes)
+    :Send alert notification\nto system admin;
+  endif
+  
+  :Log completion;
+}
+
+stop
+
+@enduml

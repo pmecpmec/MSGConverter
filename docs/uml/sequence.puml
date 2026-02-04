@@ -1,0 +1,132 @@
+@startuml MSG3_Maximo_Sequence
+!theme plain
+
+title MSG-3 → Maximo Integration - Sequence Diagram (Happy Flow)
+
+actor "Engineering Team" as user
+participant "MSG3MaximoIntegration" as main
+participant "MSG3Parser" as parser
+participant "MSG3Validator" as validator
+participant "ChangeDetector" as detector
+participant "MSG3MaximoMapper" as mapper
+participant "MaximoClient" as maximo
+database "Snapshot DB" as db
+participant "Maximo REST API" as api
+
+user -> main: process_msg3_file(excel_path)
+activate main
+
+main -> main: _load_config()
+note right: Load .env settings\nMaximo credentials\nMapping config
+
+main -> main: _initialize_components()
+note right: Initialize all modules:\nparser, validator,\ndetector, mapper, connector
+
+== Step 1: Parse Excel ==
+main -> parser: parse(excel_path)
+activate parser
+
+parser -> parser: _detect_version(excel_path)
+note right: Detect if original\nor redesign format
+
+parser -> parser: _parse_original(excel_path)\nor _parse_redesign(excel_path)
+note right: Read Excel rows\nConvert to MSG3Task objects
+
+parser --> main: parsed_data\n{metadata, tasks[]}
+deactivate parser
+
+== Step 2: Validate Data ==
+main -> validator: validate(parsed_data)
+activate validator
+
+validator -> validator: Schema validation
+note right: Check structure,\ndatatypes,\nrequired fields
+
+validator -> validator: Business rules validation
+note right: Check intervals,\nATA codes,\nlogical consistency
+
+validator --> main: validation_result\n{is_valid: true, errors: []}
+deactivate validator
+
+alt Validation Failed
+  main --> user: Error report
+  note right: Stop processing\nReturn validation errors
+end
+
+== Step 3: Change Detection ==
+main -> db: Load previous snapshot
+activate db
+db --> main: old_data
+deactivate db
+
+main -> detector: detect_changes(old_data, parsed_data)
+activate detector
+
+detector -> detector: _detect_added(old_tasks, new_tasks)
+detector -> detector: _detect_deleted(old_tasks, new_tasks)
+detector -> detector: _detect_modified(old_tasks, new_tasks)
+
+detector --> main: change_report\n{added: 5, modified: 3, deleted: 0}
+deactivate detector
+
+== Step 4: Map to Maximo Objects ==
+main -> mapper: map(parsed_data, change_report)
+activate mapper
+
+loop For each changed task
+  mapper -> mapper: PMMapper.map_task(msg3_task)
+  note right: Convert MSG3Task\nto MaximoPM object
+  
+  mapper -> mapper: JobPlanMapper.map_task(msg3_task)
+  note right: Convert MSG3Task\nto JobPlan object
+end
+
+mapper --> main: maximo_objects\n{pm: [...], jobplan: [...]}
+deactivate mapper
+
+== Step 5: Send to Maximo ==
+main -> maximo: authenticate()
+activate maximo
+maximo -> api: POST /auth
+activate api
+api --> maximo: auth_token
+deactivate api
+maximo --> main: authenticated = true
+deactivate maximo
+
+loop For each PM record
+  main -> maximo: create_pm(pm_data)
+  activate maximo
+  
+  maximo -> api: POST /maximo/oslc/os/mxpm
+  activate api
+  
+  alt Success
+    api --> maximo: 201 Created\n{PMNUM, href, ...}
+    maximo --> main: success_response
+  else Error
+    api --> maximo: 400/500 Error
+    maximo --> main: error_response
+    note right: Log error but continue\nwith next record
+  end
+  
+  deactivate api
+  deactivate maximo
+end
+
+== Step 6: Save Snapshot & Report ==
+main -> db: Save new snapshot
+activate db
+db --> main: saved
+deactivate db
+
+main -> main: Generate integration report
+note right: Summary:\n- Tasks processed\n- Success count\n- Error count\n- Changelog
+
+main --> user: Integration complete\nReport: {summary, details, errors}
+deactivate main
+
+user -> user: Review report
+note right: Check for errors\nVerify changes in Maximo
+
+@enduml
