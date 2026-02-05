@@ -5,6 +5,30 @@
 
 ---
 
+## 🔴 BELANGRIJK: Lees Dit EERST!
+
+**VOORDAT JE BEGINT MET DEVELOPMENT:**
+
+### Business Rules First! 
+```
+📘 Lees: docs/BUSINESS-RULES-FIRST.md
+```
+
+Dit project heeft **80 business rules** die ALTIJD moeten worden gevolgd:
+- ✅ 11 CRITICAL rules (blokkeren processing)
+- ✅ 48 ERROR rules (must fix)
+- ✅ 19 WARNING rules (should review)
+- ✅ 2 INFO rules (aanbevelingen)
+
+**Alle development moet compliant zijn met deze rules!**
+
+📚 **Volledige documentatie:**
+- `docs/technisch-ontwerp/business-rules.md` - Alle 80 rules
+- `docs/technisch-ontwerp/business-rules-quick-reference.md` - Snelle lookup
+- `src/validator/business_rules.py` - Implementation
+
+---
+
 ## ✅ Setup Checklist (Eerst dit doen!)
 
 ### 1. Development Environment Setup

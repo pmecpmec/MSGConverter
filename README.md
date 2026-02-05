@@ -117,6 +117,20 @@ pytest tests/integration/ -v
 pytest --cov=src tests/
 ```
 
+## 🚀 Quick Start
+
+**🔴 BELANGRIJK: Lees EERST de business rules!**
+
+```bash
+# 1. LEES EERST (VERPLICHT!)
+docs/BUSINESS-RULES-FIRST.md
+
+# 2. Lees project documentatie
+QUICKSTART.md
+PROJECT_OVERVIEW.md
+docs/technisch-ontwerp/business-rules.md
+```
+
 ## 🔧 Installatie & Setup
 
 ```bash

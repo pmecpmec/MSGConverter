@@ -278,7 +278,7 @@ Schrijf je projectdefinitie documenten
 ### Development Progress
 - ✅ Repository: 100%
 - 🔄 Parser: 0% (templates klaar)
-- 🔄 Validator: 0% (templates klaar)
+- 🔄 Validator: 40% (business rules geïmplementeerd)
 - 🔄 Change Detection: 0% (templates klaar)
 - 🔄 Mapping: 0% (templates klaar)
 - 🔄 Maximo Connector: 0% (templates klaar)
@@ -423,11 +423,13 @@ De `.cursor/project_instructions.md` bevat gedetailleerde instructies voor Curso
 ## ✅ Next Actions for Pedro
 
 ### Immediate (Deze Week)
-1. ✅ Lees QUICKSTART.md
-2. 📝 Schrijf Projectdefinitie (`docs/projectdefinitie/`)
-3. 📝 Maak Plan van Aanpak (`docs/plan-van-aanpak/`)
-4. 🔧 Setup development environment (venv, dependencies)
-5. 🔐 Regel toegang tot Maximo test environment
+1. 🚨 **LEES EERST: `docs/BUSINESS-RULES-FIRST.md`** (CRITICAL!)
+2. ✅ Lees QUICKSTART.md
+3. 📝 Schrijf Projectdefinitie (`docs/projectdefinitie/`)
+4. 📝 Maak Plan van Aanpak (`docs/plan-van-aanpak/`)
+5. 🔧 Setup development environment (venv, dependencies)
+6. 🔐 Regel toegang tot Maximo test environment
+7. 📚 Review alle 80 business rules (`docs/technisch-ontwerp/business-rules.md`)
 
 ### Week 2
 1. 🔬 MSG-3 Excel analyse

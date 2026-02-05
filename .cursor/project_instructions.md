@@ -161,6 +161,21 @@ class MSG3Task(BaseModel):
 
 ## 🚨 Belangrijke Richtlijnen
 
+### 🔴 CRITICAL: Business Rules First
+- **ALTIJD BEGIN MET BUSINESS RULES** - Zie `docs/BUSINESS-RULES-FIRST.md`
+- **80 business rules** zijn gedefinieerd en MOETEN worden gevolgd
+- **11 CRITICAL rules** blokkeren processing als geschonden
+- **Alle development** moet compliant zijn met deze rules
+- **Bij elke feature**: Identificeer relevante rules en implementeer validatie
+- Rules zijn in: `src/validator/business_rules.py`
+- Documentatie: `docs/technisch-ontwerp/business-rules.md`
+
+**NEVER skip business rules validation! Deze regels zijn fundamenteel voor:**
+- ✅ Veiligheid (Security & Access Control)
+- ✅ Compliance (ISO 9001, ISO 45001, GDPR)
+- ✅ Operationele continuïteit (SLA, planning)
+- ✅ Kwaliteit (Audits, certificeringen)
+
 ### Eigenaarschap
 - **Pedro is de eigenaar** van het project
 - Jij bent de **technische assistent**
@@ -187,12 +202,14 @@ class MSG3Task(BaseModel):
 ## 🔄 Workflow
 
 ### Bij nieuwe feature
-1. **Denk na** over architectuur impact
-2. **Schrijf tests eerst** (TDD indien mogelijk)
-3. **Implementeer** in kleine stappen
-4. **Documenteer** automatisch
-5. **Update** README en `/docs/readme-docs.md`
-6. **Commit** met duidelijke message
+1. 🔴 **IDENTIFICEER BUSINESS RULES** - Welke rules zijn van toepassing?
+2. **Denk na** over architectuur impact
+3. **Schrijf tests eerst** (TDD indien mogelijk) - inclusief rule compliance tests
+4. **Implementeer validatie** voor relevante business rules
+5. **Implementeer** feature in kleine stappen
+6. **Documenteer** automatisch (inclusief rule compliance)
+7. **Update** README en `/docs/readme-docs.md`
+8. **Commit** met duidelijke message
 
 ### Bij bug fix
 1. **Schrijf test** die de bug reproduceert
@@ -212,11 +229,13 @@ class MSG3Task(BaseModel):
 ## 📊 Kwaliteitscriteria
 
 ### Code Quality
+- ✅ **Business rules compliance** voor alle features
 - ✅ Type hints overal
 - ✅ Docstrings voor alle public functies
-- ✅ Unit test coverage > 80%
+- ✅ Unit test coverage > 80% (inclusief rule compliance tests)
 - ✅ Linter warnings = 0
 - ✅ Max cyclomatic complexity = 10
+- ✅ Critical rules violations = 0 (MUST block processing)
 
 ### Documentatie Quality
 - ✅ Alle deliverables compleet
