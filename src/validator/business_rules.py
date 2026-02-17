@@ -401,11 +401,93 @@ class BusinessRulesValidator:
         ))
     
     # ========================================================================
-    # 4. LOGISTICS & INVENTORY RULES
+    # 4. LOGISTICS & INVENTORY RULES (incl. Maximo Item Rules)
     # ========================================================================
     
     def _load_logistics_rules(self) -> None:
-        """Laad Logistics & Inventory rules."""
+        """Laad Logistics & Inventory rules (incl. Maximo Item Master regels)."""
+        # Maximo Item Master Rules (from maximosecrets.com)
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.1",
+            category=RuleCategory.LOGISTICS,
+            title="ITEMNUM max 30 characters uppercase",
+            description="Item Number moet max 30 characters zijn en uppercase. Best practice: max 12 voor UI readability.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.2",
+            category=RuleCategory.LOGISTICS,
+            title="Item Description verplicht en uniek",
+            description="Description is verplicht (max 100 chars) en moet uniek en duidelijk zijn voor zoekbaarheid in 10,000+ items.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.3",
+            category=RuleCategory.LOGISTICS,
+            title="Commodity Group en Code toewijzen",
+            description="ALTIJD commodity group en code toewijzen voor zoekbaarheid en reporting. Format: ATA Chapter → Group, ATA System → Code.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.4",
+            category=RuleCategory.LOGISTICS,
+            title="Item Status correct instellen",
+            description="Items starten als PLANNING, worden ACTIVE na goedkeuring. OBSOLETE is irreversible en requires PENDOBS eerst.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.5",
+            category=RuleCategory.LOGISTICS,
+            title="Stock Category NS voor MSG-3 items",
+            description="MSG-3 items zijn Non-Stocked (NS) omdat het taken zijn, geen fysieke voorraad items.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.6",
+            category=RuleCategory.LOGISTICS,
+            title="ITEMNUM is immutable",
+            description="Item Number kan NIET worden gewijzigd na save. Oude item OBSOLETE maken en nieuw item aanmaken indien nodig.",
+            severity=RuleSeverity.CRITICAL
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.7",
+            category=RuleCategory.LOGISTICS,
+            title="Item kan niet worden verwijderd",
+            description="Er is geen Delete Item actie. Gebruik status OBSOLETE om items te retiren.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.8",
+            category=RuleCategory.LOGISTICS,
+            title="Commodity max 8 characters uppercase",
+            description="Commodity Groups en Codes zijn max 8 characters en uppercase. Format: UPPER 8.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.9",
+            category=RuleCategory.LOGISTICS,
+            title="Item Status transitions valideren",
+            description="Status wijzigingen valideren: OBSOLETE requires PENDOBS, OBSOLETE is irreversible, anderen kunnen vrij transitioneren.",
+            severity=RuleSeverity.ERROR
+        ))
+        
+        self._add_rule(BusinessRule(
+            rule_id="LOG-4.0.10",
+            category=RuleCategory.LOGISTICS,
+            title="Geen OBSOLETE bij active references",
+            description="Item mag niet OBSOLETE worden als er references zijn in work plans, job plans, PR/PO lines, of item balance bestaat.",
+            severity=RuleSeverity.CRITICAL
+        ))
+        
+        # Original LOG-4.1 rule
         self._add_rule(BusinessRule(
             rule_id="LOG-4.1",
             category=RuleCategory.LOGISTICS,

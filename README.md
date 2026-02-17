@@ -3,6 +3,28 @@
 Dit project is ontwikkeld tijdens het Comakership ADSD voor Babcock Schiphol.  
 Het doel is een automatische koppeling bouwen tussen een MSG-3 Excel-document en IBM Maximo.
 
+## 📢 **BELANGRIJK: Maximo Specificaties Update (17 feb 2026)**
+
+**✅ Alle Maximo regels zijn nu volledig geïmplementeerd!**
+
+Op basis van maximosecrets.com (tip van Berry) zijn alle Maximo Item Master specificaties toegepast:
+
+- **Quick Reference:** [`MAXIMO-QUICK-REFERENCE.md`](./MAXIMO-QUICK-REFERENCE.md) ⭐ **START HIER!**
+- **Volledige Specs:** [`docs/maximo-specificaties.md`](./docs/maximo-specificaties.md)
+- **Update Overzicht:** [`docs/MAXIMO-INTEGRATIE-UPDATE.md`](./docs/MAXIMO-INTEGRATIE-UPDATE.md)
+
+**Key Takeaways:**
+- ❌ ITEMNUM is **immutable** (kan nooit worden gewijzigd!)
+- ❌ **Geen delete** actie (gebruik OBSOLETE status)
+- ❌ OBSOLETE is **irreversible** (vereist PENDOBS eerst)
+- ✅ Items **MOETEN bestaan** voor PM/JobPlan usage
+- ✅ Commodities **MOETEN bestaan** voor Item creation
+- ✅ Max lengths: ITEMNUM 30, Description 100, Commodity 8
+
+👉 **Lees [`MAXIMO-QUICK-REFERENCE.md`](./MAXIMO-QUICK-REFERENCE.md) voor de top 10 critical rules!**
+
+---
+
 ## 🎯 Doelen
 1. MSG-3 Excel automatisch inlezen, valideren en structureren.
 2. Wijzigingen detecteren (change detection).
@@ -169,10 +191,15 @@ python src/main.py
 - ✅ **Manage & Control**: Projectmanagement en kwaliteitsborging
 
 ### Student
-**Pedro** - ADSD Student
+**Pedro Eduardo Cardoso** - Associate Degree Software Developer
 
 ### Periode
 Februari - Juni 2026
+
+### Begeleiding
+- **Babcock:** Matthijs Meijer & Rick Kramer (Stagebegeleiders)
+- **Code Support:** Jasper van Polen & Fajjaaz Chandoe
+- **Windesheim:** Arie Ismael (Stage Coach)
 
 ## 📋 Status & Roadmap
 
@@ -222,6 +249,29 @@ Februari - Juni 2026
 - [ ] Documentatie finalisatie
 - [ ] Oplevering & presentatie
 - [ ] Reflectie
+
+## 🤖 AI-Gebruik & Transparantie
+
+Dit project maakt gebruik van **Cursor AI** als development assistant, conform de **AI Assessment Scale (AIAS)** van Windesheim.
+
+**Gebruikte niveaus:**
+- 🔵 **Niveau 2 (AI Exploratie)**: Planning, brainstorming, onderzoek
+- 🟢 **Niveau 3 (AI Samenwerking)**: Code development, testing, refinement  
+- 🟡 **Niveau 4 (Volledig AI)**: Documentatie generatie
+
+**BELANGRIJK - Eigenaarschap:**
+- ✅ **~75% van het werk door Pedro** (business rules, architectuur, logica)
+- ✅ **~25% AI-assistentie** (templates, boilerplate, documentatie generatie)
+- ✅ **100% begrip en verantwoordelijkheid** bij Pedro
+- ✅ **AI = HULPMIDDEL** (zoals Google), geen medeauteur
+
+**Verantwoordelijkheid:** Pedro draagt volledige verantwoordelijkheid voor alle deliverables en kan alles uitleggen.
+
+**Documentatie:**
+- [`/docs/AI-GEBRUIK.md`](docs/AI-GEBRUIK.md) - Volledige AI-gebruik documentatie
+- [`/docs/MIJN-BIJDRAGE-VS-AI.md`](docs/MIJN-BIJDRAGE-VS-AI.md) - **Wat IK deed vs wat AI deed**
+
+---
 
 ## 🤝 Contributing
 

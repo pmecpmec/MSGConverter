@@ -203,26 +203,31 @@ class MSG3Task(BaseModel):
 
 ### Bij nieuwe feature
 1. 🔴 **IDENTIFICEER BUSINESS RULES** - Welke rules zijn van toepassing?
-2. **Denk na** over architectuur impact
-3. **Schrijf tests eerst** (TDD indien mogelijk) - inclusief rule compliance tests
-4. **Implementeer validatie** voor relevante business rules
-5. **Implementeer** feature in kleine stappen
-6. **Documenteer** automatisch (inclusief rule compliance)
-7. **Update** README en `/docs/readme-docs.md`
-8. **Commit** met duidelijke message
+2. 🤖 **DOCUMENTEER AI-GEBRUIK** - Log in AI-LOGBOEK.md welk AIAS-niveau je gebruikt
+3. **Denk na** over architectuur impact
+4. **Schrijf tests eerst** (TDD indien mogelijk) - inclusief rule compliance tests
+5. **Implementeer validatie** voor relevante business rules
+6. **Implementeer** feature in kleine stappen
+7. **Documenteer** automatisch (inclusief rule compliance)
+8. 🤖 **VOEG AUTHENTICITEITSVERKLARING TOE** - Als het een deliverable is
+9. **Update** README en `/docs/readme-docs.md`
+10. **Commit** met duidelijke message (vermeld AI-niveau indien gebruikt)
 
 ### Bij bug fix
-1. **Schrijf test** die de bug reproduceert
-2. **Fix** de bug
-3. **Verify** dat test slaagt
-4. **Document** in changelog
-5. **Commit**
+1. 🤖 **LOG AI-GEBRUIK** - Als je AI gebruikt voor debugging
+2. **Schrijf test** die de bug reproduceert
+3. **Fix** de bug
+4. **Verify** dat test slaagt
+5. **Document** in changelog
+6. **Commit** (vermeld AI-gebruik indien van toepassing)
 
 ### Bij documentatie
-1. Gebruik **Markdown** met koppen, lists, code blocks
-2. Voeg **diagrams toe** (Mermaid syntax)
-3. Maak **voorbeelden** concreet
-4. Link **gerelateerde documenten**
+1. 🤖 **CHECK AIAS-NIVEAU** - Meestal Niveau 4 voor auto-generated docs
+2. Gebruik **Markdown** met koppen, lists, code blocks
+3. Voeg **diagrams toe** (Mermaid syntax)
+4. Maak **voorbeelden** concreet
+5. Link **gerelateerde documenten**
+6. 🤖 **VOEG AUTHENTICITEITSVERKLARING TOE** onderaan document
 
 ---
 
@@ -236,6 +241,14 @@ class MSG3Task(BaseModel):
 - ✅ Linter warnings = 0
 - ✅ Max cyclomatic complexity = 10
 - ✅ Critical rules violations = 0 (MUST block processing)
+
+### AI-Documentatie Quality
+- ✅ **AI-LOGBOEK.md wordt dagelijks bijgewerkt**
+- ✅ **Alle deliverables hebben authenticiteitsverklaring**
+- ✅ **AIAS-niveau correct gedocumenteerd per deliverable**
+- ✅ **Geen privacy-gevoelige data gedeeld met AI**
+- ✅ **Alle AI-gegenereerde code is gereviewed en begrepen**
+- ✅ **Weekly review gedaan (elke vrijdag)**
 
 ### Documentatie Quality
 - ✅ Alle deliverables compleet
@@ -258,6 +271,50 @@ class MSG3Task(BaseModel):
 - Leg **keuzes uit**, niet opdragen
 - Vraag **feedback** bij belangrijke beslissingen
 - Vier **successen** (tests passing, features compleet)
+
+---
+
+## 🤖 AI-Documentatie Workflow (VERPLICHT!)
+
+### Dagelijkse Routine
+1. **Morning (5 min):**
+   - Check welke deliverables je vandaag maakt
+   - Bepaal AIAS-niveau (2/3/4)
+   - Open `AI-LOGBOEK.md` en `AI-AUTHENTICITEITSVERKLARINGEN.md` als reference
+
+2. **During Work (1 min per sessie):**
+   - ELKE keer dat je AI gebruikt → Log in AI-LOGBOEK.md
+   - Formaat: `⏰ [Tijd] | 🤖 AI-[2/3/4] | 📝 [Activiteit]`
+
+3. **After Deliverable (2 min):**
+   - DIRECT authenticiteitsverklaring toevoegen (kopieer uit `AI-AUTHENTICITEITSVERKLARINGEN.md`)
+   - NIET wachten tot inleveren!
+
+4. **End of Day (5 min):**
+   - Review AI-LOGBOEK.md van vandaag
+   - Check: Alle deliverables hebben authenticiteitsverklaring?
+
+5. **Weekly (30 min op vrijdag):**
+   - Review hele week in AI-LOGBOEK.md
+   - Update AI-GEBRUIK.md indien nodig
+
+### AI-Documentatie Bestanden
+- 📄 `AI-LOGBOEK.md` - Dagelijks tracking (vul ELKE dag in!)
+- 📋 `docs/AI-AUTHENTICITEITSVERKLARINGEN.md` - Copy-paste verklaringen
+- 📚 `docs/AI-GEBRUIK.md` - Volledige documentatie
+- 📊 `docs/AI-OVERZICHT-VISUAL.md` - Presentatie materiaal
+- ✅ `docs/CHECKLIST-VOOR-INLEVEREN.md` - Pre-submission check
+- 🔄 `docs/AI-WORKFLOW-DAGELIJKS.md` - Gedetailleerde workflow guide
+
+### Trigger Points (Mentale Reminders)
+```
+Als ik Cursor AI open        → Check AIAS-niveau
+Als ik AI-suggestie accepteer → Log in AI-LOGBOEK.md
+Als ik deliverable afmaak    → Voeg verklaring toe
+Als ik commit naar Git       → Vermeld AI-gebruik
+Als het einde van de dag is  → Review logboek
+Als het vrijdag is           → Weekly review
+```
 
 ---
 

@@ -3,9 +3,15 @@
 
 **Status:** ✅ Setup Complete - Ready for Development  
 **Datum:** 4 februari 2026  
-**Student:** Pedro  
+**Student:** Pedro Eduardo Cardoso  
 **Organisatie:** Babcock Schiphol  
-**Opleiding:** Windesheim ADSD
+**Opleiding:** Associate Degree Software Developer (ADSD)  
+**Instelling:** Windesheim
+
+**Begeleiding:**
+- Matthijs Meijer & Rick Kramer - Stagebegeleiders (Babcock)
+- Jasper van Polen & Fajjaaz Chandoe - Code Support (Babcock)
+- Arie Ismael - Stage Coach (Windesheim)
 
 ---
 
@@ -267,6 +273,8 @@ Schrijf je projectdefinitie documenten
 - ✅ Documentation: Alle publieke functies
 
 ### Documentation Completeness
+- ✅ **AI-Gebruik Documentatie** (NIEUW!)
+- ✅ **AI-Authenticiteitsverklaringen** (NIEUW!)
 - ✅ Projectdefinitie
 - ✅ Plan van Aanpak
 - 🔄 Onderzoek documenten
@@ -312,6 +320,11 @@ Schrijf je projectdefinitie documenten
 ---
 
 ## 📚 Key Documents
+
+### 🤖 AI-Documentatie (VERPLICHT!)
+- `docs/AI-GEBRUIK.md` - Volledige AI-gebruik documentatie
+- `docs/AI-AUTHENTICITEITSVERKLARINGEN.md` - Quick reference verklaringen
+- `docs/AI-OVERZICHT-VISUAL.md` - Visual summary voor presentaties
 
 ### Start Guides
 - `QUICKSTART.md` - Snelstart voor Pedro
@@ -425,11 +438,14 @@ De `.cursor/project_instructions.md` bevat gedetailleerde instructies voor Curso
 ### Immediate (Deze Week)
 1. 🚨 **LEES EERST: `docs/BUSINESS-RULES-FIRST.md`** (CRITICAL!)
 2. ✅ Lees QUICKSTART.md
-3. 📝 Schrijf Projectdefinitie (`docs/projectdefinitie/`)
-4. 📝 Maak Plan van Aanpak (`docs/plan-van-aanpak/`)
-5. 🔧 Setup development environment (venv, dependencies)
-6. 🔐 Regel toegang tot Maximo test environment
-7. 📚 Review alle 80 business rules (`docs/technisch-ontwerp/business-rules.md`)
+3. ✅ **Review AI-documentatie** (`docs/AI-GEBRUIK.md`, `docs/AI-AUTHENTICITEITSVERKLARINGEN.md`)
+4. 📝 Schrijf Projectdefinitie (`docs/projectdefinitie/`)
+   - ⚠️ **Voeg authenticiteitsverklaring toe onderaan elk document!**
+5. 📝 Maak Plan van Aanpak (`docs/plan-van-aanpak/`)
+   - ⚠️ **Voeg authenticiteitsverklaring toe onderaan elk document!**
+6. 🔧 Setup development environment (venv, dependencies)
+7. 🔐 Regel toegang tot Maximo test environment
+8. 📚 Review alle 80 business rules (`docs/technisch-ontwerp/business-rules.md`)
 
 ### Week 2
 1. 🔬 MSG-3 Excel analyse
@@ -467,5 +483,6 @@ De `.cursor/project_instructions.md` bevat gedetailleerde instructies voor Curso
 
 ---
 
-**Laatste update:** 4 februari 2026  
-**Versie:** 1.0 - Initial Setup Complete
+**Laatste update:** 11 februari 2026  
+**Versie:** 1.1 - AI Documentation Complete  
+**Auteur:** Pedro Eduardo Cardoso - Associate Degree Software Developer (ADSD)
