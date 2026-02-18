@@ -2,7 +2,7 @@
 
 ## Eigenaarschap & Verantwoordelijkheid
 
-**Student:** Pedro Meijer  
+**Student:** Pedro Eduardo Cardoso  
 **Datum:** 11 februari 2026  
 **Project:** MSG-3 to Maximo Converter
 

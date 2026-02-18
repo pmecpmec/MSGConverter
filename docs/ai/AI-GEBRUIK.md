@@ -463,7 +463,7 @@ Het gebruik van **Cursor AI** heeft dit project significant versneld en verrijkt
 ---
 
 **Datum:** 11 februari 2026  
-**Auteur:** Pedro Meijer  
+**Auteur:** Pedro Eduardo Cardoso  
 **Project:** MSG-3 to Maximo Converter  
 **Organisatie:** Babcock Schiphol  
 **Opleiding:** Windesheim ADSD

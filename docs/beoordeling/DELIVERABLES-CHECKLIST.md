@@ -65,7 +65,7 @@
 ✅ 05-stakeholders.md
 ```
 **Status:** Compleet, inclusief authenticiteitsverklaringen  
-**Te doen:** Final review voor oplevering
+**Ingeleverd:** Via OnStage (execution phase)
 
 ---
 
@@ -79,7 +79,7 @@
 ✅ 05-deliverables.md
 ```
 **Status:** Compleet, inclusief authenticiteitsverklaringen  
-**Te doen:** Update planning met voortgang
+**Ingeleverd:** Via OnStage (execution phase)
 
 ---
 
@@ -548,7 +548,7 @@ MSGConverter-Oplevering-PedroCardoso.zip
 **Template:**
 ```markdown
 # Reflectieverslag Comakership
-## Pedro Meijer - MSG-3 to Maximo Converter
+## Pedro Eduardo Cardoso - MSG-3 to Maximo Converter
 
 ## Inleiding
 [Context project, rol, periode]

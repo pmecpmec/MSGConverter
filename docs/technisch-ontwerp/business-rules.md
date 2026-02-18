@@ -1211,4 +1211,12 @@ Voor vragen over business rules:
 
 ---
 
+## AI Authenticiteitsverklaring
+
+Tijdens het technisch onderzoek en ontwerp heb ik **Cursor AI** gebruikt om te **genereren van diagram templates, analyseren van API documentatie, en structureren van technische beslissingen**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat het ingeleverde werk mijn eigen competenties en leeruitkomsten reflecteert. Alle architecturale beslissingen, business rules en technische keuzes zijn gebaseerd op mijn eigen analyse en in overleg met stakeholders. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+
+*AIAS Niveau: 3 - AI Samenwerking*
+
+---
+
 **Document Einde** - Versie 1.0 - 5 februari 2026

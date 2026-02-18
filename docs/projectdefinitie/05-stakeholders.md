@@ -439,5 +439,13 @@ Deze stakeholders hebben indirect belang of worden beïnvloed door het project.
 ---
 
 *Datum: 4 februari 2026*  
-*Auteur: Pedro*  
+*Auteur: Pedro Eduardo Cardoso*  
 *Project: MSG-3 to Maximo Converter*
+
+---
+
+## AI Authenticiteitsverklaring
+
+Voor het verfijnen van teksten in de projectdefinitie heb ik **Cursor AI** gebruikt om te **verbeteren van formulering en professionele schrijfstijl**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat het ingeleverde werk mijn eigen competenties en leeruitkomsten reflecteert. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+
+*AIAS Niveau: 3 - AI Samenwerking*

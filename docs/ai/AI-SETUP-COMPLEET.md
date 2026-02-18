@@ -467,7 +467,7 @@ git push
 
 **Datum:** 11 februari 2026  
 **Status:** ✅ SETUP COMPLEET  
-**Auteur:** Pedro Meijer (met Cursor AI assistentie)  
+**Auteur:** Pedro Eduardo Cardoso (met Cursor AI assistentie)  
 **Project:** MSG-3 to Maximo Converter  
 **Organisatie:** Babcock Schiphol  
 **Opleiding:** Windesheim ADSD

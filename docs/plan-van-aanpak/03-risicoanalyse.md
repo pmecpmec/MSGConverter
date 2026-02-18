@@ -486,6 +486,14 @@ Bij kritieke risico's:
 ---
 
 *Datum: 4 februari 2026*  
-*Auteur: Pedro Meijer*  
-*Project: MSG-3 to Maximo Converter*
+*Auteur: Pedro Eduardo Cardoso*  
+*Project: MSG-3 to Maximo Converter*  
 *Review Frequency: Wekelijks*
+
+---
+
+## AI Authenticiteitsverklaring
+
+Tijdens de voorbereiding van het Plan van Aanpak heb ik **Cursor AI** gebruikt om te **verkennen van Agile methodieken, planning frameworks, en risicoanalyse templates**. Ik verklaar dat het ingeleverde werk geen AI-gegenereerde inhoud bevat. De daadwerkelijke planning, risico's en mitigatie strategieën zijn gebaseerd op mijn eigen analyse van het project en in overleg met de begeleider. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+
+*AIAS Niveau: 2 - AI Exploratie*

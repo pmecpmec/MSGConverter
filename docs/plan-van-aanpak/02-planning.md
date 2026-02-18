@@ -5,6 +5,8 @@
 **Eind:** 15 juni 2026  
 **Duur:** ~18 weken (circa 4.5 maanden)
 
+**Status (18 feb 2026):** Project bevindt zich in de execution phase (OnStage); Projectdefinitie en PvA zijn ingeleverd.
+
 ---
 
 ## Fasen
@@ -385,5 +387,13 @@ Deze componenten zijn **kritisch** voor het project succes:
 ---
 
 *Datum: 4 februari 2026*  
-*Auteur: Pedro Meijer*  
+*Auteur: Pedro Eduardo Cardoso*  
 *Project: MSG-3 to Maximo Converter*
+
+---
+
+## AI Authenticiteitsverklaring
+
+Tijdens de voorbereiding van het Plan van Aanpak heb ik **Cursor AI** gebruikt om te **verkennen van Agile methodieken, planning frameworks, en risicoanalyse templates**. Ik verklaar dat het ingeleverde werk geen AI-gegenereerde inhoud bevat. De daadwerkelijke planning, risico's en mitigatie strategieën zijn gebaseerd op mijn eigen analyse van het project en in overleg met de begeleider. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+
+*AIAS Niveau: 2 - AI Exploratie*

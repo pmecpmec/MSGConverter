@@ -84,7 +84,7 @@ _Pedro Eduardo Cardoso - ADSD Student - Babcock Schiphol_
 ## ⚠️ Veelgemaakte Fouten
 
 ### ❌ FOUT:
-- Pedro Meijer (verkeerde achternaam)
+- Pedro Eduardo Cardoso (verkeerde achternaam)
 - Windesheim ADSD (incomplete)
 - Christelijke Hogeschool Windesheim (te formeel)
 - Matthijs als enige begeleider (Rick vergeten)
@@ -113,7 +113,7 @@ Bij elk nieuw document check:
 
 Als je oude documenten tegenkomt met foute informatie:
 
-1. **Find:** "Pedro Meijer"  
+1. **Find:** "Pedro Eduardo Cardoso"  
    **Replace:** "Pedro Eduardo Cardoso"
 
 2. **Find:** "Windesheim ADSD"  

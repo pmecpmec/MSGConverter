@@ -117,7 +117,7 @@
 ## 🎬 Sprint Review (Dag 10 - Vrijdag)
 
 **Datum:** [Eind datum sprint]  
-**Aanwezig:** Pedro Meijer, [Matthijs Meijer indien aanwezig]
+**Aanwezig:** Pedro Eduardo Cardoso, [Matthijs Meijer indien aanwezig]
 
 ### Demo
 
