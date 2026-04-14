@@ -257,7 +257,6 @@ Dit project maakt gebruik van **Cursor AI** als development assistant, conform d
 **Gebruikte niveaus:**
 - 🔵 **Niveau 2 (AI Exploratie)**: Planning, brainstorming, onderzoek
 - 🟢 **Niveau 3 (AI Samenwerking)**: Code development, testing, refinement  
-- 🟡 **Niveau 4 (Volledig AI)**: Documentatie generatie
 
 **BELANGRIJK - Eigenaarschap:**
 - ✅ **~75% van het werk door Pedro** (business rules, architectuur, logica)
