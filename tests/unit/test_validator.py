@@ -16,46 +16,170 @@ from src.validator.business_rules import (
 )
 
 
+VALID_TASK = {
+    "task_code": "32-11-01-001",
+    "description": "Visual inspection landing gear main fitting",
+    "task_type": "INS",
+    "interval": 500,
+    "interval_unit": "FH",
+    "zone": "Z100",
+    "ata_chapter": "32",
+    "ata_system": "11",
+    "man_hours": 1.5,
+    "skills": ["MECH"],
+}
+
+VALID_DATA = {
+    "metadata": {"version": "redesign", "total_tasks": 1},
+    "tasks": [VALID_TASK],
+}
+
+
 class TestMSG3Validator:
     """Test cases voor MSG3Validator."""
-    
+
     def setup_method(self):
-        """Setup voor elke test."""
         self.validator = MSG3Validator()
-    
+
     def test_validator_initialization(self):
-        """Test of validator correct geïnitialiseerd wordt."""
         assert self.validator is not None
-    
+
     def test_validation_result_creation(self):
-        """Test ValidationResult dataclass."""
         result = ValidationResult(
-            is_valid=True,
-            errors=[],
-            warnings=[],
-            info_messages=[]
+            is_valid=True, errors=[], warnings=[], info_messages=[]
         )
-        
         assert result.is_valid is True
-        assert len(result.errors) == 0
-    
+        assert result.total_issues == 0
+
     def test_validation_error_creation(self):
-        """Test ValidationError dataclass."""
         error = ValidationError(
             field="task_code",
             error_type="required",
             message="Task code is verplicht",
-            severity="error"
+            severity="error",
         )
-        
         assert error.field == "task_code"
         assert error.severity == "error"
-    
-    # TODO: Meer tests toevoegen na implementatie
-    # - test_validate_valid_data
-    # - test_validate_missing_required_field
-    # - test_validate_invalid_datatype
-    # - test_business_rules_validation
+
+    def test_validate_valid_data(self):
+        result = self.validator.validate(VALID_DATA)
+        assert result.is_valid
+        assert len(result.errors) == 0
+
+    def test_validate_missing_tasks_key(self):
+        result = self.validator.validate({"metadata": {}})
+        assert not result.is_valid
+        assert any(e.field == "tasks" for e in result.errors)
+
+    def test_validate_missing_metadata(self):
+        result = self.validator.validate({"tasks": [VALID_TASK]})
+        assert not result.is_valid
+        assert any(e.field == "metadata" for e in result.errors)
+
+    def test_validate_tasks_not_list(self):
+        result = self.validator.validate({"metadata": {}, "tasks": "bad"})
+        assert not result.is_valid
+
+    def test_validate_not_dict(self):
+        result = self.validator.validate("not a dict")
+        assert not result.is_valid
+
+    def test_validate_duplicate_task_codes(self):
+        data = {
+            "metadata": {},
+            "tasks": [VALID_TASK, VALID_TASK],
+        }
+        result = self.validator.validate(data)
+        assert not result.is_valid
+        assert any("Dubbele" in e.message for e in result.errors)
+
+    def test_validate_missing_required_field(self):
+        task = VALID_TASK.copy()
+        task["description"] = None
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert not result.is_valid
+
+    def test_validate_invalid_interval(self):
+        task = VALID_TASK.copy()
+        task["interval"] = -10
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert not result.is_valid
+
+    def test_validate_invalid_interval_unit(self):
+        task = VALID_TASK.copy()
+        task["interval_unit"] = "INVALID"
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert not result.is_valid
+
+    def test_validate_maximo_itemnum_too_long(self):
+        task = VALID_TASK.copy()
+        task["task_code"] = "A" * 30
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert any(e.error_type == "maximo_limit" for e in result.errors)
+
+    def test_validate_description_too_long_warning(self):
+        task = VALID_TASK.copy()
+        task["description"] = "X" * 150
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert any(w.error_type == "maximo_limit" for w in result.warnings)
+
+    def test_validate_short_description_warning(self):
+        task = VALID_TASK.copy()
+        task["description"] = "Short"
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert any(w.error_type == "quality" for w in result.warnings)
+
+    def test_validate_missing_ata_chapter_warning(self):
+        task = VALID_TASK.copy()
+        task["ata_chapter"] = None
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert any(w.field == "ata_chapter" for w in result.warnings)
+
+    def test_validate_high_fh_interval_warning(self):
+        task = VALID_TASK.copy()
+        task["interval"] = 60000
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert any("ongebruikelijk" in w.message for w in result.warnings)
+
+    def test_validate_high_mo_interval_warning(self):
+        task = VALID_TASK.copy()
+        task["interval"] = 150
+        task["interval_unit"] = "MO"
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert any("ongebruikelijk" in w.message for w in result.warnings)
+
+    def test_validate_negative_man_hours_warning(self):
+        task = VALID_TASK.copy()
+        task["man_hours"] = -5
+        data = {"metadata": {}, "tasks": [task]}
+        result = self.validator.validate(data)
+        assert any(w.field == "man_hours" for w in result.warnings)
+
+    def test_error_summary_valid(self):
+        result = ValidationResult(True, [], [], [])
+        assert "geslaagd" in result.get_error_summary()
+
+    def test_error_summary_with_errors(self):
+        err = ValidationError("test", "required", "test msg", task_code="TC-001")
+        result = ValidationResult(False, [err], [], [])
+        summary = result.get_error_summary()
+        assert "ERROR" in summary
+        assert "TC-001" in summary
+
+    def test_error_summary_with_warnings(self):
+        warn = ValidationError("test", "quality", "warning msg", severity="warning")
+        result = ValidationResult(True, [], [warn], [])
+        summary = result.get_error_summary()
+        assert "WARN" in summary
 
 
 class TestBusinessRulesValidator:
@@ -70,15 +194,21 @@ class TestBusinessRulesValidator:
         assert self.validator is not None
         assert len(self.validator.rules) > 0
     
-    def test_all_80_rules_loaded(self):
-        """Test of alle 80 business rules geladen zijn."""
-        assert len(self.validator.rules) == 80, f"Expected 80 rules, but got {len(self.validator.rules)}"
+    def test_all_90_rules_loaded(self):
+        """Test of alle 90 business rules geladen zijn (8 categorieën + 10 Maximo Item rules)."""
+        assert len(self.validator.rules) == 90, f"Expected 90 rules, but got {len(self.validator.rules)}"
     
     def test_rules_by_category(self):
-        """Test of elke categorie 10 rules heeft."""
+        """Test het verwachte aantal rules per categorie."""
+        expected = {
+            RuleCategory.LOGISTICS: 20,  # 10 operationeel + 10 Maximo Item rules (LOG-4.0.*)
+        }
         for category in RuleCategory:
             rules = self.validator.get_rules_by_category(category)
-            assert len(rules) == 10, f"Category {category.value} should have 10 rules, but has {len(rules)}"
+            expected_count = expected.get(category, 10)
+            assert len(rules) == expected_count, (
+                f"Category {category.value} should have {expected_count} rules, but has {len(rules)}"
+            )
     
     def test_security_rules_loaded(self):
         """Test of Security & Access Control rules correct geladen zijn."""
@@ -112,7 +242,7 @@ class TestBusinessRulesValidator:
     def test_logistics_rules_loaded(self):
         """Test of Logistics & Inventory rules correct geladen zijn."""
         rules = self.validator.get_rules_by_category(RuleCategory.LOGISTICS)
-        assert len(rules) == 10
+        assert len(rules) == 20
         
         log_4_1 = self.validator.get_rule("LOG-4.1")
         assert log_4_1 is not None
@@ -168,7 +298,7 @@ class TestBusinessRulesValidator:
         
         # Check totaal
         total = len(critical_rules) + len(error_rules) + len(warning_rules) + len(info_rules)
-        assert total == 80
+        assert total == 90
     
     def test_critical_rules_identification(self):
         """Test of critical rules correct geïdentificeerd zijn."""
@@ -187,11 +317,11 @@ class TestBusinessRulesValidator:
         """Test het genereren van een rule summary."""
         summary = self.validator.get_rule_summary()
         
-        assert summary["total_rules"] == 80
+        assert summary["total_rules"] == 90
         assert "by_category" in summary
         assert "by_severity" in summary
         assert "rules" in summary
-        assert len(summary["rules"]) == 80
+        assert len(summary["rules"]) == 90
     
     def test_validate_empty_data(self):
         """Test validatie met lege data."""
@@ -295,17 +425,16 @@ class TestBusinessRulesIntegration:
         """Setup voor elke test."""
         self.validator = BusinessRulesValidator()
     
-    def test_all_categories_have_equal_rules(self):
-        """Test dat alle categorieën evenveel rules hebben."""
-        rule_counts = {}
-        
+    def test_all_categories_have_expected_rules(self):
+        """Test dat alle categorieën het verwachte aantal rules hebben."""
+        expected = {"Logistics & Inventory": 20}
+
         for category in RuleCategory:
             rules = self.validator.get_rules_by_category(category)
-            rule_counts[category.value] = len(rules)
-        
-        # Alle categorieën moeten 10 rules hebben
-        for category, count in rule_counts.items():
-            assert count == 10, f"Category {category} has {count} rules instead of 10"
+            expected_count = expected.get(category.value, 10)
+            assert len(rules) == expected_count, (
+                f"Category {category.value} has {len(rules)} rules instead of {expected_count}"
+            )
     
     def test_no_duplicate_rule_ids(self):
         """Test dat er geen duplicate rule IDs zijn."""

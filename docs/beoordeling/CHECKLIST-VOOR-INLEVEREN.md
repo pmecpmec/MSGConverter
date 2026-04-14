@@ -1,11 +1,11 @@
-# ✅ Checklist Voordat je Inlevert
+# Checklist Voordat je Inlevert
 ## Pre-Submission Checklist voor Deliverables
 
 **Gebruik deze checklist voor ELKE deliverable die je inlevert!**
 
 ---
 
-## 🎯 Quick Check (Doe dit ALTIJD!)
+## Quick Check (Doe dit ALTIJD!)
 
 ```
 □ Document is compleet en alle secties zijn ingevuld
@@ -20,13 +20,13 @@
 
 ---
 
-## 🤖 AI-Transparantie Check
+## AI-Transparantie Check
 
 ### Voor ALLE Deliverables
 
 ```
-□ AI-gebruik is gedocumenteerd in `/docs/AI-GEBRUIK.md`
-□ Juiste authenticiteitsverklaring gekopieerd uit `/docs/AI-AUTHENTICITEITSVERKLARINGEN.md`
+□ AI-gebruik is gedocumenteerd in `docs/ai/AI-GEBRUIK.md`
+□ Juiste authenticiteitsverklaring gekopieerd uit `docs/ai/AI-AUTHENTICITEITSVERKLARINGEN.md`
 □ AIAS-niveau klopt met daadwerkelijk gebruik
 □ <<naam tool>> en <<activiteit>> zijn ingevuld (niet vergeten!)
 □ Geen generieke placeholder tekst zoals "Cursor AI" zonder specificatie
@@ -49,17 +49,9 @@
 □ Je kunt alles uitleggen tijdens assessment
 ```
 
-**Niveau 4 (Volledig AI)**
-```
-□ AI-generatie is gecontroleerd op correctheid
-□ Context en voorbeelden zijn door jou toegevoegd
-□ Babcock/project-specifieke info is aangevuld
-□ Output is bruikbaar voor stakeholders
-```
-
 ---
 
-## 📝 Document-Specifieke Checks
+## Document-Specifieke Checks
 
 ### Projectdefinitie Documenten
 
@@ -132,7 +124,7 @@
 
 ---
 
-## 🔒 Privacy & Security Check
+## Privacy & Security Check
 
 ```
 □ Geen echte Maximo credentials in code/docs
@@ -145,7 +137,7 @@
 
 ---
 
-## 📊 Kwaliteit Check
+## Kwaliteit Check
 
 ### Professionaliteit
 
@@ -169,7 +161,7 @@
 
 ---
 
-## 🎓 Competentie Aantoonbaarheid
+## Competentie Aantoonbaarheid
 
 ### Analyseren
 ```
@@ -213,7 +205,7 @@
 
 ---
 
-## 📤 Voor Inleveren (Final Check)
+## Voor Inleveren (Final Check)
 
 ### Dag voor Inleveren
 
@@ -245,28 +237,28 @@
 
 ---
 
-## 🚨 Red Flags (STOP en Fix!)
+## Red Flags (STOP en Fix!)
 
 **Als één van deze van toepassing is, NIET inleveren:**
 
 ```
-❌ Authenticiteitsverklaring ontbreekt
-❌ Echte passwords/credentials in code of docs
-❌ "Lorem ipsum" placeholder tekst nog aanwezig
-❌ <<placeholder>> markeringen nog zichtbaar
-❌ Code draait niet of heeft syntax errors
-❌ Tests falen
-❌ Linter warnings > 10
-❌ Geen bronvermelding bij citaten
-❌ Plagiarismcheck niet gedaan
-❌ Deadline gemist zonder communicatie
+ Authenticiteitsverklaring ontbreekt
+ Echte passwords/credentials in code of docs
+ "Lorem ipsum" placeholder tekst nog aanwezig
+ <<placeholder>> markeringen nog zichtbaar
+ Code draait niet of heeft syntax errors
+ Tests falen
+ Linter warnings > 10
+ Geen bronvermelding bij citaten
+ Plagiarismcheck niet gedaan
+ Deadline gemist zonder communicatie
 ```
 
 ---
 
-## 📋 Voorbeeld: Ingevulde Authenticiteitsverklaring
+## Voorbeeld: Ingevulde Authenticiteitsverklaring
 
-### ❌ FOUT (Te generiek):
+### FOUT (Te generiek):
 
 ```markdown
 ## AI Authenticiteitsverklaring
@@ -274,7 +266,7 @@
 Tijdens het maken van deze opdracht heb ik <<naam tool>> gebruikt om te <<activiteit>>.
 ```
 
-### ✅ GOED (Specifiek ingevuld):
+### GOED (Specifiek ingevuld):
 
 ```markdown
 ## AI Authenticiteitsverklaring
@@ -286,22 +278,22 @@ Tijdens de voorbereiding van de projectdefinitie heb ik **Cursor AI** gebruikt o
 
 ---
 
-## 🎯 Quick Summary
+## Quick Summary
 
 ```
 ┌─────────────────────────────────────────────┐
-│  3 Critical Things Before Submission:       │
+│ 3 Critical Things Before Submission: │
 ├─────────────────────────────────────────────┤
-│                                             │
-│  1️⃣  Authenticiteitsverklaring toegevoegd   │
-│     └─ Specifiek, niet <<placeholder>>     │
-│                                             │
-│  2️⃣  Privacy check gedaan                   │
-│     └─ Geen credentials/sensitive data     │
-│                                             │
-│  3️⃣  Je kunt het uitleggen                  │
-│     └─ Begrijp wat je inlevert!            │
-│                                             │
+│ │
+│ 1. Authenticiteitsverklaring toegevoegd │
+│ └─ Specifiek, niet <<placeholder>> │
+│ │
+│ 2. Privacy check gedaan │
+│ └─ Geen credentials/sensitive data │
+│ │
+│ 3. Je kunt het uitleggen │
+│ └─ Begrijp wat je inlevert! │
+│ │
 └─────────────────────────────────────────────┘
 ```
 
@@ -312,29 +304,29 @@ Tijdens de voorbereiding van de projectdefinitie heb ik **Cursor AI** gebruikt o
 **Voor je inlevert, vraag jezelf af:**
 
 1. **Begrijp ik alles in dit document?**
-   - ✅ Ja → Ga door
-   - ❌ Nee → Review nogmaals of vraag begeleider
+ - Ja → Ga door
+ - Nee → Review nogmaals of vraag begeleider
 
 2. **Kan ik dit uitleggen tijdens assessment?**
-   - ✅ Ja → Ga door
-   - ❌ Nee → Oefen presentatie, maak notities
+ - Ja → Ga door
+ - Nee → Oefen presentatie, maak notities
 
 3. **Ben ik trots op dit werk?**
-   - ✅ Ja → Perfect, lever in!
-   - ❌ Nee → Neem de tijd om het te verbeteren
+ - Ja → Perfect, lever in!
+ - Nee → Neem de tijd om het te verbeteren
 
 ---
 
-## 📞 Contactpersonen bij Twijfel
+## Contactpersonen bij Twijfel
 
 **Technische vragen:**
 - Cursor AI (inline help)
 - `.cursor/project_instructions.md`
-- `/docs/readme-docs.md`
+- `docs/readme-docs.md`
 
 **AI-gebruik vragen:**
-- `/docs/AI-GEBRUIK.md`
-- `/docs/AI-AUTHENTICITEITSVERKLARINGEN.md`
+- `docs/ai/AI-GEBRUIK.md`
+- `docs/ai/AI-AUTHENTICITEITSVERKLARINGEN.md`
 
 **Projectinhoudelijke vragen:**
 - Matthijs Meijer (Bedrijfsbegeleider Babcock)
@@ -346,27 +338,27 @@ Tijdens de voorbereiding van de projectdefinitie heb ik **Cursor AI** gebruikt o
 
 ---
 
-## ✅ Final Reminder
+## Final Reminder
 
 ```
 Je bent klaar om in te leveren als:
 
-✅ Alle checkboxes hierboven zijn afgevinkt
-✅ Authenticiteitsverklaring is toegevoegd
-✅ Privacy check is gedaan
-✅ Je kunt het werk uitleggen
-✅ Je bent trots op het resultaat
-✅ Backup is gemaakt (Git push)
+ Alle checkboxes hierboven zijn afgevinkt
+ Authenticiteitsverklaring is toegevoegd
+ Privacy check is gedaan
+ Je kunt het werk uitleggen
+ Je bent trots op het resultaat
+ Backup is gemaakt (Git push)
 
-Succes! 🚀
+Succes!
 ```
 
 ---
 
-**Datum:** 11 februari 2026  
-**Auteur:** Pedro Eduardo Cardoso  
-**Opleiding:** Associate Degree Software Developer (ADSD)  
-**Project:** MSG-3 to Maximo Converter  
+**Datum:** 11 februari 2026
+**Auteur:** Pedro Eduardo Cardoso
+**Opleiding:** Associate Degree Software Developer (ADSD)
+**Project:** MSG-3 to Maximo Converter
 **Organisatie:** Babcock Schiphol
 
 ---

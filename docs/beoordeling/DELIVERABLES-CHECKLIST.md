@@ -1,10 +1,10 @@
-# 📋 Deliverables Checklist - Windesheim Comakership
+# Deliverables Checklist - Windesheim Comakership
 ## MSG-3 to Maximo Converter Project
 
-**Student:** Pedro Eduardo Cardoso  
-**Organisatie:** Babcock Schiphol  
-**Periode:** 4 feb - 15 juni 2026  
-**Opleiding:** Associate Degree Software Developer (ADSD)  
+**Student:** Pedro Eduardo Cardoso
+**Organisatie:** Babcock Schiphol
+**Periode:** 4 feb - 15 juni 2026
+**Opleiding:** Associate Degree Software Developer (ADSD)
 **Instelling:** Windesheim
 
 **Begeleiding:**
@@ -16,25 +16,25 @@
 
 ---
 
-## 🔗 Gerelateerde Documenten
+## Gerelateerde Documenten
 
-### 📊 **[ZELFEVALUATIE-TRACKING.md](ZELFEVALUATIE-TRACKING.md)** ⭐ **LIVE SCORECARD**
+### **[ZELFEVALUATIE-TRACKING.md](ZELFEVALUATIE-TRACKING.md)** **LIVE SCORECARD**
 **Jouw persoonlijke dashboard - zie hier altijd waar je staat!**
-- 📈 Live progress per competentie (0% → 100%)
-- 🎯 Geschat eindcijfer calculator (huidige: 7.2 verwacht)
-- ✅ Auto-updates bij nieuwe code/docs
-- 📅 Wekelijkse versie geschiedenis
-- ⚠️ Risico waarschuwingen
+- Live progress per competentie (0% → 100%)
+- Geschat eindcijfer calculator (huidige: 7.2 verwacht)
+- Auto-updates bij nieuwe code/docs
+- Wekelijkse versie geschiedenis
+- Risico waarschuwingen
 
 **Check dit ELKE VRIJDAG tijdens je weekly review!**
 
-### 📊 **[BEOORDELINGSCRITERIA.md](BEOORDELINGSCRITERIA.md)** - Beoordelingscriteria
+### **[BEOORDELINGSCRITERIA.md](BEOORDELINGSCRITERIA.md)** - Beoordelingscriteria
 - Alle criteria uit het beoordelingsformulier
 - Per competentie: Uitstekend, Goed, Voldoende, Onvoldoende
 - Concrete voorbeelden uit jouw project
 - Bewijs mapping (welke docs bewijzen wat?)
 
-### 🔄 **Workflow:**
+### **Workflow:**
 1. **Vrijdag:** Check ZELFEVALUATIE-TRACKING → Waar sta ik deze week?
 2. **Planning:** Check DELIVERABLES-CHECKLIST → Wat moet ik maken?
 3. **Schrijven:** Check BEOORDELINGSCRITERIA → Aan welke criteria moet het voldoen?
@@ -42,48 +42,49 @@
 
 ---
 
-## 📦 Oplevering Overzicht
+## Oplevering Overzicht
 
-**Opleveren via:** Brightspace  
-**Format:** .zip bestand met mappenstructuur  
-**Deadline:** 15 juni 2026  
+**Opleveren via:** Brightspace
+**Format:** .zip bestand met mappenstructuur
+**Deadline:** 15 juni 2026
 **Wie levert in:** 1 teamlid (in dit geval: Pedro Eduardo Cardoso - solo project)
 
 ---
 
-## ✅ Deliverables Status
+## Deliverables Status
 
-### 1️⃣ PROJECTARCHIEF
+### 1. PROJECTARCHIEF
 
-#### ✅ Projectdefinitie (COMPLEET)
+#### Projectdefinitie (COMPLEET)
 **Locatie:** `docs/projectdefinitie/`
 ```
-✅ 01-context-analyse.md
-✅ 02-probleemstelling.md
-✅ 03-doelstellingen.md
-✅ 04-scope.md
-✅ 05-stakeholders.md
+ 01-context-analyse.md
+ 02-probleemstelling.md
+ 03-doelstellingen.md
+ 04-scope.md
+ 05-stakeholders.md
 ```
-**Status:** Compleet, inclusief authenticiteitsverklaringen  
+**Status:** Compleet, inclusief authenticiteitsverklaringen
 **Ingeleverd:** Via OnStage (execution phase)
 
 ---
 
-#### ✅ Plan van Aanpak (COMPLEET)
+#### Plan van Aanpak (COMPLEET)
 **Locatie:** `docs/plan-van-aanpak/`
 ```
-✅ 01-projectaanpak.md (Agile methodiek)
-✅ 02-planning.md (18 weken roadmap)
-✅ 03-risicoanalyse.md (risico's + mitigaties)
-✅ 04-randvoorwaarden.md
-✅ 05-deliverables.md
+ 01-projectaanpak.md (Agile methodiek)
+ 02-planning.md (18 weken roadmap)
+ 03-risicoanalyse.md (risico's + mitigaties)
+ 04-probleemstelling-vragen.md
+ 05-randvoorwaarden.md
+ 06-deliverables.md
 ```
-**Status:** Compleet, inclusief authenticiteitsverklaringen  
+**Status:** Compleet, inclusief authenticiteitsverklaringen
 **Ingeleverd:** Via OnStage (execution phase)
 
 ---
 
-#### 🔄 Onderzoeksrapport (IN PROGRESS)
+#### Onderzoeksrapport (IN PROGRESS)
 **Locatie:** `docs/onderzoek/`
 **Huidige status:** Folder bestaat, templates klaar, nog GEEN volledig rapport
 
@@ -97,12 +98,12 @@
 □ 00-onderzoeksrapport.md - HOOFDDOCUMENT (samenvatting)
 ```
 
-**Planning:** Week 3-4 (18 feb - 3 mrt)  
+**Planning:** Week 3-4 (18 feb - 3 mrt)
 **Deadline intern:** 3 maart 2026
 
 ---
 
-#### ❌ Scrum/Sprint Documentatie (MOET NOG)
+#### Scrum/Sprint Documentatie (MOET NOG)
 **Locatie:** `docs/scrum/` (nieuw aan te maken)
 
 **Wat er moet komen:**
@@ -116,53 +117,53 @@
 □ Burndown charts (optioneel)
 ```
 
-**Planning:** Start Week 3 (Sprint 1), elke 2 weken update  
+**Planning:** Start Week 3 (Sprint 1), elke 2 weken update
 **Deadline intern:** Continue tijdens project
 
 **Alternatief:** We gebruiken Agile ipv pure Scrum - documenteer dit in projectaanpak
 
 ---
 
-#### ✅ Authenticiteitsverklaring AI Gebruik (COMPLEET!)
-**Locatie:** `docs/`
+#### Authenticiteitsverklaring AI Gebruik (COMPLEET!)
+**Locatie:** `docs/ai/`
 ```
-✅ AI-GEBRUIK.md - Volledige AI-documentatie
-✅ AI-AUTHENTICITEITSVERKLARINGEN.md - Quick reference
-✅ MIJN-BIJDRAGE-VS-AI.md - Eigenaarschap bewijs
-✅ AI-OVERZICHT-VISUAL.md - Presentatie materiaal
-✅ Authenticiteitsverklaringen in ALLE deliverables
+ AI-GEBRUIK.md - Volledige AI-documentatie
+ AI-AUTHENTICITEITSVERKLARINGEN.md - Quick reference
+ MIJN-BIJDRAGE-VS-AI.md - Eigenaarschap bewijs
+ AI-GEBRUIK.md - Hoofddocument en presentatiebron AI-gebruik
+ Authenticiteitsverklaringen in ALLE deliverables
 ```
-**Status:** 100% compleet, AIAS-compliant  
+**Status:** 100% compleet, AIAS-compliant
 **Te doen:** Alleen updaten tijdens project indien nieuw AI-gebruik
 
 ---
 
-### 2️⃣ PROJECTRESULTAAT
+### 2. PROJECTRESULTAAT
 
-#### 🔄 Hoofdproduct: Applicatie (IN PROGRESS)
+#### Hoofdproduct: Applicatie (IN PROGRESS)
 **Vereiste:** Minimaal 250 regels eigen geschreven code
 
 **Huidige status:**
-- ✅ Repository structuur
-- ✅ Code templates
-- 🔄 Business rules (40% gedaan - src/validator/business_rules.py)
-- ❌ Parser implementatie (0%)
-- ❌ Mapping implementatie (0%)
-- ❌ Maximo connector (0%)
+- Repository structuur
+- Code templates
+- Business rules (40% gedaan - src/validator/business_rules.py)
+- Parser implementatie (0%)
+- Mapping implementatie (0%)
+- Maximo connector (0%)
 
 **Code regels verwachting:**
 ```
-Parser module:        ~300 regels (Pedro)
-Validator module:     ~400 regels (Pedro)
-Mapping engine:       ~350 regels (Pedro)
-Maximo connector:     ~250 regels (Pedro)
-Change detection:     ~200 regels (Pedro)
-Tests:                ~500 regels (Pedro)
+Parser module: ~300 regels (Pedro)
+Validator module: ~400 regels (Pedro)
+Mapping engine: ~350 regels (Pedro)
+Maximo connector: ~250 regels (Pedro)
+Change detection: ~200 regels (Pedro)
+Tests: ~500 regels (Pedro)
 ──────────────────────────────────────
-TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
+TOTAAL VERWACHT: ~2000 regels (>250 vereist)
 ```
 
-**Planning:** Week 5-13 (implementatie fases)  
+**Planning:** Week 5-13 (implementatie fases)
 **Deadline intern:** 5 mei 2026 (Week 13)
 
 **Code support beschikbaar:**
@@ -171,14 +172,14 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 
 ---
 
-#### 🔄 Technische Ontwerpen (IN PROGRESS)
+#### Technische Ontwerpen (IN PROGRESS)
 **Locatie:** `docs/technisch-ontwerp/`
 
 **Huidige status:**
 ```
-✅ 01-architectuur-ontwerp.md (basis klaar)
-✅ business-rules.md (80 rules gedocumenteerd)
-✅ UML diagrammen (class, sequence, component, usecase)
+ 01-architectuur-ontwerp.md (basis klaar)
+ business-rules.md (80 rules gedocumenteerd)
+ UML diagrammen (class, sequence, component, usecase)
 □ 02-datamodellen.md - MSG-3 & Maximo data structures
 □ 03-api-specificaties.md - Maximo REST API specs
 □ 04-class-diagram.md - OOP design uitgebreid
@@ -188,12 +189,12 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 □ 08-performance.md - Performance requirements
 ```
 
-**Planning:** Week 4-5 (ontwerp fase)  
+**Planning:** Week 4-5 (ontwerp fase)
 **Deadline intern:** 10 maart 2026
 
 ---
 
-#### ⏳ Testcases (PLANNED)
+#### Testcases (PLANNED)
 **Locatie:** `docs/testcases/`
 
 **Wat er moet komen:**
@@ -206,12 +207,12 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 □ 06-testresultaten.md - Test runs & coverage
 ```
 
-**Planning:** Week 5-17 (parallel met development)  
+**Planning:** Week 5-17 (parallel met development)
 **Deadline intern:** 2 juni 2026 (Week 17)
 
 ---
 
-#### ⏳ Overdrachtsdocumenten (PLANNED)
+#### Overdrachtsdocumenten (PLANNED)
 **Locatie:** `docs/overdracht/`
 
 **Wat er moet komen:**
@@ -224,12 +225,12 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 □ 06-toekomstige-verbeteringen.md - Roadmap
 ```
 
-**Planning:** Week 16-18 (afronding)  
+**Planning:** Week 16-18 (afronding)
 **Deadline intern:** 8 juni 2026
 
 ---
 
-#### ⏳ Demonstratie (PLANNED)
+#### Demonstratie (PLANNED)
 **Format:** Video of live demo tijdens assessment
 
 **Wat te demonstreren:**
@@ -243,14 +244,14 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 □ Rapportage
 ```
 
-**Planning:** Week 17-18  
+**Planning:** Week 17-18
 **Deadline:** Assessment dag (juni 2026)
 
 ---
 
-### 3️⃣ REFLECTIEVERSLAG
+### 3. REFLECTIEVERSLAG
 
-#### ❌ Reflectieverslag (MOET NOG)
+#### Reflectieverslag (MOET NOG)
 **Locatie:** `docs/reflectie/` (nieuw aan te maken)
 
 **Vereiste:** Individuele reflectie op:
@@ -264,11 +265,11 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 ```
 □ Inleiding - Project context
 □ Competentieontwikkeling (per HBO-i competentie)
-  - Analyseren
-  - Adviseren
-  - Ontwerpen
-  - Realiseren
-  - Manage & Control
+ - Analyseren
+ - Adviseren
+ - Ontwerpen
+ - Realiseren
+ - Manage & Control
 □ Leerpunten - Wat heb ik geleerd?
 □ Uitdagingen - Wat was moeilijk?
 □ Successen - Wat ging goed?
@@ -277,16 +278,16 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 □ AI-gebruik reflectie - Wat leerde ik over AI?
 ```
 
-**Planning:** Week 17-18 (einde project)  
+**Planning:** Week 17-18 (einde project)
 **Deadline:** 12 juni 2026
 
 **Template maken:** Week 16
 
 ---
 
-### 4️⃣ PRESENTATIE (Optioneel)
+### 4. PRESENTATIE (Optioneel)
 
-#### ⏳ Criteriumgericht Interview / Presentatie (PLANNED)
+#### Criteriumgericht Interview / Presentatie (PLANNED)
 **Format:** PowerPoint of Keynote presentatie
 
 **Inhoud:**
@@ -302,42 +303,42 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 □ Conclusie - Oplevering en reflectie
 ```
 
-**Planning:** Week 17-18  
+**Planning:** Week 17-18
 **Deadline:** Assessment dag
 
-**Materiaal:** Gebruik `docs/AI-OVERZICHT-VISUAL.md` voor AI-slides
+**Materiaal:** Gebruik `docs/ai/AI-GEBRUIK.md` (of AI-WORKFLOW-DAGELIJKS.md) voor AI-slides
 
 ---
 
-### 5️⃣ EVALUATIEFORMULIEREN
+### 5. EVALUATIEFORMULIEREN
 
-#### ❌ Zelfevaluatieformulier (MOET NOG)
+#### Zelfevaluatieformulier (MOET NOG)
 **Format:** Windesheim template (waarschijnlijk via Brightspace)
 
 **Wat te doen:**
 ```
 □ Download template van Brightspace
 □ Reflecteer per HBO-i domein:
-  - User Interaction
-  - Software Realisatie
-  - Future-Oriented Organisation
-  - Investigative Problem Solving
-  - Personal Leadership
+ - User Interaction
+ - Software Realisatie
+ - Future-Oriented Organisation
+ - Investigative Problem Solving
+ - Personal Leadership
 □ Geef zelfscore (1-5) per competentie
 □ Onderbouw met voorbeelden uit project
 ```
 
-**Planning:** Week 17-18  
+**Planning:** Week 17-18
 **Deadline:** 12 juni 2026
 
 **Actie:** Check Brightspace voor template
 
 ---
 
-#### ❌ Evaluatieformulier Opdrachtgever (MOET NOG) - ZEER BELANGRIJK!
+#### Evaluatieformulier Opdrachtgever (MOET NOG) - ZEER BELANGRIJK!
 **Van:** Matthijs Meijer & Rick Kramer (Babcock stagebegeleiders)
 
-**⚠️ KRITIEK:** Zonder ondertekend formulier = GEEN ASSESSMENT = NIET AFSTUDEREN!
+** KRITIEK:** Zonder ondertekend formulier = GEEN ASSESSMENT = NIET AFSTUDEREN!
 
 **Wat het formulier bevat:**
 ```
@@ -358,15 +359,15 @@ TOTAAL VERWACHT:     ~2000 regels ✅ (>250 vereist)
 Week 17 (begin juni):
 □ Download formulier van Brightspace (Bedrijf - Evaluatieformulier Comakership)
 □ Stuur naar Matthijs Meijer EN Rick Kramer met:
-  - Brief: "Graag jullie evaluatie voor mijn assessment"
-  - Link naar alle deliverables (Projectdefinitie, PvA, Onderzoek, Code)
-  - Uitleg wat ze moeten doen (4 checkboxen + 3 open vragen)
-  - Deadline: 1 week voor assessment
-  
+ - Brief: "Graag jullie evaluatie voor mijn assessment"
+ - Link naar alle deliverables (Projectdefinitie, PvA, Onderzoek, Code)
+ - Uitleg wat ze moeten doen (4 checkboxen + 3 open vragen)
+ - Deadline: 1 week voor assessment
+
 □ OPTIONEEL: Stuur "Project Samenvatting" email (maakt invullen makkelijker):
-  - Wat heb ik opgeleverd?
-  - Wat waren de resultaten? (40 uur → <1 uur)
-  - Wat waren hoogtepunten? (MSG-3 template verbetering)
+ - Wat heb ik opgeleverd?
+ - Wat waren de resultaten? (40 uur → <1 uur)
+ - Wat waren hoogtepunten? (MSG-3 template verbetering)
 
 Week 18 (voor 12 juni):
 □ Follow-up als je nog geen formulier hebt (na 3 dagen)
@@ -374,10 +375,10 @@ Week 18 (voor 12 juni):
 □ Check: Alle vragen ingevuld? Handtekening aanwezig?
 □ Include in oplevering .zip
 
-🚨 Zonder handtekening wordt eindwerk NIET beoordeeld!
+ Zonder handtekening wordt eindwerk NIET beoordeeld!
 ```
 
-**Planning:** Week 17 (aanvragen 2 juni), Week 18 (ontvangen vóór 12 juni)  
+**Planning:** Week 17 (aanvragen 2 juni), Week 18 (ontvangen vóór 12 juni)
 **Deadline:** 12 juni 2026 (dag voor assessment)
 
 **Impact op beoordeling:**
@@ -388,89 +389,90 @@ Week 18 (voor 12 juni):
 
 ---
 
-## 📁 Aanbevolen Mappenstructuur voor Oplevering
+## Aanbevolen Mappenstructuur voor Oplevering
 
 ```
 MSGConverter-Oplevering-PedroCardoso.zip
 │
 ├── 1-Projectarchief/
-│   ├── Projectdefinitie/
-│   │   ├── 01-context-analyse.pdf
-│   │   ├── 02-probleemstelling.pdf
-│   │   ├── 03-doelstellingen.pdf
-│   │   ├── 04-scope.pdf
-│   │   └── 05-stakeholders.pdf
-│   │
-│   ├── Plan-van-Aanpak/
-│   │   ├── 01-projectaanpak.pdf
-│   │   ├── 02-planning.pdf
-│   │   ├── 03-risicoanalyse.pdf
-│   │   ├── 04-randvoorwaarden.pdf
-│   │   └── 05-deliverables.pdf
-│   │
-│   ├── Onderzoeksrapport/
-│   │   ├── 00-onderzoeksrapport.pdf (hoofddocument)
-│   │   ├── 01-msg3-analyse.pdf
-│   │   ├── 02-maximo-api.pdf
-│   │   └── 03-technologie-keuzes.pdf
-│   │
-│   ├── Sprint-Documentatie/
-│   │   ├── Sprint-1-Planning.pdf
-│   │   ├── Sprint-1-Review.pdf
-│   │   ├── Sprint-1-Retrospective.pdf
-│   │   └── [... per sprint ...]
-│   │
-│   └── AI-Authenticiteitsverklaring/
-│       ├── AI-GEBRUIK.pdf (hoofddocument)
-│       ├── MIJN-BIJDRAGE-VS-AI.pdf
-│       └── AI-OVERZICHT-VISUAL.pdf
+│ ├── Projectdefinitie/
+│ │ ├── 01-context-analyse.pdf
+│ │ ├── 02-probleemstelling.pdf
+│ │ ├── 03-doelstellingen.pdf
+│ │ ├── 04-scope.pdf
+│ │ └── 05-stakeholders.pdf
+│ │
+│ ├── Plan-van-Aanpak/
+│ │ ├── 01-projectaanpak.pdf
+│ │ ├── 02-planning.pdf
+│ │ ├── 03-risicoanalyse.pdf
+│ │ ├── 04-probleemstelling-vragen.pdf
+│ │ ├── 05-randvoorwaarden.pdf
+│ │ └── 06-deliverables.pdf
+│ │
+│ ├── Onderzoeksrapport/
+│ │ ├── 00-onderzoeksrapport.pdf (hoofddocument)
+│ │ ├── 01-msg3-analyse.pdf
+│ │ ├── 02-maximo-api.pdf
+│ │ └── 03-technologie-keuzes.pdf
+│ │
+│ ├── Sprint-Documentatie/
+│ │ ├── Sprint-1-Planning.pdf
+│ │ ├── Sprint-1-Review.pdf
+│ │ ├── Sprint-1-Retrospective.pdf
+│ │ └── [... per sprint ...]
+│ │
+│ └── AI-Authenticiteitsverklaring/
+│ ├── AI-GEBRUIK.pdf (hoofddocument)
+│ ├── MIJN-BIJDRAGE-VS-AI.pdf
+│ └── (eventueel export van AI-GEBRUIK of AI-WORKFLOW naar PDF)
 │
 ├── 2-Projectresultaat/
-│   ├── Applicatie/
-│   │   ├── src/ (volledige source code)
-│   │   ├── tests/
-│   │   ├── examples/
-│   │   ├── README.md
-│   │   └── requirements.txt
-│   │
-│   ├── Technisch-Ontwerp/
-│   │   ├── 01-architectuur.pdf
-│   │   ├── 02-datamodellen.pdf
-│   │   ├── business-rules.pdf
-│   │   └── UML-diagrammen.pdf
-│   │
-│   ├── Testcases/
-│   │   ├── teststrategie.pdf
-│   │   ├── testplannen.pdf
-│   │   └── testresultaten.pdf
-│   │
-│   ├── Overdracht/
-│   │   ├── gebruikershandleiding.pdf
-│   │   ├── technische-handleiding.pdf
-│   │   ├── installatie-instructies.pdf
-│   │   └── troubleshooting.pdf
-│   │
-│   └── Demonstratie/
-│       └── demo-video.mp4 (of link naar YouTube)
+│ ├── Applicatie/
+│ │ ├── src/ (volledige source code)
+│ │ ├── tests/
+│ │ ├── examples/
+│ │ ├── README.md
+│ │ └── requirements.txt
+│ │
+│ ├── Technisch-Ontwerp/
+│ │ ├── 01-architectuur.pdf
+│ │ ├── 02-datamodellen.pdf
+│ │ ├── business-rules.pdf
+│ │ └── UML-diagrammen.pdf
+│ │
+│ ├── Testcases/
+│ │ ├── teststrategie.pdf
+│ │ ├── testplannen.pdf
+│ │ └── testresultaten.pdf
+│ │
+│ ├── Overdracht/
+│ │ ├── gebruikershandleiding.pdf
+│ │ ├── technische-handleiding.pdf
+│ │ ├── installatie-instructies.pdf
+│ │ └── troubleshooting.pdf
+│ │
+│ └── Demonstratie/
+│ └── demo-video.mp4 (of link naar YouTube)
 │
 ├── 3-Reflectie/
-│   └── Reflectieverslag-PedroMeijer.pdf
+│ └── Reflectieverslag-PedroMeijer.pdf
 │
 ├── 4-Presentatie/
-│   └── Presentatie-Assessment.pdf
+│ └── Presentatie-Assessment.pdf
 │
 ├── 5-Evaluaties/
-│   ├── Zelfevaluatie-PedroMeijer.pdf
-│   └── Evaluatie-Opdrachtgever-Babcock.pdf
+│ ├── Zelfevaluatie-PedroMeijer.pdf
+│ └── Evaluatie-Opdrachtgever-Babcock.pdf
 │
 └── README.md (Navigatie voor beoordelaars)
 ```
 
 ---
 
-## 📝 Ontbrekende Documenten - Actielijst
+## Ontbrekende Documenten - Actielijst
 
-### 🚨 Hoge Prioriteit (Moet nog aangemaakt)
+### Hoge Prioriteit (Moet nog aangemaakt)
 
 #### 1. Sprint/Scrum Documentatie Structuur
 **Actie:** Maak `docs/scrum/` folder met templates
@@ -588,7 +590,7 @@ MSGConverter-Oplevering-PedroCardoso.zip
 
 ---
 
-## 📅 Planning Update - Ontbrekende Items
+## Planning Update - Ontbrekende Items
 
 ### Week 3-4 (18 feb - 3 mrt): Onderzoek
 ```
@@ -636,7 +638,7 @@ MSGConverter-Oplevering-PedroCardoso.zip
 
 ---
 
-## ✅ Pre-Oplevering Checklist (Week 18)
+## Pre-Oplevering Checklist (Week 18)
 
 ### Documenten Check
 ```
@@ -677,7 +679,7 @@ MSGConverter-Oplevering-PedroCardoso.zip
 
 ---
 
-## 🎯 Acties voor DEZE WEEK
+## Acties voor DEZE WEEK
 
 ```
 1. □ Maak docs/scrum/ folder aan (nu)
@@ -691,9 +693,9 @@ MSGConverter-Oplevering-PedroCardoso.zip
 
 ---
 
-**Datum:** 11 februari 2026  
-**Versie:** 1.0  
-**Eigenaar:** Pedro Eduardo Cardoso  
+**Datum:** 11 februari 2026
+**Versie:** 1.0
+**Eigenaar:** Pedro Eduardo Cardoso
 **Laatste check:** Voor oplevering Week 18
 
 ---

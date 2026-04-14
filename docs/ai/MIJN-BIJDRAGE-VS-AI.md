@@ -1,26 +1,26 @@
-# 👤 Mijn Bijdrage vs AI-Assistentie
+# Mijn Bijdrage vs AI-Assistentie
 
 ## Eigenaarschap & Verantwoordelijkheid
 
-**Student:** Pedro Eduardo Cardoso  
-**Datum:** 11 februari 2026  
+**Student:** Pedro Eduardo Cardoso
+**Datum:** 11 februari 2026
 **Project:** MSG-3 to Maximo Converter
 
 ---
 
-## 🎯 Kernboodschap
+## Kernboodschap
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                                                     │
-│  IK (Pedro) ben de EIGENAAR van dit project         │
-│  AI (Cursor) is een TOOL die ik gebruik             │
-│                                                     │
-│  → IK maak de beslissingen                          │
-│  → IK schrijf de business logic                     │
-│  → IK begrijp ALLES wat er gebeurt                  │
-│  → IK kan het uitleggen en verdedigen               │
-│                                                     │
+│ │
+│ IK (Pedro) ben de EIGENAAR van dit project │
+│ AI (Cursor) is een TOOL die ik gebruik │
+│ │
+│ → IK maak de beslissingen │
+│ → IK schrijf de business logic │
+│ → IK begrijp ALLES wat er gebeurt │
+│ → IK kan het uitleggen en verdedigen │
+│ │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -28,38 +28,38 @@
 
 ---
 
-## 📊 Wat Heb IK Gedaan vs Wat Deed AI?
+## Wat Heb IK Gedaan vs Wat Deed AI?
 
 ### Overzicht per Activiteit
 
-| Activiteit              | Mijn Werk (Pedro)                                                         | AI-Assistentie                                  | % Eigen Werk |
+| Activiteit | Mijn Werk (Pedro) | AI-Assistentie | % Eigen Werk |
 | ----------------------- | ------------------------------------------------------------------------- | ----------------------------------------------- | ------------ |
-| **Projectdefinitie**    | Context analyse, probleemstelling, doelen, stakeholders identificeren     | Structuur templates, formatting suggesties      | **90%**      |
-| **Plan van Aanpak**     | Planning, tijdsinschattingen, risico's identificeren, mitigaties bedenken | Planning frameworks, Gantt templates            | **85%**      |
-| **Onderzoek**           | MSG-3 analyse, Maximo API testen, POC's bouwen, keuzes onderbouwen        | Alternatieven suggesties, documentatie opzoeken | **80%**      |
-| **Architectuur**        | Design beslissingen, pattern keuzes, trade-offs evalueren                 | UML templates, diagram syntax                   | **75%**      |
-| **Business Rules**      | Alle 80 rules identificeren en definiëren met stakeholders                | Structuur voor documentatie                     | **95%**      |
-| **Code Implementation** | Business logic, MSG-3/Maximo specifieke code, error handling              | Code templates, boilerplate, syntax suggesties  | **60%**      |
-| **Testing**             | Test cases bedenken, assertions schrijven, edge cases, data               | Test templates, fixture suggesties              | **70%**      |
-| **Documentatie**        | Context, voorbeelden, Babcock-specifieke info, instructies                | Markdown generatie uit code                     | **40%**      |
+| **Projectdefinitie** | Context analyse, probleemstelling, doelen, stakeholders identificeren | Structuur templates, formatting suggesties | **90%** |
+| **Plan van Aanpak** | Planning, tijdsinschattingen, risico's identificeren, mitigaties bedenken | Planning frameworks, Gantt templates | **85%** |
+| **Onderzoek** | MSG-3 analyse, Maximo API testen, POC's bouwen, keuzes onderbouwen | Alternatieven suggesties, documentatie opzoeken | **80%** |
+| **Architectuur** | Design beslissingen, pattern keuzes, trade-offs evalueren | UML templates, diagram syntax | **75%** |
+| **Business Rules** | Alle 80 rules identificeren en definiëren met stakeholders | Structuur voor documentatie | **95%** |
+| **Code Implementation** | Business logic, MSG-3/Maximo specifieke code, error handling | Code templates, boilerplate, syntax suggesties | **60%** |
+| **Testing** | Test cases bedenken, assertions schrijven, edge cases, data | Test templates, fixture suggesties | **70%** |
+| **Documentatie** | Context, voorbeelden, Babcock-specifieke info, instructies | Markdown generatie uit code | **40%** |
 
 **Gemiddeld eigen werk: ~75%**
 
 ---
 
-## 🏗️ Gedetailleerd: Wat Heb IK Gedaan?
+## Gedetailleerd: Wat Heb IK Gedaan?
 
 ### 1. Analyse & Requirements (100% Pedro)
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ Gesprekken gevoerd met Matthijs Meijer (begeleider Babcock)
-- ✅ MSG-3 Excel bestanden geanalyseerd
-- ✅ Huidige workflow bij Babcock geobserveerd
-- ✅ Pijnpunten geïdentificeerd (handmatig werk, fouten, tijd)
-- ✅ Stakeholders geïdentificeerd (engineers, planners, management)
-- ✅ Requirements opgesteld in overleg met team
-- ✅ Scope bepaald (wat wel/niet in project)
+- Gesprekken gevoerd met Matthijs Meijer (begeleider Babcock)
+- MSG-3 Excel bestanden geanalyseerd
+- Huidige workflow bij Babcock geobserveerd
+- Pijnpunten geïdentificeerd (handmatig werk, fouten, tijd)
+- Stakeholders geïdentificeerd (engineers, planners, management)
+- Requirements opgesteld in overleg met team
+- Scope bepaald (wat wel/niet in project)
 
 **WAT AI DEED:**
 
@@ -74,12 +74,12 @@
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ Alle 80 business rules geïdentificeerd met stakeholders
-- ✅ Kritische rules bepaald (security, safety, compliance)
-- ✅ Validatie logica bedacht voor elke rule
-- ✅ Prioriteit bepaald (welke blokkeren processing?)
-- ✅ Error messages geformuleerd
-- ✅ Onderbouwd waarom elke rule belangrijk is
+- Alle 80 business rules geïdentificeerd met stakeholders
+- Kritische rules bepaald (security, safety, compliance)
+- Validatie logica bedacht voor elke rule
+- Prioriteit bepaald (welke blokkeren processing?)
+- Error messages geformuleerd
+- Onderbouwd waarom elke rule belangrijk is
 
 **WAT AI DEED:**
 
@@ -94,14 +94,14 @@
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ Python gekozen als taal (onderbouwd waarom)
-- ✅ Agile methodiek gekozen (vs Waterfall, onderbouwd)
-- ✅ Modulaire architectuur ontworpen (5 modules)
-- ✅ Design patterns gekozen (Factory, Strategy, Repository)
-- ✅ Libraries geselecteerd (openpyxl vs pandas, onderbouwd)
-- ✅ Error handling strategie bedacht
-- ✅ Testing strategie bepaald (TDD, >80% coverage)
-- ✅ Trade-offs geëvalueerd (performance vs leesbaarheid)
+- Python gekozen als taal (onderbouwd waarom)
+- Agile methodiek gekozen (vs Waterfall, onderbouwd)
+- Modulaire architectuur ontworpen (5 modules)
+- Design patterns gekozen (Factory, Strategy, Repository)
+- Libraries geselecteerd (openpyxl vs pandas, onderbouwd)
+- Error handling strategie bedacht
+- Testing strategie bepaald (TDD, >80% coverage)
+- Trade-offs geëvalueerd (performance vs leesbaarheid)
 
 **WAT AI DEED:**
 
@@ -117,16 +117,16 @@
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ **Business logic volledig zelf geschreven**
-- ✅ MSG-3 specifieke parsing logica
-- ✅ Maximo specifieke mapping rules
-- ✅ 80 business rules validatie implementatie
-- ✅ Error handling voor edge cases
-- ✅ Logging strategie
-- ✅ Configuration management
-- ✅ Code review van alle AI-suggesties
-- ✅ Refactoring voor leesbaarheid
-- ✅ Type hints en docstrings toegevoegd/aangepast
+- **Business logic volledig zelf geschreven**
+- MSG-3 specifieke parsing logica
+- Maximo specifieke mapping rules
+- 80 business rules validatie implementatie
+- Error handling voor edge cases
+- Logging strategie
+- Configuration management
+- Code review van alle AI-suggesties
+- Refactoring voor leesbaarheid
+- Type hints en docstrings toegevoegd/aangepast
 
 **WAT AI DEED:**
 
@@ -146,17 +146,17 @@
 ```python
 # AI genereerde dit template:
 class MSG3Parser:
-    def parse(self, file_path: str):
-        pass  # TODO
+ def parse(self, file_path: str):
+ pass # TODO
 
 # IK schreef de daadwerkelijke implementatie:
 class MSG3Parser:
-    def parse(self, file_path: str) -> MSG3Data:
-        # MSG-3 specifieke logica (100% Pedro)
-        workbook = openpyxl.load_workbook(file_path)
-        # ... 50+ regels MSG-3 specifieke parsing ...
-        # ... business rule validatie per field ...
-        # ... error handling voor Babcock edge cases ...
+ def parse(self, file_path: str) -> MSG3Data:
+ # MSG-3 specifieke logica (100% Pedro)
+ workbook = openpyxl.load_workbook(file_path)
+ # ... 50+ regels MSG-3 specifieke parsing ...
+ # ... business rule validatie per field ...
+ # ... error handling voor Babcock edge cases ...
 ```
 
 ---
@@ -165,13 +165,13 @@ class MSG3Parser:
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ Test cases bedacht (happy path, edge cases, errors)
-- ✅ Test data gemaakt (mock MSG-3 bestanden)
-- ✅ Assertions geschreven (wat moet het resultaat zijn?)
-- ✅ Business rule compliance tests
-- ✅ Integration test scenarios
-- ✅ Manual testing met echte data
-- ✅ Bug fixes na test failures
+- Test cases bedacht (happy path, edge cases, errors)
+- Test data gemaakt (mock MSG-3 bestanden)
+- Assertions geschreven (wat moet het resultaat zijn?)
+- Business rule compliance tests
+- Integration test scenarios
+- Manual testing met echte data
+- Bug fixes na test failures
 
 **WAT AI DEED:**
 
@@ -187,13 +187,13 @@ class MSG3Parser:
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ Maximo API getest in Babcock environment
-- ✅ Excel libraries vergeleken (openpyxl vs pandas vs xlrd)
-- ✅ Performance tests gedaan
-- ✅ POC's gebouwd (Excel parsing, Maximo API call)
-- ✅ Alternatieven onderbouwd (waarom deze keuze?)
-- ✅ Risico's geïdentificeerd
-- ✅ Mitigatie strategieën bedacht
+- Maximo API getest in Babcock environment
+- Excel libraries vergeleken (openpyxl vs pandas vs xlrd)
+- Performance tests gedaan
+- POC's gebouwd (Excel parsing, Maximo API call)
+- Alternatieven onderbouwd (waarom deze keuze?)
+- Risico's geïdentificeerd
+- Mitigatie strategieën bedacht
 
 **WAT AI DEED:**
 
@@ -209,13 +209,13 @@ class MSG3Parser:
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ Tijdsinschattingen gemaakt (realistische uren per taak)
-- ✅ Sprint planning (wat in welke sprint?)
-- ✅ Risico's geïdentificeerd (Maximo API, MSG-3 complexiteit)
-- ✅ Mitigaties bedacht
-- ✅ Voortgang gemonitord
-- ✅ Weekly meetings met begeleider
-- ✅ Backlog beheerd
+- Tijdsinschattingen gemaakt (realistische uren per taak)
+- Sprint planning (wat in welke sprint?)
+- Risico's geïdentificeerd (Maximo API, MSG-3 complexiteit)
+- Mitigaties bedacht
+- Voortgang gemonitord
+- Weekly meetings met begeleider
+- Backlog beheerd
 
 **WAT AI DEED:**
 
@@ -231,12 +231,12 @@ class MSG3Parser:
 
 **WAT IK HEB GEDAAN:**
 
-- ✅ Context en achtergrond (Babcock specifiek)
-- ✅ Voorbeelden en use cases
-- ✅ Installatie instructies (Babcock omgeving)
-- ✅ Troubleshooting (op basis van eigen ervaring)
-- ✅ Gebruikersscenario's
-- ✅ Review van AI-gegenereerde docs voor correctheid
+- Context en achtergrond (Babcock specifiek)
+- Voorbeelden en use cases
+- Installatie instructies (Babcock omgeving)
+- Troubleshooting (op basis van eigen ervaring)
+- Gebruikersscenario's
+- Review van AI-gegenereerde docs voor correctheid
 
 **WAT AI DEED:**
 
@@ -248,7 +248,7 @@ class MSG3Parser:
 
 ---
 
-## 🎓 Competenties: Wat Heb IK Aangetoond?
+## Competenties: Wat Heb IK Aangetoond?
 
 ### Analyseren (100% Pedro)
 
@@ -287,25 +287,25 @@ class MSG3Parser:
 
 ---
 
-## 🔍 Hoe Kan Ik Dit Bewijzen?
+## Hoe Kan Ik Dit Bewijzen?
 
 ### 1. Ik Kan Alles Uitleggen
 
 ```
 Q: "Waarom heb je Python gekozen?"
 A: "Omdat Python sterke libraries heeft voor Excel parsing
-    (openpyxl) en REST APIs (requests). Ook heeft Babcock
-    al Python kennis in het team, wat adoptie makkelijker maakt."
+ (openpyxl) en REST APIs (requests). Ook heeft Babcock
+ al Python kennis in het team, wat adoptie makkelijker maakt."
 
 Q: "Leg deze business rule uit."
 A: "Deze rule (BR-005) controleert dat een taak niet dubbel
-    voorkomt in het MSG-3. Dit is kritiek omdat dubbele taken
-    kunnen leiden tot onnodige maintenance kosten."
+ voorkomt in het MSG-3. Dit is kritiek omdat dubbele taken
+ kunnen leiden tot onnodige maintenance kosten."
 
 Q: "Waarom deze architectuur?"
 A: "Ik heb gekozen voor modulaire architectuur omdat het
-    testbaarheid verbetert, wijzigingen isoleert, en het
-    mogelijk maakt om later modules te vervangen."
+ testbaarheid verbetert, wijzigingen isoleert, en het
+ mogelijk maakt om later modules te vervangen."
 ```
 
 ### 2. Ik Heb de Tests Geschreven
@@ -328,17 +328,17 @@ A: "Ik heb gekozen voor modulaire architectuur omdat het
 
 ---
 
-## 📊 Vergelijking: Met vs Zonder AI
+## Vergelijking: Met vs Zonder AI
 
 ### Zonder AI (Traditioneel)
 
 ```
-Repository setup:        8 uur
-Code templates:         12 uur
-Documentation:          40 uur
-Unit test boilerplate:  20 uur
+Repository setup: 8 uur
+Code templates: 12 uur
+Documentation: 40 uur
+Unit test boilerplate: 20 uur
 ─────────────────────────────
-Totaal:                 80 uur
+Totaal: 80 uur
 
 → Veel tijd aan repetitief werk
 → Focus verdeeld tussen boilerplate en logic
@@ -348,12 +348,12 @@ Totaal:                 80 uur
 ### Met AI (Dit Project)
 
 ```
-Repository setup:        2 uur (AI template → Pedro review)
-Code templates:          3 uur (AI skeleton → Pedro logic)
-Documentation:          10 uur (AI base → Pedro context)
-Unit test boilerplate:   8 uur (AI template → Pedro cases)
+Repository setup: 2 uur (AI template → Pedro review)
+Code templates: 3 uur (AI skeleton → Pedro logic)
+Documentation: 10 uur (AI base → Pedro context)
+Unit test boilerplate: 8 uur (AI template → Pedro cases)
 ─────────────────────────────
-Totaal:                 23 uur
+Totaal: 23 uur
 
 → 57 uur bespaard
 → Meer tijd voor business logic & design
@@ -362,15 +362,15 @@ Totaal:                 23 uur
 
 **Maar:** Die 57 uur zijn niet "verloren" - ik heb ze gebruikt voor:
 
-- ✅ Diepere analyse van MSG-3 structuur
-- ✅ Meer tijd besteed aan business rules
-- ✅ Betere testing (meer edge cases)
-- ✅ Betere documentatie (meer voorbeelden)
-- ✅ Meer iteraties op design
+- Diepere analyse van MSG-3 structuur
+- Meer tijd besteed aan business rules
+- Betere testing (meer edge cases)
+- Betere documentatie (meer voorbeelden)
+- Meer iteraties op design
 
 ---
 
-## 💡 Analogie: AI als Hulpmiddel
+## Analogie: AI als Hulpmiddel
 
 ### AI is Zoals...
 
@@ -404,7 +404,7 @@ Totaal:                 23 uur
 
 ---
 
-## 🎤 Voor Assessment: Hoe Leg Ik Dit Uit?
+## Voor Assessment: Hoe Leg Ik Dit Uit?
 
 ### Opening Statement
 
@@ -492,7 +492,7 @@ AI was een assistent, ik was de ingenieur."
 
 ---
 
-## 📋 Checklist: Kan Ik Dit Bewijzen?
+## Checklist: Kan Ik Dit Bewijzen?
 
 ### Voor Assessment
 
@@ -520,34 +520,34 @@ AI was een assistent, ik was de ingenieur."
 
 ---
 
-## 🎯 Conclusie
+## Conclusie
 
 ```
 ┌──────────────────────────────────────────────────┐
-│                                                  │
-│  DIT IS MIJN PROJECT                             │
-│                                                  │
-│  ✅ Ik heb het probleem geanalyseerd            │
-│  ✅ Ik heb de oplossing ontworpen               │
-│  ✅ Ik heb de keuzes gemaakt                    │
-│  ✅ Ik heb de logica geschreven                 │
-│  ✅ Ik heb het getest                           │
-│  ✅ Ik begrijp het volledig                     │
-│  ✅ Ik kan het verdedigen                       │
-│                                                  │
-│  AI was een HULPMIDDEL, geen MEDEWERKER          │
-│                                                  │
-│  → Ik draag volledige verantwoordelijkheid       │
-│  → Ik ben trots op MIJN werk                     │
-│                                                  │
+│ │
+│ DIT IS MIJN PROJECT │
+│ │
+│ Ik heb het probleem geanalyseerd │
+│ Ik heb de oplossing ontworpen │
+│ Ik heb de keuzes gemaakt │
+│ Ik heb de logica geschreven │
+│ Ik heb het getest │
+│ Ik begrijp het volledig │
+│ Ik kan het verdedigen │
+│ │
+│ AI was een HULPMIDDEL, geen MEDEWERKER │
+│ │
+│ → Ik draag volledige verantwoordelijkheid │
+│ → Ik ben trots op MIJN werk │
+│ │
 └──────────────────────────────────────────────────┘
 ```
 
 ---
 
-**Datum:** 11 februari 2026  
+**Datum:** 11 februari 2026
 **Auteur:** Pedro Eduardo Cardoso
-**Project:** MSG-3 to Maximo Converter  
+**Project:** MSG-3 to Maximo Converter
 **Organisatie:** Babcock Schiphol
 
 ---

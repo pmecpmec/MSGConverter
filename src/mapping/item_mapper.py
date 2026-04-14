@@ -169,7 +169,7 @@ class ItemMapper:
             "PLUSCMSG3TYPE": msg3_task.get("task_type"),
         }
         
-        logger.debug(f"Mapped MSG-3 task {msg3_task.get('task_code')} → Item {itemnum}")
+        logger.debug(f"Mapped MSG-3 task {msg3_task.get('task_code')} -> Item {itemnum}")
         return item_record
     
     def map_task_to_item_org(self, msg3_task: Dict[str, Any]) -> Dict[str, Any]:

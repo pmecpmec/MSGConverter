@@ -5,7 +5,7 @@
 
 ---
 
-## 📋 Overzicht per Deliverable
+## Overzicht per Deliverable
 
 | Deliverable | AIAS Niveau | Verklaring |
 |-------------|-------------|------------|
@@ -15,9 +15,9 @@
 | Onderzoek & Ontwerp | Niveau 3 | [Verklaring D](#verklaring-d-onderzoek--technisch-ontwerp-niveau-3) |
 | Source Code | Niveau 3 | [Verklaring E](#verklaring-e-source-code-niveau-3) |
 | Unit & Integration Tests | Niveau 3 | [Verklaring F](#verklaring-f-testing-niveau-3) |
-| API Documentatie | Niveau 4 | [Verklaring G](#verklaring-g-api-documentatie-niveau-4) |
-| User Documentation | Niveau 4 | [Verklaring H](#verklaring-h-user-documentation-niveau-4) |
-| Repository Setup | Niveau 3 & 4 | [Verklaring I](#verklaring-i-repository-setup-niveau-3--4) |
+| API Documentatie | Niveau 3 | [Verklaring G](#verklaring-g-api-documentatie-niveau-3) |
+| User Documentation | Niveau 3 | [Verklaring H](#verklaring-h-user-documentation-niveau-3) |
+| Repository Setup | Niveau 3 | [Verklaring I](#verklaring-i-repository-setup-niveau-3) |
 
 ---
 
@@ -95,43 +95,43 @@ Tijdens het schrijven van tests heb ik **Cursor AI** gebruikt om te **genereren 
 
 ---
 
-### Verklaring G: API Documentatie (Niveau 4)
+### Verklaring G: API Documentatie (Niveau 3)
 
 ```markdown
 ## AI Authenticiteitsverklaring
 
-Tijdens het genereren van API documentatie heb ik **Cursor AI** gebruikt om te **automatisch genereren van API documentatie op basis van de source code**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast. Alle context-specifieke uitleg en voorbeelden zijn door mij toegevoegd. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+Tijdens het schrijven van API documentatie heb ik **Cursor AI** gebruikt om te **structureren en opstellen van API documentatie op basis van de source code**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat het ingeleverde werk mijn eigen competenties en leeruitkomsten reflecteert. Alle context-specifieke uitleg en voorbeelden zijn door mij toegevoegd en geverifieerd. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
 
-*AIAS Niveau: 4 - Volledig AI*
+*AIAS Niveau: 3 - AI Samenwerking*
 ```
 
 ---
 
-### Verklaring H: User Documentation (Niveau 4)
+### Verklaring H: User Documentation (Niveau 3)
 
 ```markdown
 ## AI Authenticiteitsverklaring
 
-Tijdens het genereren van gebruikersdocumentatie heb ik **Cursor AI** gebruikt om te **automatisch genereren van README, QUICKSTART guide, en gebruikershandleidingen**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast. Alle Babcock-specifieke instructies, installation guides voor de productieomgeving, en gebruikersscenario's zijn door mij toegevoegd. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+Tijdens het schrijven van gebruikersdocumentatie heb ik **Cursor AI** gebruikt om te **opstellen van README, QUICKSTART guide, en gebruikershandleidingen**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat het ingeleverde werk mijn eigen competenties en leeruitkomsten reflecteert. Alle Babcock-specifieke instructies, installation guides voor de productieomgeving, en gebruikersscenario's zijn door mij toegevoegd. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
 
-*AIAS Niveau: 4 - Volledig AI*
+*AIAS Niveau: 3 - AI Samenwerking*
 ```
 
 ---
 
-### Verklaring I: Repository Setup (Niveau 3 & 4)
+### Verklaring I: Repository Setup (Niveau 3)
 
 ```markdown
 ## AI Authenticiteitsverklaring
 
-Tijdens het opzetten van dit project heb ik **Cursor AI** gebruikt om te **genereren van repository structuur, code templates, en documentatie skeletons**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat de structuur aansluit bij de Windesheim deliverables en de specifieke behoeften van het Babcock project. Voor de initiële documentatie templates heb ik Cursor AI gebruikt om complete Markdown bestanden te genereren, welke ik vervolgens heb gecontroleerd en aangepast aan de projectcontext. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+Tijdens het opzetten van dit project heb ik **Cursor AI** gebruikt om te **genereren van repository structuur, code templates, en documentatie skeletons**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat de structuur aansluit bij de Windesheim deliverables en de specifieke behoeften van het Babcock project. Voor de initiële documentatie templates heb ik Cursor AI gebruikt om Markdown bestanden te genereren, welke ik vervolgens heb gecontroleerd en aangepast aan de projectcontext. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
 
-*AIAS Niveau: 3 - AI Samenwerking & Niveau 4 - Volledig AI*
+*AIAS Niveau: 3 - AI Samenwerking*
 ```
 
 ---
 
-## 🎯 Gebruik Instructies
+## Gebruik Instructies
 
 ### Stap 1: Identificeer je deliverable
 Kijk in de tabel bovenaan welke verklaring bij jouw document hoort.
@@ -149,7 +149,7 @@ Als je meerdere AI-tools hebt gebruikt, voeg deze toe:
 
 ---
 
-## 📝 Voorbeeld: Hoe het eruit ziet in je document
+## Voorbeeld: Hoe het eruit ziet in je document
 
 ### Voor een Projectdefinitie document:
 
@@ -176,34 +176,34 @@ Tijdens de voorbereiding van de projectdefinitie heb ik **Cursor AI** gebruikt o
 
 ---
 
-## ⚠️ Belangrijke Reminders
+## Belangrijke Reminders
 
 ### Privacy & Compliance
-- ✅ Windesheim heeft **geen** gegevensovereenkomst met AI-providers
-- ✅ **Nooit** privacygevoelige data delen (echte credentials, persoonsgegevens, etc.)
-- ✅ AI-gebruik is **vrijwillig**, niet verplicht
+- Windesheim heeft **geen** gegevensovereenkomst met AI-providers
+- **Nooit** privacygevoelige data delen (echte credentials, persoonsgegevens, etc.)
+- AI-gebruik is **vrijwillig**, niet verplicht
 
 ### Eerlijkheid
-- ✅ Wees **transparant** over AI-gebruik
-- ✅ **Documenteer** alles wat je met AI doet
-- ✅ **Begrijp** wat AI genereert - jij moet het kunnen uitleggen!
+- Wees **transparant** over AI-gebruik
+- **Documenteer** alles wat je met AI doet
+- **Begrijp** wat AI genereert - jij moet het kunnen uitleggen!
 
 ### Fraude Vermijden
-- ❌ **Niet** AI-output blind copy-pasten zonder review
-- ❌ **Niet** AI-gebruik verzwijgen
-- ❌ **Niet** claim dat AI-werk 100% van jou is
+- **Niet** AI-output blind copy-pasten zonder review
+- **Niet** AI-gebruik verzwijgen
+- **Niet** claim dat AI-werk 100% van jou is
 
 ---
 
-## 🔗 Meer Informatie
+## Meer Informatie
 
-- **Volledige AI-gebruik documentatie:** `/docs/AI-GEBRUIK.md`
+- **Volledige AI-gebruik documentatie:** `docs/ai/AI-GEBRUIK.md`
 - **AI Assessment Scale uitleg:** [Windesheim AIAS](https://www.windesheim.nl/)
 - **Project AI-richtlijnen:** `.cursor/project_instructions.md`
 
 ---
 
-**Laatst bijgewerkt:** 11 februari 2026  
-**Auteur:** Pedro Eduardo Cardoso  
-**Opleiding:** Associate Degree Software Developer (ADSD)  
+**Laatst bijgewerkt:** 11 februari 2026
+**Auteur:** Pedro Eduardo Cardoso
+**Opleiding:** Associate Degree Software Developer (ADSD)
 **Project:** MSG-3 to Maximo Converter

@@ -19,6 +19,7 @@ python-dotenv==1.0.1     # Environment variable management
 
 # Logging & Monitoring
 colorlog==6.8.2          # Colored logging output
+rich>=13.0.0             # Rich terminal output (progress bars, gekleurde tabellen)
 
 # Testing
 pytest==8.0.0            # Testing framework

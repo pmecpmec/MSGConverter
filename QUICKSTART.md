@@ -1,442 +1,246 @@
-# 🚀 Quick Start Guide
-## MSG-3 → Maximo Integration Project
+# Quick Start – MSG-3 to Maximo Converter
 
-**Welkom Pedro! Dit document helpt je om snel te starten met je project.**
-
----
-
-## 🔴 BELANGRIJK: Lees Dit EERST!
-
-**VOORDAT JE BEGINT MET DEVELOPMENT:**
-
-### Business Rules First! 
-```
-📘 Lees: docs/BUSINESS-RULES-FIRST.md
-```
-
-Dit project heeft **80 business rules** die ALTIJD moeten worden gevolgd:
-- ✅ 11 CRITICAL rules (blokkeren processing)
-- ✅ 48 ERROR rules (must fix)
-- ✅ 19 WARNING rules (should review)
-- ✅ 2 INFO rules (aanbevelingen)
-
-**Alle development moet compliant zijn met deze rules!**
-
-📚 **Volledige documentatie:**
-- `docs/technisch-ontwerp/business-rules.md` - Alle 80 rules
-- `docs/technisch-ontwerp/business-rules-quick-reference.md` - Snelle lookup
-- `src/validator/business_rules.py` - Implementation
+**Versie:** 0.2.0 | **Python:** 3.11+
 
 ---
 
-## ✅ Setup Checklist (Eerst dit doen!)
-
-### 1. Development Environment Setup
+## 1. Installatie
 
 ```powershell
-# Navigeer naar project directory
-cd "C:\Users\pmec\.cursor\worktrees\MSGConverter\jjv"
+# Navigeer naar de project directory
+cd "C:\Users\pmec\Documents\Stage Babcock\MSGConverter"
 
 # Controleer Python versie (moet 3.11+ zijn)
 python --version
 
-# Maak virtual environment
+# Maak virtual environment (eenmalig)
 python -m venv venv
 
 # Activeer virtual environment
-.\venv\Scripts\activate  # Windows PowerShell
+.\venv\Scripts\Activate.ps1        # PowerShell
+# of: venv\Scripts\activate.bat    # cmd
 
 # Installeer dependencies
 pip install -r requirements.txt
 
 # Verify installatie
-python -c "import openpyxl, pandas, pytest; print('✓ All dependencies installed!')"
+python -c "import openpyxl, pandas, rich, requests; print('OK – alle dependencies aanwezig')"
 ```
 
-### 2. Git Setup
+---
 
-```bash
-# Initialiseer git (als nog niet gedaan)
-git init
-
-# Voeg remote repository toe (vervang URL)
-git remote add origin https://github.com/your-username/msg3-maximo-integration.git
-
-# Eerste commit
-git add .
-git commit -m "feat: Initial project setup with complete structure"
-
-# Push naar remote (optioneel)
-# git push -u origin main
-```
-
-### 3. Environment Variables
+## 2. Omgevingsvariabelen instellen
 
 ```powershell
-# .env bestand is al aangemaakt, update de waarden:
-# MAXIMO_BASE_URL, MAXIMO_USERNAME, MAXIMO_PASSWORD
+# Kopieer het voorbeeld-configuratiebestand
+copy .env.example .env
+
+# Open en vul de waarden in (Maximo URL, API key, org ID)
 notepad .env
 ```
 
----
+Vereiste variabelen:
 
-## 🎯 Je Eerste Stappen
-
-### Week 1: Oriëntatie & Documentatie
-
-#### Dag 1-2: Project Setup ✅
-- [x] Repository structuur klaar
-- [ ] Development environment setup
-- [ ] Kennismaking met Babcock team
-- [ ] Toegang tot Maximo test environment regelen
-
-#### Dag 3-4: Projectdefinitie
-```bash
-# Start met projectdefinitie documenten
-cd docs/projectdefinitie
-# Lees 00-START-HIER.md
-# Schrijf documenten 01 t/m 05
-```
-
-**Focus:**
-- Context analyse Babcock Schiphol
-- Probleemstelling formuleren
-- SMART doelen definiëren
-- Scope bepalen
-- Stakeholders identificeren
-
-**Cursor AI hulp:**
-```
-"Schrijf een context analyse voor Babcock Schiphol als luchtvaart 
-maintenance organisatie. Focus op MSG-3 en IBM Maximo gebruik."
-```
-
-#### Dag 5: Plan van Aanpak
-```bash
-cd docs/plan-van-aanpak
-# Lees 00-START-HIER.md
-# Maak planning met milestones
-```
+| Variabele | Beschrijving | Voorbeeld |
+|-----------|-------------|---------|
+| `MAXIMO_BASE_URL` | Maximo basis-URL | `https://maximo.babcock.local` |
+| `MAXIMO_API_KEY` | API sleutel (of gebruik MAXIMO_USERNAME/PASSWORD) | `abc123xyz` |
+| `MAXIMO_ORG_ID` | Organisatie ID in Maximo | `SCHIPHOL` |
+| `MAXIMO_ITEM_SET` | Item Set | `MSG3-MAINT` |
 
 ---
 
-### Week 2: Technisch Onderzoek
+## 3. Gebruik – CLI
 
-#### Dag 1-2: MSG-3 Excel Analyse
-```python
-# Analyseer de huidige MSG-3 Excel structuur
-# - Welke sheets zijn er?
-# - Wat zijn de kolommen?
-# - Wat zijn de datatypes?
-# - Zijn er formules/validaties?
+### Volledig verwerken (standaard)
 
-# Maak notities in:
-# docs/onderzoek/05-msg3-analyse.md
+```powershell
+# Verwerk een MSG-3 Excel bestand (parse + valideer + map)
+python -m src.main examples\msg3_example.xlsx
+
+# Met JSON output naar bestand
+python -m src.main examples\msg3_example.xlsx --output output\result.json
+
+# Uitgebreide logging
+python -m src.main examples\msg3_example.xlsx --verbose
 ```
 
-#### Dag 3-4: Maximo API Onderzoek
-```python
-# Test Maximo API connectie
-# Maak een simpel test script:
+### Change detection (vergelijk met vorige versie)
 
-import requests
+```powershell
+# Sla eerste run op als baseline
+python -m src.main msg3_v1.xlsx --output output\v1.json
 
-base_url = "https://maximo-test.babcock.local"
-# Test authentication
-# Test GET request naar /maximo/oslc/os/mxpm
-# Documenteer API endpoints
-
-# Documenteer in:
-# docs/onderzoek/02-maximo-api.md
+# Vergelijk tweede run met baseline
+python -m src.main msg3_v2.xlsx --output output\v2.json --previous output\v1.json
 ```
 
-#### Dag 5: Proof of Concept
-```python
-# POC 1: Excel Parsing
-# Doel: Lees een MSG-3 Excel en print de data
+### Validatie only
 
-import openpyxl
+```powershell
+# Alleen valideren (geen mapping)
+python -m src.main examples\msg3_example.xlsx --mode validate
+```
 
-wb = openpyxl.load_workbook("examples/msg3_example.xlsx")
-sheet = wb.active
+### Parse only (JSON structuur bekijken)
 
-for row in sheet.iter_rows(values_only=True):
-    print(row)
+```powershell
+# Alleen parsen naar JSON (geen validatie, geen mapping)
+python -m src.main examples\msg3_example.xlsx --mode parse --output output\parsed.json
+```
 
-# POC 2: Maximo API Call
-# Doel: Maak een test PM record in Maximo
+### Quiet mode (alleen JSON, geen banner/samenvatting)
 
-# Sla POCs op in /examples/poc/
+```powershell
+# Geschikt voor scripting / pipen
+python -m src.main examples\msg3_example.xlsx --quiet --output output\result.json
+```
+
+### Logging naar bestand
+
+```powershell
+python -m src.main examples\msg3_example.xlsx --log-file logs\run.log
 ```
 
 ---
 
-## 📚 Belangrijkste Bestanden om te Lezen
+## 4. Alle CLI opties
 
-### Voor je Start
-1. `README.md` - Project overzicht
-2. `docs/readme-docs.md` - Documentatie structuur
-3. `.cursor/project_instructions.md` - Cursor AI instructies
-4. `CONTRIBUTING.md` - Workflow & best practices
+```
+usage: python -m src.main [-h] [--mode {full,validate,parse}]
+                           [--output OUTPUT] [--previous PREVIOUS]
+                           [--skip-validation] [--verbose] [--quiet]
+                           [--log-file LOG_FILE] [--version]
+                           excel_file
 
-### Tijdens Development
-1. `src/main.py` - Main entry point (template aanwezig)
-2. `src/parser/msg3_parser.py` - Parser voorbeeld
-3. `tests/unit/test_parser.py` - Test voorbeeld
-4. `requirements.txt` - Dependencies
+Positional arguments:
+  excel_file            Pad naar MSG-3 Excel bestand
 
----
-
-## 🧪 Testing Workflow
-
-### Run je Eerste Test
-
-```bash
-# Activeer venv (als nog niet gedaan)
-.\venv\Scripts\activate
-
-# Run alle unit tests
-pytest tests/unit/ -v
-
-# Run specifieke test
-pytest tests/unit/test_parser.py -v
-
-# Run met coverage
-pytest tests/unit/ --cov=src --cov-report=html
-
-# Open coverage report
-start htmlcov\index.html  # Windows
+Options:
+  -h, --help            Toon help bericht en sluit af
+  --mode {full,validate,parse}
+                        Verwerkingsmodus (default: full)
+  --output, -o          Pad voor JSON output bestand (default: stdout)
+  --previous            Pad naar vorige JSON output voor change detection
+  --skip-validation     Sla validatie over (niet aanbevolen)
+  --verbose, -v         Uitgebreide logging (DEBUG niveau)
+  --quiet, -q           Alleen JSON output, geen banner/samenvatting
+  --log-file LOG_FILE   Schrijf logs naar bestand
+  --version             Toon versienummer
 ```
 
 ---
 
-## 💻 Development Workflow
+## 5. Testen
 
-### Feature Implementeren
+```powershell
+# Alle tests draaien
+python -m pytest tests/
 
-```bash
-# 1. Kies een feature (bijv. Excel Parser)
+# Alleen unit tests
+python -m pytest tests/unit/ -v
 
-# 2. Schrijf eerst de test (TDD)
-notepad tests/unit/test_parser.py
+# Alleen integratie tests
+python -m pytest tests/integration/ -v
 
-# 3. Run test (moet falen)
-pytest tests/unit/test_parser.py -v
+# Met coverage rapport (HTML)
+python -m pytest tests/ --cov=src --cov-report=html
 
-# 4. Implementeer feature
-notepad src/parser/msg3_parser.py
+# Coverage rapport openen
+Start-Process "htmlcov\index.html"
+```
 
-# 5. Run test (moet slagen)
-pytest tests/unit/test_parser.py -v
+Huidige status: **201 tests**, **84% coverage**, alle tests groen.
 
-# 6. Documenteer
-# - Docstrings in code
-# - Technical doc in docs/technisch-ontwerp/
-# - Update README.md
+---
 
-# 7. Code quality checks
-black src/parser/  # Format
-flake8 src/parser/ # Lint
-mypy src/parser/   # Type check
+## 6. Project structuur
 
-# 8. Commit
-git add .
-git commit -m "feat(parser): Implement Excel parsing for MSG-3"
-
-# 9. Repeat!
+```
+MSGConverter/
+├── src/
+│   ├── main.py                    # CLI entry point
+│   ├── parser/
+│   │   ├── excel_reader.py        # Excel lezen
+│   │   └── msg3_parser.py         # MSG-3 data parsen
+│   ├── validator/
+│   │   ├── msg3_validator.py      # Structuur- en veldvalidatie
+│   │   └── business_rules.py      # 90 business rules
+│   ├── mapping/
+│   │   ├── msg3_maximo_mapper.py  # Orchestratie mapper
+│   │   ├── item_mapper.py         # Item Master records
+│   │   ├── pm_mapper.py           # Preventive Maintenance records
+│   │   └── jobplan_mapper.py      # Job Plan records
+│   ├── change_detection/
+│   │   └── change_detector.py     # Versievergelijking
+│   └── maximo_connector/
+│       ├── rest_client.py         # Lage-niveau HTTP client
+│       └── maximo_client.py       # Hoge-niveau Maximo API client
+├── tests/
+│   ├── unit/                      # Unit tests per module
+│   ├── integration/               # End-to-end pipeline tests
+│   └── fixtures/                  # Test Excel bestand
+├── docs/
+│   ├── scrum/sprints/             # Sprint planning, review, retrospective
+│   ├── testcases/                 # Teststrategie en testresultaten
+│   └── technisch-ontwerp/         # SDD, business rules, UML
+├── requirements.txt               # Productie- en dev-dependencies
+├── pytest.ini                     # Test configuratie
+├── .coveragerc                    # Coverage configuratie
+├── .env.example                   # Voorbeeld omgevingsvariabelen
+└── QUICKSTART.md                  # Dit bestand
 ```
 
 ---
 
-## 🤖 Cursor AI Effectief Gebruiken
+## 7. Veelgestelde problemen
 
-### Goede Prompts voor Verschillende Taken
+### ModuleNotFoundError bij `python -m src.main`
 
-#### Code Generatie
-```
-"Implementeer de parse() method in src/parser/msg3_parser.py.
-De method moet een Excel bestand inlezen met openpyxl,
-de headers detecteren op rij 1, en elke rij converteren naar
-een MSG3Task object. Return een dictionary met metadata en tasks."
-```
+Zorg dat je de opdracht uitvoert vanuit de `MSGConverter/` map en dat de venv actief is:
 
-#### Test Generatie
-```
-"Schrijf pytest unit tests voor de MSG3Parser class in 
-tests/unit/test_parser.py. Test scenarios:
-1. Succesvol parsen van geldig bestand
-2. FileNotFoundError voor niet-bestaand bestand
-3. ValueError voor corrupt bestand
-4. Empty file handling"
+```powershell
+cd "C:\Users\pmec\Documents\Stage Babcock\MSGConverter"
+.\venv\Scripts\Activate.ps1
+python -m src.main --help
 ```
 
-#### Documentatie
-```
-"Genereer een technisch ontwerp document voor de Parser module
-in docs/technisch-ontwerp/01-parser-design.md. Inclusief:
-- Class diagram
-- Sequence diagram voor parsing flow
-- Error handling strategie
-- Performance overwegingen"
+### Validatie gefaald – CRITICAL errors
+
+Controleer de task codes in het Excel bestand. Verplicht formaat: `{chapter}-{system}-{subsystem}-{sequence}` (bijv. `32-11-01-001`).
+
+### `rich` niet gevonden
+
+```powershell
+pip install rich
 ```
 
-#### Debugging
-```
-"Ik krijg deze error: [plak error]. Dit gebeurt in deze code: 
-[plak code]. Wat is de oorzaak en hoe fix ik het?"
-```
+### UnicodeDecodeError in Windows console
 
-#### Refactoring
-```
-"Refactor deze functie om SOLID principes te volgen:
-[plak code]"
+Stel de console encoding in:
+
+```powershell
+$env:PYTHONIOENCODING = "utf-8"
+python -m src.main examples\msg3_example.xlsx
 ```
 
 ---
 
-## 📊 Progress Tracking
+## 8. Business rules
 
-### Wekelijkse Review Vragen
-- **Wat heb ik deze week bereikt?**
-- **Welke problemen kwam ik tegen?**
-- **Wat heb ik geleerd?**
-- **Wat ga ik volgende week doen?**
-- **Heb ik hulp nodig?**
+De applicatie valideert 90 business rules verdeeld over 6 categorieën:
 
-### Documenteer in
-```
-docs/plan-van-aanpak/progress-log.md
-```
+| Categorie | Regels | Voorbeelden |
+|-----------|--------|-------------|
+| Structural (STR) | 15 | Verplichte velden, bestandsformaat |
+| Safety (SAF) | 15 | Veiligheidskritische taken |
+| Airworthiness (AIR) | 15 | Luchwaardigheidsregels |
+| Maintenance (MNT) | 15 | Onderhoudsinterval-regels |
+| Logistics & Inventory (LOG) | 20 | Commodity codes, Maximo veldlimieten |
+| Regulatory (REG) | 10 | Complianceregels |
 
----
-
-## 🆘 Als je Vast Zit
-
-### 1. Check de Documentatie
-- Lees `docs/readme-docs.md` voor documentatie structuur
-- Check `CONTRIBUTING.md` voor workflows
-- Bekijk voorbeelden in `tests/` en `src/`
-
-### 2. Gebruik Cursor AI
-```
-"Ik zit vast met [beschrijf probleem]. Ik heb geprobeerd [wat je probeerde].
-Wat kan ik doen?"
-```
-
-### 3. Google & Documentation
-- [Python openpyxl docs](https://openpyxl.readthedocs.io/)
-- [Pandas docs](https://pandas.pydata.org/)
-- [pytest docs](https://docs.pytest.org/)
-- [IBM Maximo REST API docs](https://www.ibm.com/docs/en/mam)
-
-### 4. Vraag Begeleiders
-- Babcock team: Functionele vragen, requirements
-- Windesheim begeleider: Procesmatige vragen, competenties
+Zie `docs/technisch-ontwerp/business-rules.md` voor de volledige lijst.
 
 ---
 
-## 🎯 Sprint 1 Goals (Week 3-4)
-
-**Doel:** Basis parser implementeren
-
-### Must Have (Week 3-4)
-- [ ] Excel bestand kan worden ingelezen
-- [ ] Headers worden gedetecteerd
-- [ ] Data wordt naar JSON geconverteerd
-- [ ] Basis validatie (file exists, correct format)
-- [ ] Unit tests geschreven
-- [ ] Documentatie in `/docs/technisch-ontwerp/`
-
-### Nice to Have
-- [ ] Support voor meerdere Excel formaten
-- [ ] Performance optimalisatie
-- [ ] Uitgebreide error messages
-
-### Demo
-**Aan eind week 4:** Demo aan Babcock team:
-- Toon Excel parsing
-- Toon JSON output
-- Toon error handling
-
----
-
-## 📈 Success Metrics
-
-### Code Quality
-- ✅ Test coverage >80%
-- ✅ Zero linter warnings
-- ✅ Type hints everywhere
-- ✅ All functions documented
-
-### Documentation
-- ✅ All deliverables complete
-- ✅ README up to date
-- ✅ Code comments clear
-
-### Progress
-- ✅ Weekly demos to stakeholders
-- ✅ Regular commits (min. 3x/week)
-- ✅ Milestones on track
-
----
-
-## 🎓 Learning Resources
-
-### Python
-- [Real Python](https://realpython.com/)
-- [Python official docs](https://docs.python.org/3/)
-
-### Excel Parsing
-- [openpyxl tutorial](https://openpyxl.readthedocs.io/en/stable/tutorial.html)
-- [pandas Excel tutorial](https://pandas.pydata.org/docs/user_guide/io.html#excel-files)
-
-### Testing
-- [pytest tutorial](https://docs.pytest.org/en/stable/getting-started.html)
-- [Test-Driven Development](https://www.obeythetestinggoat.com/)
-
-### API Development
-- [requests library](https://requests.readthedocs.io/)
-- [REST API best practices](https://restfulapi.net/)
-
----
-
-## ✨ Motivatie
-
-**Je hebt dit! 💪**
-
-Dit project is:
-- ✅ **Haalbaar**: Gestructureerd opgezet, duidelijke stappen
-- ✅ **Leerzaam**: Je leert Python, APIs, testing, documentatie
-- ✅ **Relevant**: Echte business value voor Babcock
-- ✅ **Portfolio**: Mooi project voor je CV
-
-**Tips:**
-- 🎯 Focus op één ding tegelijk
-- 🧪 Test vroeg en vaak
-- 📝 Documenteer terwijl je werkt (niet achteraf!)
-- 🤝 Vraag hulp als je vast zit
-- 🎉 Vier kleine successen
-
----
-
-## 📞 Contact & Support
-
-### Cursor AI
-- Altijd beschikbaar
-- Best voor: code, tests, documentatie, technical vragen
-
-### Begeleiders
-- Beschikbaar: volgens afspraak
-- Best voor: strategie, proces, competenties
-
----
-
-**Veel succes met je Comakership! 🚀**
-
-**Next Steps:**
-1. ✅ Setup development environment
-2. 📝 Start met projectdefinitie (`docs/projectdefinitie/00-START-HIER.md`)
-3. 🔬 Begin met technisch onderzoek (week 2)
-4. 💻 Start coding (week 3)
-
-*Happy coding!*
+**Vragen of problemen?** Zie `docs/` voor gedetailleerde documentatie of raadpleeg de testcases in `tests/`.

@@ -1,49 +1,49 @@
-# 📊 Beoordelingscriteria Comakership 1 ADSD
+# Beoordelingscriteria Comakership 1 ADSD
 ## MSG-3 to Maximo Converter Project
 
-**Student:** Pedro Eduardo Cardoso  
-**Organisatie:** Babcock Schiphol  
-**Opleiding:** Associate Degree Software Developer (ADSD)  
+**Student:** Pedro Eduardo Cardoso
+**Organisatie:** Babcock Schiphol
+**Opleiding:** Associate Degree Software Developer (ADSD)
 **Beoordelingsformulier:** Beoordelingsformulier Comaker 1 ADSD
 
 ---
 
-## 📋 Inhoudsopgave
+## Inhoudsopgave
 
 1. [HBO-I Competenties](#hbo-i-competenties)
-   - [Analyseren (Niveau 1)](#1-analyseren-niveau-1)
-   - [Adviseren (Niveau 1)](#2-adviseren-niveau-1)
-   - [Ontwerpen (Niveau 1)](#3-ontwerpen-niveau-1)
-   - [Realiseren (Niveau 2)](#4-realiseren-niveau-2)
-   - [Manage & Control (Niveau 1)](#5-manage--control-niveau-1)
+ - [Analyseren (Niveau 1)](#1-analyseren-niveau-1)
+ - [Adviseren (Niveau 1)](#2-adviseren-niveau-1)
+ - [Ontwerpen (Niveau 1)](#3-ontwerpen-niveau-1)
+ - [Realiseren (Niveau 2)](#4-realiseren-niveau-2)
+ - [Manage & Control (Niveau 1)](#5-manage--control-niveau-1)
 
 2. [Professional Skills](#professional-skills)
-   - [Persoonlijk Leiderschap](#persoonlijk-leiderschap)
-   - [Toekomstgericht Organiseren](#toekomstgericht-organiseren)
-   - [Onderzoekend Probleemoplossend](#onderzoekend-probleemoplossend)
-   - [Doelgericht Interacteren](#doelgericht-interacteren)
+ - [Persoonlijk Leiderschap](#persoonlijk-leiderschap)
+ - [Toekomstgericht Organiseren](#toekomstgericht-organiseren)
+ - [Onderzoekend Probleemoplossend](#onderzoekend-probleemoplossend)
+ - [Doelgericht Interacteren](#doelgericht-interacteren)
 
 3. [Bewijs Mapping](#bewijs-mapping)
 
 ---
 
-## 🎯 HBO-I Competenties
+## HBO-I Competenties
 
 ### Competentiematrix Software Laag
 
 | Architectuurlaag | Analyseren | Adviseren | Ontwerpen | Realiseren | Manage & Control |
 |------------------|------------|-----------|-----------|------------|------------------|
-| **Software**     | **1**      | **1**     | **1**     | **2** ⚡    | **1**            |
+| **Software** | **1** | **1** | **1** | **2** | **1** |
 
-⚡ = Hogere eis - niveau 2 vereist meer zelfstandigheid en diepgang
+ = Hogere eis - niveau 2 vereist meer zelfstandigheid en diepgang
 
 ---
 
-### 1️⃣ ANALYSEREN (Niveau 1)
+### 1. ANALYSEREN (Niveau 1)
 
 **Definitie:** Werkt volgens geplande stappen naar onderbouwde conclusies en verwerkt nieuwe inzichten; blijft analyseaanpak valideren.
 
-#### 📌 Beoordelingsaspecten
+#### Beoordelingsaspecten
 
 ##### Aanpak (Gestructureerdheid, samenhang, flexibiliteit)
 - **Uitstekend (9+):** Werkt volgens geplande stappen naar onderbouwde conclusies en verwerkt nieuwe inzichten; blijft analyseaanpak valideren
@@ -69,16 +69,16 @@
 - **Voldoende (6):** Analyseert relevante aspecten van de gegeven situatie
 - **Onvoldoende (4-):** Draagt weinig bij aan de oplossing van de gegeven situatie
 
-#### 🎯 Waar toon ik dit aan?
+#### Waar toon ik dit aan?
 
 **Deliverables die ANALYSEREN bewijzen:**
-- ✅ `docs/projectdefinitie/01-context-analyse.md` - Bedrijfscontext en probleem analyse
-- ✅ `docs/projectdefinitie/02-probleemstelling.md` - Analyse van de huidige situatie
-- 🔄 `docs/onderzoek/01-msg3-analyse.md` - MSG-3 structuur analyse
-- 🔄 `docs/onderzoek/02-maximo-api.md` - Maximo capabilities analyse
-- 🔄 `docs/onderzoek/04-alternatieven-evaluatie.md` - Vergelijkend onderzoek
-- ✅ `docs/technisch-ontwerp/business-rules.md` - Business logic analyse (80 regels)
-- ⏳ `docs/reflectie/` - Reflectie op analyse proces
+- `docs/projectdefinitie/01-context-analyse.md` - Bedrijfscontext en probleem analyse
+- `docs/projectdefinitie/02-probleemstelling.md` - Analyse van de huidige situatie
+- `docs/onderzoek/01-msg3-analyse.md` - MSG-3 structuur analyse
+- `docs/onderzoek/02-maximo-api.md` - Maximo capabilities analyse
+- `docs/onderzoek/04-alternatieven-evaluatie.md` - Vergelijkend onderzoek
+- `docs/technisch-ontwerp/business-rules.md` - Business logic analyse (80 regels)
+- `docs/reflectie/` - Reflectie op analyse proces
 
 **Concrete voorbeelden uit je project:**
 1. Analyse van MSG-3 Excel structuur (80 business rules geïdentificeerd)
@@ -89,11 +89,11 @@
 
 ---
 
-### 2️⃣ ADVISEREN (Niveau 1)
+### 2. ADVISEREN (Niveau 1)
 
 **Definitie:** Werkt volgens geplande stappen naar onderbouwde adviezen en verwerkt nieuwe inzichten; blijft valideren.
 
-#### 📌 Beoordelingsaspecten
+#### Beoordelingsaspecten
 
 ##### Aanpak (Gestructureerdheid, samenhang, flexibiliteit)
 - **Uitstekend (9+):** Werkt volgens geplande stappen naar onderbouwde adviezen en verwerkt nieuwe inzichten; blijft valideren
@@ -119,15 +119,15 @@
 - **Voldoende (6):** Houdt rekening met eisen en wensen en geeft een uitvoerbaar advies
 - **Onvoldoende (4-):** Draagt weinig bij aan de oplossing van de gegeven situatie
 
-#### 🎯 Waar toon ik dit aan?
+#### Waar toon ik dit aan?
 
 **Deliverables die ADVISEREN bewijzen:**
-- 🔄 `docs/onderzoek/00-onderzoeksrapport.md` - Aanbevelingen en conclusies
-- 🔄 `docs/onderzoek/03-technologie-keuzes.md` - Onderbouwde technologie adviezen
-- 🔄 `docs/onderzoek/04-alternatieven-evaluatie.md` - Advies over beste oplossing
-- ✅ `docs/plan-van-aanpak/01-projectaanpak.md` - Advies over Agile aanpak
-- ✅ `docs/plan-van-aanpak/03-risicoanalyse.md` - Advies over risicomitigatie
-- ⏳ `docs/overdracht/06-toekomstige-verbeteringen.md` - Aanbevelingen voor toekomst
+- `docs/onderzoek/00-onderzoeksrapport.md` - Aanbevelingen en conclusies
+- `docs/onderzoek/03-technologie-keuzes.md` - Onderbouwde technologie adviezen
+- `docs/onderzoek/04-alternatieven-evaluatie.md` - Advies over beste oplossing
+- `docs/plan-van-aanpak/01-projectaanpak.md` - Advies over Agile aanpak
+- `docs/plan-van-aanpak/03-risicoanalyse.md` - Advies over risicomitigatie
+- `docs/overdracht/06-toekomstige-verbeteringen.md` - Aanbevelingen voor toekomst
 
 **Concrete voorbeelden uit je project:**
 1. Advies om Python te gebruiken (ipv C# of Java) - onderbouwd met criteria
@@ -138,11 +138,11 @@
 
 ---
 
-### 3️⃣ ONTWERPEN (Niveau 1)
+### 3. ONTWERPEN (Niveau 1)
 
 **Definitie:** Ontwerpt volgens geplande stappen bruikbare oplossingen en verwerkt nieuwe inzichten; blijft ontwerpenaanpak valideren.
 
-#### 📌 Beoordelingsaspecten
+#### Beoordelingsaspecten
 
 ##### Aanpak (Gestructureerdheid, samenhang, flexibiliteit)
 - **Uitstekend (9+):** Ontwerpt volgens geplande stappen bruikbare oplossingen en verwerkt nieuwe inzichten; blijft ontwerpenaanpak valideren
@@ -168,17 +168,17 @@
 - **Voldoende (6):** Maakt voldoende gedetailleerde en realiseerbare ontwerpen die voldoen aan eisen en wensen
 - **Onvoldoende (4-):** Draagt weinig bij aan de oplossing van de gegeven situatie
 
-#### 🎯 Waar toon ik dit aan?
+#### Waar toon ik dit aan?
 
 **Deliverables die ONTWERPEN bewijzen:**
-- ✅ `docs/technisch-ontwerp/01-architectuur-ontwerp.md` - Systeemarchitectuur
-- ✅ `docs/technisch-ontwerp/business-rules.md` - Business logic ontwerp (80 regels)
-- ✅ `docs/technisch-ontwerp/uml-diagrammen/` - Class, Sequence, Component, Use Case diagrammen
-- ⏳ `docs/technisch-ontwerp/02-datamodellen.md` - Data structuur ontwerp
-- ⏳ `docs/technisch-ontwerp/03-api-specificaties.md` - API ontwerp
-- ⏳ `docs/technisch-ontwerp/06-error-handling.md` - Error strategie ontwerp
-- ⏳ `docs/technisch-ontwerp/07-security.md` - Security ontwerp
-- ⏳ `docs/technisch-ontwerp/08-performance.md` - Performance ontwerp
+- `docs/technisch-ontwerp/01-architectuur-ontwerp.md` - Systeemarchitectuur
+- `docs/technisch-ontwerp/business-rules.md` - Business logic ontwerp (80 regels)
+- `docs/technisch-ontwerp/uml-diagrammen/` - Class, Sequence, Component, Use Case diagrammen
+- `docs/technisch-ontwerp/02-datamodellen.md` - Data structuur ontwerp
+- `docs/technisch-ontwerp/03-api-specificaties.md` - API ontwerp
+- `docs/technisch-ontwerp/06-error-handling.md` - Error strategie ontwerp
+- `docs/technisch-ontwerp/07-security.md` - Security ontwerp
+- `docs/technisch-ontwerp/08-performance.md` - Performance ontwerp
 
 **Concrete voorbeelden uit je project:**
 1. OOP class design (Parser, Validator, Mapper, MaximoConnector)
@@ -189,13 +189,13 @@
 
 ---
 
-### 4️⃣ REALISEREN (Niveau 2) ⚡
+### 4. REALISEREN (Niveau 2)
 
 **Definitie:** Realiseert volgens geplande stappen bruikbare oplossingen en verwerkt nieuwe inzichten; blijft aanpak valideren.
 
 **LET OP:** Dit is NIVEAU 2 - Hogere eis dan andere competenties!
 
-#### 📌 Beoordelingsaspecten
+#### Beoordelingsaspecten
 
 ##### Aanpak (Gestructureerdheid, samenhang, flexibiliteit)
 - **Uitstekend (9+):** Realiseert volgens geplande stappen bruikbare oplossingen en verwerkt nieuwe inzichten; blijft aanpak valideren
@@ -221,20 +221,20 @@
 - **Voldoende (6):** Realiseert oplossingen die voldoen aan eisen, wensen en ontwerpen
 - **Onvoldoende (4-):** Draagt weinig bij aan de oplossing van de gegeven situatie
 
-#### 🎯 Waar toon ik dit aan?
+#### Waar toon ik dit aan?
 
 **Deliverables die REALISEREN bewijzen:**
-- 🔄 `src/` - **>2000 regels eigen geschreven code** (vereiste: min. 250)
-  - `src/parser/` - Excel parsing logica (~300 regels)
-  - `src/validator/business_rules.py` - Validatie engine (~400 regels)
-  - `src/mapping/` - MSG-3 naar Maximo mapping (~350 regels)
-  - `src/maximo/connector.py` - API integratie (~250 regels)
-  - `src/change_detection/` - Versie vergelijking (~200 regels)
-  - `tests/` - Unit en integration tests (~500 regels)
-- ⏳ `docs/testcases/` - Testresultaten en coverage
-- ⏳ `docs/overdracht/01-gebruikershandleiding.md` - Product documentatie
-- ⏳ `docs/overdracht/02-technische-handleiding.md` - Developer documentatie
-- ⏳ Demo video/presentatie - Werkende applicatie demonstratie
+- `src/` - **>2000 regels eigen geschreven code** (vereiste: min. 250)
+ - `src/parser/` - Excel parsing logica (~300 regels)
+ - `src/validator/business_rules.py` - Validatie engine (~400 regels)
+ - `src/mapping/` - MSG-3 naar Maximo mapping (~350 regels)
+ - `src/maximo/connector.py` - API integratie (~250 regels)
+ - `src/change_detection/` - Versie vergelijking (~200 regels)
+ - `tests/` - Unit en integration tests (~500 regels)
+- `docs/testcases/` - Testresultaten en coverage
+- `docs/overdracht/01-gebruikershandleiding.md` - Product documentatie
+- `docs/overdracht/02-technische-handleiding.md` - Developer documentatie
+- Demo video/presentatie - Werkende applicatie demonstratie
 
 **Concrete voorbeelden uit je project:**
 1. Werkende MSG-3 Excel parser (openpyxl)
@@ -249,11 +249,11 @@
 
 ---
 
-### 5️⃣ MANAGE & CONTROL (Niveau 1)
+### 5. MANAGE & CONTROL (Niveau 1)
 
 **Definitie:** Werkt volgens geplande stappen aan het beheren, monitoren en optimaliseren van ICT-systemen en/of organisatieprocessen; verwerkt nieuwe inzichten; blijft aanpak valideren.
 
-#### 📌 Beoordelingsaspecten
+#### Beoordelingsaspecten
 
 ##### Aanpak (Gestructureerdheid, samenhang, flexibiliteit)
 - **Uitstekend (9+):** Werkt volgens geplande stappen aan het beheren, monitoren en optimaliseren van ICT-systemen en/of organisatieprocessen; verwerkt nieuwe inzichten; blijft aanpak valideren
@@ -279,17 +279,17 @@
 - **Voldoende (6):** Zorgt voor een overdracht van de oplossing die voldoet aan eisen, wensen van de opdrachtgever
 - **Onvoldoende (4-):** Draagt weinig bij aan de overdracht van de oplossing
 
-#### 🎯 Waar toon ik dit aan?
+#### Waar toon ik dit aan?
 
 **Deliverables die MANAGE & CONTROL bewijzen:**
-- ✅ `docs/plan-van-aanpak/01-projectaanpak.md` - Agile aanpak en werkwijze
-- ✅ `docs/plan-van-aanpak/02-planning.md` - 18 weken planning
-- ✅ `docs/plan-van-aanpak/03-risicoanalyse.md` - Risicomanagement
-- 🔄 `docs/scrum/` - Sprint planning, reviews, retrospectives
-- ⏳ `docs/overdracht/03-installatie-instructies.md` - Deployment guide
-- ⏳ `docs/overdracht/04-troubleshooting.md` - Support documentatie
-- ⏳ `docs/overdracht/05-changelog.md` - Versie beheer
-- ⏳ `docs/testcases/06-testresultaten.md` - Kwaliteitsbewaking
+- `docs/plan-van-aanpak/01-projectaanpak.md` - Agile aanpak en werkwijze
+- `docs/plan-van-aanpak/02-planning.md` - 18 weken planning
+- `docs/plan-van-aanpak/03-risicoanalyse.md` - Risicomanagement
+- `docs/scrum/` - Sprint planning, reviews, retrospectives
+- `docs/overdracht/03-installatie-instructies.md` - Deployment guide
+- `docs/overdracht/04-troubleshooting.md` - Support documentatie
+- `docs/overdracht/05-changelog.md` - Versie beheer
+- `docs/testcases/06-testresultaten.md` - Kwaliteitsbewaking
 
 **Concrete voorbeelden uit je project:**
 1. Agile projectmanagement (sprints, standups)
@@ -301,7 +301,7 @@
 
 ---
 
-## 🌟 Professional Skills
+## Professional Skills
 
 ### Professional Skills Beoordelingsschaal
 - **Uitstekend (9+):** Overtreft verwachtingen significant
@@ -328,12 +328,12 @@
 - Is proactief, stelt uitdagende doelen en prioriteiten en handelt daar consequent naar
 - Realiseert de gestelde doelen
 
-#### 🎯 Waar toon ik dit aan?
-- ✅ Eigen initiatief om stage te vinden bij Babcock
-- ✅ Proactief voorgestelde MSG-3 template verbetering (Week 14-15)
-- ✅ Zelfstandig opzetten van technische architectuur
-- ⏳ Reflectieverslag - voorbeelden van proactief handelen
-- ⏳ Weekly progress updates naar stakeholders
+#### Waar toon ik dit aan?
+- Eigen initiatief om stage te vinden bij Babcock
+- Proactief voorgestelde MSG-3 template verbetering (Week 14-15)
+- Zelfstandig opzetten van technische architectuur
+- Reflectieverslag - voorbeelden van proactief handelen
+- Weekly progress updates naar stakeholders
 
 ---
 
@@ -352,11 +352,11 @@
 - Reflecteert diepgaand op eigen handelen, denken en resultaten
 - Benoemt de effecten daarvan en stelt handelen en denken bij
 
-#### 🎯 Waar toon ik dit aan?
-- ⏳ `docs/reflectie/reflectieverslag.md` - Persoonlijke reflectie op groei
-- ✅ `docs/MIJN-BIJDRAGE-VS-AI.md` - Reflectie op AI-gebruik en leerproces
-- 🔄 Sprint retrospectives - continue verbetering
-- ⏳ Zelfevaluatieformulier - zelfassessment van competenties
+#### Waar toon ik dit aan?
+- `docs/reflectie/reflectieverslag.md` - Persoonlijke reflectie op groei
+- `docs/MIJN-BIJDRAGE-VS-AI.md` - Reflectie op AI-gebruik en leerproces
+- Sprint retrospectives - continue verbetering
+- Zelfevaluatieformulier - zelfassessment van competenties
 
 ---
 
@@ -385,12 +385,12 @@
 - Bewust van beroepsmatige en ethische dilemma's
 - Bewust van en/of toont geen respect met cultuurverschillen
 
-#### 🎯 Waar toon ik dit aan?
-- ✅ `docs/AI-GEBRUIK.md` - Ethisch verantwoord AI-gebruik, transparantie
-- ✅ `docs/AI-AUTHENTICITEITSVERKLARINGEN.md` - Eerlijkheid over AI-rol
-- ✅ Data privacy overwegingen (geen echte credentials in code)
-- ✅ Open source approach (geen vendor lock-in)
-- ⏳ Reflectie op professionele werkhouding bij Babcock
+#### Waar toon ik dit aan?
+- `docs/ai/AI-GEBRUIK.md` - Ethisch verantwoord AI-gebruik, transparantie
+- `docs/ai/AI-AUTHENTICITEITSVERKLARINGEN.md` - Eerlijkheid over AI-rol
+- Data privacy overwegingen (geen echte credentials in code)
+- Open source approach (geen vendor lock-in)
+- Reflectie op professionele werkhouding bij Babcock
 
 ---
 
@@ -409,12 +409,12 @@
 - Benoemt de zakelijke legitimering en beheert het onderhanden project
 - Stemt af met stakeholders en houdt rekening met overdracht van het project aan de organisatie
 
-#### 🎯 Waar toon ik dit aan?
-- ✅ `docs/projectdefinitie/01-context-analyse.md` - Business case Babcock
-- ✅ `docs/projectdefinitie/05-stakeholders.md` - Stakeholder management
-- ✅ `docs/plan-van-aanpak/02-planning.md` - Project planning
-- ⏳ `docs/overdracht/` - Overdrachtsplan voor Babcock
-- 🔄 Regular meetings met Matthijs en Rick (bedrijfsbegeleiders)
+#### Waar toon ik dit aan?
+- `docs/projectdefinitie/01-context-analyse.md` - Business case Babcock
+- `docs/projectdefinitie/05-stakeholders.md` - Stakeholder management
+- `docs/plan-van-aanpak/02-planning.md` - Project planning
+- `docs/overdracht/` - Overdrachtsplan voor Babcock
+- Regular meetings met Matthijs en Rick (bedrijfsbegeleiders)
 
 ---
 
@@ -437,13 +437,13 @@
 - Ontvangt feedback en doet dit op constructieve wijze
 - Creëert win-win situaties en toont leiderschap
 
-#### 🎯 Waar toon ik dit aan?
-- 🔄 `docs/onderzoek/00-onderzoeksrapport.md` - Onderzoeksproces en bevindingen
-- 🔄 `docs/onderzoek/01-msg3-analyse.md` - Nieuwe kennis over MSG-3
-- 🔄 `docs/onderzoek/02-maximo-api.md` - Nieuwe kennis over Maximo
-- 🔄 `docs/onderzoek/04-alternatieven-evaluatie.md` - Probleem oplossingsrichtingen
-- ⏳ POC resultaten - experimenteel onderzoek
-- ✅ Creatieve oplossing voor MSG-3 complexiteit
+#### Waar toon ik dit aan?
+- `docs/onderzoek/00-onderzoeksrapport.md` - Onderzoeksproces en bevindingen
+- `docs/onderzoek/01-msg3-analyse.md` - Nieuwe kennis over MSG-3
+- `docs/onderzoek/02-maximo-api.md` - Nieuwe kennis over Maximo
+- `docs/onderzoek/04-alternatieven-evaluatie.md` - Probleem oplossingsrichtingen
+- POC resultaten - experimenteel onderzoek
+- Creatieve oplossing voor MSG-3 complexiteit
 
 ---
 
@@ -466,12 +466,12 @@
 - Ontvangt feedback en doet dit op constructieve wijze
 - Creëert win-win situaties en toont leiderschap
 
-#### 🎯 Waar toon ik dit aan?
-- 🔄 Samenwerking met Jasper & Fajjaaz (code support team)
-- 🔄 Weekly meetings met Matthijs & Rick
-- 🔄 Feedback verwerken in iteraties
-- ⏳ Sprint retrospectives - feedback loops
-- ⏳ Reflectie op samenwerking
+#### Waar toon ik dit aan?
+- Samenwerking met Jasper & Fajjaaz (code support team)
+- Weekly meetings met Matthijs & Rick
+- Feedback verwerken in iteraties
+- Sprint retrospectives - feedback loops
+- Reflectie op samenwerking
 
 ---
 
@@ -490,88 +490,88 @@
 - Communiceert zeer effectief in het Nederlands (en Engels)
 - Gebruikt passende communicatievormen en -middelen
 
-#### 🎯 Waar toon ik dit aan?
-- ✅ Professionele documentatie (Nederlands)
-- ✅ Code comments en docstrings (Engels)
-- ✅ README en technische docs (Engels)
-- ⏳ Presentatie tijdens assessment (Nederlands)
-- 🔄 E-mail communicatie met stakeholders
-- 🔄 Sprint meetings en demos
-- ✅ Gebruik van markdown, Git, documentatie tools
+#### Waar toon ik dit aan?
+- Professionele documentatie (Nederlands)
+- Code comments en docstrings (Engels)
+- README en technische docs (Engels)
+- Presentatie tijdens assessment (Nederlands)
+- E-mail communicatie met stakeholders
+- Sprint meetings en demos
+- Gebruik van markdown, Git, documentatie tools
 
 ---
 
-## 🔗 Bewijs Mapping
+## Bewijs Mapping
 
 ### Overzicht: Welke Deliverables bewijzen welke Competenties?
 
 | Deliverable | Analyseren | Adviseren | Ontwerpen | Realiseren | Manage & Control | Prof. Skills |
 |-------------|------------|-----------|-----------|------------|------------------|--------------|
-| **Projectdefinitie** | ✅ | ✅ | - | - | - | ✅ |
-| **Plan van Aanpak** | ✅ | ✅ | - | - | ✅ | ✅ |
-| **Onderzoeksrapport** | ✅ | ✅ | - | - | - | ✅ |
-| **Scrum Docs** | - | - | - | - | ✅ | ✅ |
-| **AIAS (AI Docs)** | - | - | - | - | - | ✅ |
-| **Applicatie Code** | - | - | ✅ | ✅ | - | ✅ |
-| **Technisch Ontwerp** | ✅ | - | ✅ | - | - | - |
-| **Testcases** | - | - | - | ✅ | ✅ | - |
-| **Overdracht Docs** | - | ✅ | - | - | ✅ | ✅ |
-| **Demo** | - | - | - | ✅ | - | ✅ |
-| **Reflectieverslag** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Presentatie** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Projectdefinitie** | | | - | - | - | |
+| **Plan van Aanpak** | | | - | - | | |
+| **Onderzoeksrapport** | | | - | - | - | |
+| **Scrum Docs** | - | - | - | - | | |
+| **AIAS (AI Docs)** | - | - | - | - | - | |
+| **Applicatie Code** | - | - | | | - | |
+| **Technisch Ontwerp** | | - | | - | - | - |
+| **Testcases** | - | - | - | | | - |
+| **Overdracht Docs** | - | | - | - | | |
+| **Demo** | - | - | - | | - | |
+| **Reflectieverslag** | | | | | | |
+| **Presentatie** | | | | | | |
 
 ---
 
-## ✅ Checklist: Ben ik klaar voor beoordeling?
+## Checklist: Ben ik klaar voor beoordeling?
 
 ### HBO-I Competenties
 - [ ] **Analyseren (Niveau 1):** Kan ik aantonen dat ik systematisch geanalyseerd heb?
-  - [ ] Meerdere documenten tonen analyseproces
-  - [ ] Onderbouwde conclusies zichtbaar
-  - [ ] Stakeholder perspectief meegenomen
-  
+ - [ ] Meerdere documenten tonen analyseproces
+ - [ ] Onderbouwde conclusies zichtbaar
+ - [ ] Stakeholder perspectief meegenomen
+
 - [ ] **Adviseren (Niveau 1):** Heb ik onderbouwde adviezen gegeven?
-  - [ ] Aanbevelingen in onderzoeksrapport
-  - [ ] Technologie keuzes onderbouwd
-  - [ ] Alternatieven afgewogen
-  
+ - [ ] Aanbevelingen in onderzoeksrapport
+ - [ ] Technologie keuzes onderbouwd
+ - [ ] Alternatieven afgewogen
+
 - [ ] **Ontwerpen (Niveau 1):** Zijn mijn ontwerpen compleet en bruikbaar?
-  - [ ] Architectuur gedocumenteerd
-  - [ ] UML diagrammen aanwezig
-  - [ ] Design keuzes onderbouwd
-  
+ - [ ] Architectuur gedocumenteerd
+ - [ ] UML diagrammen aanwezig
+ - [ ] Design keuzes onderbouwd
+
 - [ ] **Realiseren (Niveau 2):** Heb ik >250 regels code + werkend product?
-  - [ ] Minimaal 250 regels eigen code (target: 2000+)
-  - [ ] Code werkt en is getest
-  - [ ] Demo kan worden gegeven
-  
+ - [ ] Minimaal 250 regels eigen code (target: 2000+)
+ - [ ] Code werkt en is getest
+ - [ ] Demo kan worden gegeven
+
 - [ ] **Manage & Control (Niveau 1):** Heb ik het project goed gemanaged?
-  - [ ] Planning gemaakt en bijgehouden
-  - [ ] Risico's gemanaged
-  - [ ] Overdracht geregeld
+ - [ ] Planning gemaakt en bijgehouden
+ - [ ] Risico's gemanaged
+ - [ ] Overdracht geregeld
 
 ### Professional Skills
 - [ ] **Persoonlijk Leiderschap:** Toon ik proactiviteit en reflectie?
-  - [ ] Voorbeelden van initiatief
-  - [ ] Reflectie op ontwikkeling
-  
+ - [ ] Voorbeelden van initiatief
+ - [ ] Reflectie op ontwikkeling
+
 - [ ] **Toekomstgericht Organiseren:** Heb ik rekening gehouden met organisatie en ethiek?
-  - [ ] Business case helder
-  - [ ] Ethische overwegingen (AI)
-  - [ ] Overdracht geregeld
-  
+ - [ ] Business case helder
+ - [ ] Ethische overwegingen (AI)
+ - [ ] Overdracht geregeld
+
 - [ ] **Onderzoekend Probleemoplossend:** Heb ik onderzocht en problemen opgelost?
-  - [ ] Onderzoeksrapport compleet
-  - [ ] Creatieve oplossingen
-  
+ - [ ] Onderzoeksrapport compleet
+ - [ ] Creatieve oplossingen
+
 - [ ] **Doelgericht Interacteren:** Communiceer ik professioneel?
-  - [ ] Samenwerking met stakeholders
-  - [ ] Professionele documentatie
-  - [ ] Feedback verwerkt
+ - [ ] Samenwerking met stakeholders
+ - [ ] Professionele documentatie
+ - [ ] Feedback verwerkt
 
 ---
 
-## 💡 Tips voor Beoordeling
+## Tips voor Beoordeling
 
 ### 1. Cross-referencing
 Verwijs in je documenten naar andere documenten die competenties bewijzen:
@@ -582,8 +582,8 @@ Verwijs in je documenten naar andere documenten die competenties bewijzen:
 ### 2. Concrete voorbeelden
 Gebruik specifieke voorbeelden uit je project, geen generieke teksten:
 
-❌ **Slecht:** "Ik heb geanalyseerd"
-✅ **Goed:** "Ik heb de MSG-3 Excel structuur geanalyseerd en 80 business rules gedocumenteerd in business-rules.md, zie regel 34-156"
+ **Slecht:** "Ik heb geanalyseerd"
+ **Goed:** "Ik heb de MSG-3 Excel structuur geanalyseerd en 80 business rules gedocumenteerd in business-rules.md, zie regel 34-156"
 
 ### 3. Reflecteer op niveau
 Voor niveau 1: toon dat je systematisch werkt
@@ -605,29 +605,29 @@ Let op "gedrag" voorbeelden:
 
 ---
 
-## 📊 Status Overzicht
+## Status Overzicht
 
-### Competenties met voldoende bewijs ✅
-- Analyseren: ✅ (Projectdefinitie, onderzoek, business rules)
-- Ontwerpen: ✅ (Technisch ontwerp, UML, architectuur)
+### Competenties met voldoende bewijs
+- Analyseren: (Projectdefinitie, onderzoek, business rules)
+- Ontwerpen: (Technisch ontwerp, UML, architectuur)
 
-### Competenties die nog aandacht nodig hebben 🔄
-- Adviseren: 🔄 (Onderzoeksrapport moet af)
-- Realiseren: 🔄 (Code moet geschreven worden - grootste prioriteit!)
-- Manage & Control: 🔄 (Sprint docs moeten bijgehouden worden)
+### Competenties die nog aandacht nodig hebben
+- Adviseren: (Onderzoeksrapport moet af)
+- Realiseren: (Code moet geschreven worden - grootste prioriteit!)
+- Manage & Control: (Sprint docs moeten bijgehouden worden)
 
-### Professional Skills status 🔄
-- Persoonlijk Leiderschap: 🔄 (Reflectie moet nog)
-- Toekomstgericht Organiseren: ✅ (AI docs zijn goed, overdracht moet nog)
-- Onderzoekend Probleemoplossend: 🔄 (Onderzoeksrapport moet af)
-- Doelgericht Interacteren: 🔄 (Bewijs in sprint docs en reflectie)
+### Professional Skills status
+- Persoonlijk Leiderschap: (Reflectie moet nog)
+- Toekomstgericht Organiseren: (AI docs zijn goed, overdracht moet nog)
+- Onderzoekend Probleemoplossend: (Onderzoeksrapport moet af)
+- Doelgericht Interacteren: (Bewijs in sprint docs en reflectie)
 
 ---
 
-**Laatste update:** 11 februari 2026  
-**Volgende review:** Wekelijks tijdens Friday review  
+**Laatste update:** 11 februari 2026
+**Volgende review:** Wekelijks tijdens Friday review
 **Gebruik dit document:** Bij het schrijven van ELKE deliverable
 
 ---
 
-*💡 **Gouden regel:** Als je een document schrijft, open dit beoordelingsdocument en vraag jezelf af: "Welke beoordelingscriteria dek ik hiermee af?"*
+* **Gouden regel:** Als je een document schrijft, open dit beoordelingsdocument en vraag jezelf af: "Welke beoordelingscriteria dek ik hiermee af?"*

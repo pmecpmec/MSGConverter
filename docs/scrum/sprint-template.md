@@ -1,14 +1,14 @@
 # Sprint [Nummer] - [Naam]
 
-**Periode:** [Start datum] - [Eind datum]  
-**Duur:** 2 weken  
-**Project:** MSG-3 to Maximo Converter  
-**Student:** Pedro Eduardo Cardoso  
+**Periode:** [Start datum] - [Eind datum]
+**Duur:** 2 weken
+**Project:** MSG-3 to Maximo Converter
+**Student:** Pedro Eduardo Cardoso
 **Opleiding:** Associate Degree Software Developer (ADSD)
 
 ---
 
-## 🎯 Sprint Goal
+## Sprint Goal
 
 [Wat is het hoofddoel van deze sprint? Wat willen we bereiken?]
 
@@ -16,32 +16,32 @@
 
 ---
 
-## 📋 Backlog Items Selected
+## Backlog Items Selected
 
 ### Must Have (Prioriteit 1)
 1. [ ] [User story / Taak 1]
-   - Geschatte tijd: X uur
-   - Acceptatiecriteria: [Wanneer is het klaar?]
+ - Geschatte tijd: X uur
+ - Acceptatiecriteria: [Wanneer is het klaar?]
 
 2. [ ] [User story / Taak 2]
-   - Geschatte tijd: X uur
-   - Acceptatiecriteria: [Wanneer is het klaar?]
+ - Geschatte tijd: X uur
+ - Acceptatiecriteria: [Wanneer is het klaar?]
 
 ### Should Have (Prioriteit 2)
 3. [ ] [User story / Taak 3]
-   - Geschatte tijd: X uur
-   - Acceptatiecriteria: [Wanneer is het klaar?]
+ - Geschatte tijd: X uur
+ - Acceptatiecriteria: [Wanneer is het klaar?]
 
 ### Could Have (Prioriteit 3)
 4. [ ] [User story / Taak 4]
-   - Geschatte tijd: X uur
-   - Acceptatiecriteria: [Wanneer is het klaar?]
+ - Geschatte tijd: X uur
+ - Acceptatiecriteria: [Wanneer is het klaar?]
 
 **Totaal geschat:** [X] uur
 
 ---
 
-## 📊 Daily Progress Tracking
+## Daily Progress Tracking
 
 ### Week 1
 
@@ -114,9 +114,9 @@
 
 ---
 
-## 🎬 Sprint Review (Dag 10 - Vrijdag)
+## Sprint Review (Dag 10 - Vrijdag)
 
-**Datum:** [Eind datum sprint]  
+**Datum:** [Eind datum sprint]
 **Aanwezig:** Pedro Eduardo Cardoso, [Matthijs Meijer indien aanwezig]
 
 ### Demo
@@ -141,8 +141,8 @@
 ### Definition of Done Check
 
 **Backlog items af:**
-- [✅/❌] [Item 1] - [Reden indien niet af]
-- [✅/❌] [Item 2] - [Reden indien niet af]
+- [/] [Item 1] - [Reden indien niet af]
+- [/] [Item 2] - [Reden indien niet af]
 
 **Kwaliteit check:**
 - [ ] Code getest (>80% coverage)
@@ -152,29 +152,29 @@
 
 ---
 
-## 🔄 Sprint Retrospective (Dag 10 - Vrijdag)
+## Sprint Retrospective (Dag 10 - Vrijdag)
 
-### What Went Well ✅
+### What Went Well
 
 1. [Positief punt 1]
-   - Waarom ging dit goed?
-   - Hoe houden we dit vol?
+ - Waarom ging dit goed?
+ - Hoe houden we dit vol?
 
 2. [Positief punt 2]
 
 3. [Positief punt 3]
 
-### What Could Be Better ⚠️
+### What Could Be Better
 
 1. [Verbeterpunt 1]
-   - Waarom was dit een probleem?
-   - Hoe kunnen we dit verbeteren?
+ - Waarom was dit een probleem?
+ - Hoe kunnen we dit verbeteren?
 
 2. [Verbeterpunt 2]
 
 3. [Verbeterpunt 3]
 
-### Action Items voor Volgende Sprint 🎯
+### Action Items voor Volgende Sprint
 
 1. [ ] [Actie 1] - [Verantwoordelijke: Pedro]
 2. [ ] [Actie 2] - [Verantwoordelijke: Pedro]
@@ -198,14 +198,14 @@
 
 ---
 
-## 📈 Sprint Metrics
+## Sprint Metrics
 
-**Geplande uren:** [X] uur  
-**Werkelijke uren:** [Y] uur  
+**Geplande uren:** [X] uur
+**Werkelijke uren:** [Y] uur
 **Variance:** [Y-X] uur ([+/-]%)
 
-**Geplande backlog items:** [X]  
-**Afgeronde backlog items:** [Y]  
+**Geplande backlog items:** [X]
+**Afgeronde backlog items:** [Y]
 **Completion rate:** [Y/X * 100]%
 
 **Velocity:** [Story points / uren afgerond]
@@ -214,7 +214,7 @@
 
 ---
 
-## 📝 Notes & Learnings
+## Notes & Learnings
 
 **Technische learnings:**
 - [Technisch inzicht]
@@ -231,6 +231,6 @@
 
 ---
 
-**Datum aangemaakt:** [Datum]  
-**Laatste update:** [Datum]  
+**Datum aangemaakt:** [Datum]
+**Laatste update:** [Datum]
 **Status:** [Planning / In Progress / Completed]

@@ -3,7 +3,7 @@
 
 ---
 
-## 🎯 Voor Pedro (Projecteigenaar)
+## Voor Pedro (Projecteigenaar)
 
 Dit project is jouw Comakership project. Deze guide helpt je om:
 - Gestructureerd te werken
@@ -13,7 +13,7 @@ Dit project is jouw Comakership project. Deze guide helpt je om:
 
 ---
 
-## 📋 Workflow
+## Workflow
 
 ### 1. Nieuwe Feature Implementeren
 
@@ -30,9 +30,9 @@ git checkout -b feature/excel-parser
 pytest tests/unit/test_parser.py -v
 
 # 4. Check code kwaliteit
-black src/parser/  # Format code
-flake8 src/parser/  # Lint code
-mypy src/parser/   # Type checking
+black src/parser/ # Format code
+flake8 src/parser/ # Lint code
+mypy src/parser/ # Type checking
 
 # 5. Update documentatie
 # - Update relevante docs in /docs
@@ -67,7 +67,7 @@ git commit -m "docs(mapping): Add PM field mapping table"
 
 ---
 
-## ✅ Code Kwaliteit Checklist
+## Code Kwaliteit Checklist
 
 ### Voor elke commit
 - [ ] Code is geformatteerd met `black`
@@ -93,7 +93,7 @@ git commit -m "docs(mapping): Add PM field mapping table"
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Unit Tests Runnen
 
@@ -108,8 +108,8 @@ pytest tests/unit/test_parser.py -v
 pytest tests/unit/ --cov=src --cov-report=html
 
 # Open coverage report
-open htmlcov/index.html  # macOS
-start htmlcov/index.html  # Windows
+open htmlcov/index.html # macOS
+start htmlcov/index.html # Windows
 ```
 
 ### Integration Tests Runnen
@@ -127,21 +127,21 @@ pytest tests/integration/ -v -m maximo
 ```python
 @pytest.mark.unit
 def test_parser():
-    pass
+ pass
 
 @pytest.mark.integration
 def test_full_pipeline():
-    pass
+ pass
 
 @pytest.mark.slow
 @pytest.mark.maximo
 def test_maximo_upload():
-    pass
+ pass
 ```
 
 ---
 
-## 📝 Commit Message Conventies
+## Commit Message Conventies
 
 Gebruik [Conventional Commits](https://www.conventionalcommits.org/):
 
@@ -192,13 +192,13 @@ test(change-detection): Add tests for field-level changes
 
 Added unit tests covering:
 - Added tasks
-- Deleted tasks  
+- Deleted tasks
 - Modified fields
 ```
 
 ---
 
-## 🏗️ Architectuur Principes
+## Architectuur Principes
 
 ### SOLID Principes
 - **S**ingle Responsibility: Elke class heeft één verantwoordelijkheid
@@ -210,16 +210,16 @@ Added unit tests covering:
 ### Code Organizatie
 ```
 src/
-├── parser/           # Excel → JSON conversie
-│   ├── __init__.py
-│   ├── msg3_parser.py      # High-level parser
-│   └── excel_reader.py     # Low-level Excel utilities
+├── parser/ # Excel → JSON conversie
+│ ├── __init__.py
+│ ├── msg3_parser.py # High-level parser
+│ └── excel_reader.py # Low-level Excel utilities
 │
-├── validator/        # Data validatie
-│   ├── __init__.py
-│   ├── msg3_validator.py   # Main validator
-│   ├── schema_validator.py # Schema checks
-│   └── business_rules.py   # Business logic checks
+├── validator/ # Data validatie
+│ ├── __init__.py
+│ ├── msg3_validator.py # Main validator
+│ ├── schema_validator.py # Schema checks
+│ └── business_rules.py # Business logic checks
 │
 └── ... (andere modules)
 ```
@@ -232,42 +232,42 @@ src/
 
 ---
 
-## 📚 Documentatie Schrijven
+## Documentatie Schrijven
 
 ### Docstring Format (Google Style)
 
 ```python
 def map_task(self, msg3_task: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Map een MSG-3 taak naar een Maximo PM object.
-    
-    Deze functie converteert alle MSG-3 velden naar de corresponderende
-    Maximo PM velden volgens de mapping specificatie in /docs/mapping/.
-    
-    Args:
-        msg3_task: Dictionary met MSG-3 taak data. Moet minimaal
-            de velden 'task_code' en 'description' bevatten.
-            
-    Returns:
-        Dictionary met Maximo PM object. Bevat alle verplichte
-        Maximo velden (PMNUM, DESCRIPTION, etc.)
-        
-    Raises:
-        ValueError: Als verplichte velden ontbreken
-        MappingError: Als mapping faalt
-        
-    Example:
-        >>> mapper = PMMapper()
-        >>> msg3_task = {"task_code": "32-11-01-001", "description": "Check"}
-        >>> pm_record = mapper.map_task(msg3_task)
-        >>> print(pm_record['PMNUM'])
-        32-11-01-001
-        
-    Note:
-        Interval units worden automatisch geconverteerd (FH → HOURS).
-        Zie _map_interval_unit() voor details.
-    """
-    pass
+ """
+ Map een MSG-3 taak naar een Maximo PM object.
+
+ Deze functie converteert alle MSG-3 velden naar de corresponderende
+ Maximo PM velden volgens de mapping specificatie in /docs/mapping/.
+
+ Args:
+ msg3_task: Dictionary met MSG-3 taak data. Moet minimaal
+ de velden 'task_code' en 'description' bevatten.
+
+ Returns:
+ Dictionary met Maximo PM object. Bevat alle verplichte
+ Maximo velden (PMNUM, DESCRIPTION, etc.)
+
+ Raises:
+ ValueError: Als verplichte velden ontbreken
+ MappingError: Als mapping faalt
+
+ Example:
+ >>> mapper = PMMapper()
+ >>> msg3_task = {"task_code": "32-11-01-001", "description": "Check"}
+ >>> pm_record = mapper.map_task(msg3_task)
+ >>> print(pm_record['PMNUM'])
+ 32-11-01-001
+
+ Note:
+ Interval units worden automatisch geconverteerd (FH → HOURS).
+ Zie _map_interval_unit() voor details.
+ """
+ pass
 ```
 
 ### Markdown Documentatie
@@ -292,26 +292,26 @@ Code voorbeelden:
 \`\`\`python
 # Code met syntax highlighting
 def example():
-    return "Hello"
+ return "Hello"
 \`\`\`
 
 Diagrammen:
 
 \`\`\`mermaid
 graph LR
-    A --> B
+ A --> B
 \`\`\`
 
 Tabellen:
 
 | Kolom 1 | Kolom 2 |
 |---------|---------|
-| Data 1  | Data 2  |
+| Data 1 | Data 2 |
 ```
 
 ---
 
-## 🎓 Assessment Voorbereiding
+## Assessment Voorbereiding
 
 ### Competentie: Analyseren
 **Wat laat je zien:**
@@ -365,7 +365,7 @@ Tabellen:
 
 ---
 
-## 🤝 Hulp Vragen
+## Hulp Vragen
 
 ### Aan Cursor AI
 Cursor is jouw technische assistent. Gebruik hem voor:
@@ -391,7 +391,7 @@ Voor strategische vragen en feedback:
 
 ---
 
-## 📦 Release Checklist
+## Release Checklist
 
 ### Voor oplevering
 - [ ] Alle modules geïmplementeerd
@@ -406,6 +406,6 @@ Voor strategische vragen en feedback:
 
 ---
 
-**Succes met je Comakership, Pedro! 🚀**
+**Succes met je Comakership, Pedro! **
 
 *Voor vragen: gebruik Cursor AI of neem contact op met je begeleiders.*

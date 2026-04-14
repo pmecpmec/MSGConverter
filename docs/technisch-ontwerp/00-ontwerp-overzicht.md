@@ -4,15 +4,19 @@
 **Organisatie:** Babcock Schiphol  
 **Auteur:** Pedro Eduardo Cardoso  
 **Opleiding:** Associate Degree Software Developer (ADSD), Windesheim  
-**Datum:** 18 februari 2026
+**Datum:** 18 februari 2026  
 
----
+## Hoofddocument SDD
+
+Het **Software Design Document** in één document: [SDD-MSG3-Maximo-Converter.md](SDD-MSG3-Maximo-Converter.md). Daarin staan alle secties volgens het Windesheim SDD-template (Inleiding, Gebruikerseisen, Architectuuroverzicht, Gedetailleerd Ontwerp, Implementatie, Testing, Planning, Bronnen, Bijlagen) met verwijzingen naar de onderstaande detaildocumenten.
+
+## SDD-template
+
+De structuur volgt [SDD-TEMPLATE.md](SDD-TEMPLATE.md). De secties zijn in SDD-MSG3-Maximo-Converter.md opgenomen; gedetailleerde specificaties staan in de bijlagen.
 
 ## Doel van dit document
 
 Dit document is het **hoofddocument** voor de OnStage-inlevertaak "FO/design document". Het geeft een overzicht van alle functioneel en technisch ontwerpdocumenten in deze map en hun onderlinge relatie. De gedetailleerde specificaties, business rules en mapping staan in de hieronder genoemde bestanden.
-
----
 
 ## Inhoudsopgave ontwerpdocumenten
 
@@ -25,23 +29,18 @@ Dit document is het **hoofddocument** voor de OnStage-inlevertaak "FO/design doc
 | [MAPPING-FLOW-VISUAL.md](MAPPING-FLOW-VISUAL.md) | Visueel overzicht van de end-to-end dataflow: MSG-3 Excel → Parse → Validate → Map → Maximo API. |
 | [maximo-specificaties.md](maximo-specificaties.md) | Maximo-specifieke specificaties (Item Master, statuses, commodity groups, verplichte velden, validatieregels) op basis van maximosecrets.com. |
 | [MAXIMO-INTEGRATIE-UPDATE.md](MAXIMO-INTEGRATIE-UPDATE.md) | Statusupdate van de Maximo-integratie: toegepaste specificaties, nieuwe mappers, volgorde Item → PM → JobPlan. |
-
----
+| [SDD-MSG3-Maximo-Converter.md](SDD-MSG3-Maximo-Converter.md) | Het volledige Software Design Document in één bestand (secties 1–10); hoofddocument voor FO/design. |
 
 ## Relatie tussen de documenten
 
 - **Business rules** vormen de kern: zij bepalen wat geldige data is en hoe transformaties plaatsvinden.
 - **Maximo specificaties** bepalen hoe data in Maximo (velden, statuses, relaties) moet worden weergegeven.
 - **Mapping flow** beschrijft de stappen van bron (MSG-3 Excel) tot doel (Maximo API).
-- **FO/design** voor OnStage wordt geleverd als: dit overzicht + de genoemde documenten (bijvoorbeeld als één ZIP van de map `technisch-ontwerp/`).
+- **FO/design** voor OnStage wordt geleverd als: het SDD [SDD-MSG3-Maximo-Converter.md](SDD-MSG3-Maximo-Converter.md) plus dit overzicht en de genoemde documenten (bijvoorbeeld als één ZIP van de map `technisch-ontwerp/`).
 
----
-
-*Datum: 18 februari 2026*  
-*Auteur: Pedro Eduardo Cardoso*  
+*Datum: 18 februari 2026*
+*Auteur: Pedro Eduardo Cardoso*
 *Project: MSG-3 to Maximo Converter*
-
----
 
 ## AI Authenticiteitsverklaring
 

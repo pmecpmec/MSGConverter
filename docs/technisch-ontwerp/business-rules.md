@@ -1,13 +1,13 @@
-# 📘 Business Rules - Babcock @ Schiphol
+# Business Rules - Babcock @ Schiphol
 
-**Versie:** 1.0  
-**Datum:** 5 februari 2026  
-**Status:** Actief  
+**Versie:** 1.0
+**Datum:** 5 februari 2026
+**Status:** Actief
 **Auteur:** Pedro (met Cursor AI assistentie)
 
 ---
 
-## 📋 Inhoudsopgave
+## Inhoudsopgave
 
 1. [Overzicht](#overzicht)
 2. [Rule Structuur](#rule-structuur)
@@ -19,7 +19,7 @@
 
 ---
 
-## 🎯 Overzicht
+## Overzicht
 
 Dit document bevat alle **80 business rules** voor Babcock operaties op Schiphol. Deze regels zijn essentieel voor:
 
@@ -40,18 +40,18 @@ Dit document bevat alle **80 business rules** voor Babcock operaties op Schiphol
 
 ---
 
-## 🏗️ Rule Structuur
+## Rule Structuur
 
 Elke business rule heeft de volgende structuur:
 
 ```python
 BusinessRule(
-    rule_id: str,          # Unieke ID (bijv. "SEC-1.1")
-    category: RuleCategory, # Categorie (bijv. SECURITY)
-    title: str,            # Korte beschrijving
-    description: str,      # Volledige beschrijving
-    severity: RuleSeverity, # Ernst niveau
-    validation_func: Optional[Callable]  # Validatie functie
+ rule_id: str, # Unieke ID (bijv. "SEC-1.1")
+ category: RuleCategory, # Categorie (bijv. SECURITY)
+ title: str, # Korte beschrijving
+ description: str, # Volledige beschrijving
+ severity: RuleSeverity, # Ernst niveau
+ validation_func: Optional[Callable] # Validatie functie
 )
 ```
 
@@ -60,14 +60,14 @@ BusinessRule(
 Format: `XXX-N.M`
 
 - **XXX**: Categorie prefix (3 letters)
-  - `SEC`: Security
-  - `OPS`: Operations
-  - `QUA`: Quality
-  - `LOG`: Logistics
-  - `PLN`: Planning
-  - `IT`: IT Systems
-  - `HR`: Human Resources
-  - `COM`: Communication
+ - `SEC`: Security
+ - `OPS`: Operations
+ - `QUA`: Quality
+ - `LOG`: Logistics
+ - `PLN`: Planning
+ - `IT`: IT Systems
+ - `HR`: Human Resources
+ - `COM`: Communication
 
 - **N**: Categorie nummer (1-8)
 - **M**: Rule nummer binnen categorie (1-10)
@@ -79,27 +79,27 @@ Format: `XXX-N.M`
 
 ---
 
-## 🚨 Severity Levels
+## Severity Levels
 
-### CRITICAL 🔴
+### CRITICAL
 - **Blokkeert verder processing**
 - Moet onmiddellijk worden opgelost
 - Kan leiden tot gevaarlijke situaties
 - Voorbeelden: Geen VGB-screening, geen PBM, alcohol/drugs gebruik
 
-### ERROR 🟠
+### ERROR
 - **Must be fixed**
 - Werk mag niet worden voortgezet
 - Non-compliance met regelgeving
 - Voorbeelden: Geen certificering, geen werkvergunning, gemiste SLA
 
-### WARNING 🟡
+### WARNING
 - **Should be reviewed**
 - Werk kan voortgaan maar review vereist
 - Best practice violations
 - Voorbeelden: Late registratie, incomplete rapportage
 
-### INFO 🔵
+### INFO
 - **Informational**
 - Geen directe actie vereist
 - Aanbevelingen voor verbetering
@@ -107,7 +107,7 @@ Format: `XXX-N.M`
 
 ---
 
-## 📂 Rule Categorieën
+## Rule Categorieën
 
 ### 1. Security & Access Control (SEC)
 **Focus:** Veiligheid en toegangsbeveiliging
@@ -212,15 +212,15 @@ Format: `XXX-N.M`
 
 ---
 
-## 💻 Implementatie
+## Implementatie
 
 ### Gebruik in Code
 
 ```python
 from src.validator.business_rules import (
-    BusinessRulesValidator,
-    RuleCategory,
-    RuleSeverity
+ BusinessRulesValidator,
+ RuleCategory,
+ RuleSeverity
 )
 
 # Initialiseer validator
@@ -232,8 +232,8 @@ violations = validator.validate(data)
 
 # Valideer specifieke categorie
 security_violations = validator.validate_by_category(
-    data, 
-    RuleCategory.SECURITY
+ data,
+ RuleCategory.SECURITY
 )
 
 # Haal specifieke rule op
@@ -252,55 +252,55 @@ Regels kunnen custom validatie functies hebben:
 
 ```python
 def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]:
-    """Valideer of medewerker geldige Schiphol-pas heeft."""
-    employee = data.get("employee")
-    
-    if not employee or not employee.get("schiphol_pass_valid"):
-        rule = validator.get_rule("SEC-1.1")
-        return RuleViolation(
-            rule=rule,
-            field="employee.schiphol_pass",
-            message="Medewerker heeft geen geldige Schiphol-pas",
-            value=employee.get("schiphol_pass_id") if employee else None
-        )
-    
-    return None
+ """Valideer of medewerker geldige Schiphol-pas heeft."""
+ employee = data.get("employee")
+
+ if not employee or not employee.get("schiphol_pass_valid"):
+ rule = validator.get_rule("SEC-1.1")
+ return RuleViolation(
+ rule=rule,
+ field="employee.schiphol_pass",
+ message="Medewerker heeft geen geldige Schiphol-pas",
+ value=employee.get("schiphol_pass_id") if employee else None
+ )
+
+ return None
 ```
 
 ---
 
-## 🔄 Validatie Process
+## Validatie Process
 
 ### Flow Diagram
 
 ```
 ┌─────────────────┐
-│  Input Data     │
+│ Input Data │
 └────────┬────────┘
-         │
-         ▼
+ │
+ ▼
 ┌─────────────────┐
-│ Load All Rules  │
-│    (80 rules)   │
+│ Load All Rules │
+│ (80 rules) │
 └────────┬────────┘
-         │
-         ▼
+ │
+ ▼
 ┌─────────────────┐
-│  For Each Rule  │
-│  with func      │
+│ For Each Rule │
+│ with func │
 └────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     Yes    ┌──────────────┐
-│  Execute        │────────────>│ Add to       │
-│  validation_    │             │ Violations   │
-│  func()         │             │ List         │
-└────────┬────────┘             └──────────────┘
-         │ No
-         ▼
+ │
+ ▼
+┌─────────────────┐ Yes ┌──────────────┐
+│ Execute │────────────>│ Add to │
+│ validation_ │ │ Violations │
+│ func() │ │ List │
+└────────┬────────┘ └──────────────┘
+ │ No
+ ▼
 ┌─────────────────┐
-│ Return All      │
-│ Violations      │
+│ Return All │
+│ Violations │
 └─────────────────┘
 ```
 
@@ -308,24 +308,24 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ```python
 [
-    RuleViolation(
-        rule=BusinessRule(...),
-        field="employee.vgb_screening",
-        message="VGB-screening is verlopen",
-        value="2025-12-01",
-        context={"expires": "2025-12-01", "today": "2026-02-05"}
-    ),
-    # ... meer violations
+ RuleViolation(
+ rule=BusinessRule(...),
+ field="employee.vgb_screening",
+ message="VGB-screening is verlopen",
+ value="2025-12-01",
+ context={"expires": "2025-12-01", "today": "2026-02-05"}
+ ),
+ # ... meer violations
 ]
 ```
 
 ---
 
-## 📚 Alle Business Rules
+## Alle Business Rules
 
 ### 1. Security & Access Control
 
-#### SEC-1.1: Geldige Schiphol-pas vereist 🔴 CRITICAL
+#### SEC-1.1: Geldige Schiphol-pas vereist CRITICAL
 **Beschrijving:** Alleen medewerkers met een geldige Schiphol-pas mogen beveiligde zones betreden.
 
 **Validatie:**
@@ -335,7 +335,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.2: VGB-screening voor airside toegang 🔴 CRITICAL
+#### SEC-1.2: VGB-screening voor airside toegang CRITICAL
 **Beschrijving:** Airside toegang vereist een geldige VGB‑screening.
 
 **Validatie:**
@@ -345,7 +345,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.3: Jaarlijkse herkeuring toegangspassen 🟠 ERROR
+#### SEC-1.3: Jaarlijkse herkeuring toegangspassen ERROR
 **Beschrijving:** Alle toegangspassen moeten jaarlijks worden herkeurd.
 
 **Validatie:**
@@ -355,7 +355,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.4: Beperkte toegang technische ruimtes 🟠 ERROR
+#### SEC-1.4: Beperkte toegang technische ruimtes ERROR
 **Beschrijving:** Toegang tot technische ruimtes is beperkt tot geautoriseerd personeel.
 
 **Validatie:**
@@ -365,7 +365,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.5: Gereedschap registratie 🟠 ERROR
+#### SEC-1.5: Gereedschap registratie ERROR
 **Beschrijving:** Gereedschap moet worden geregistreerd bij in- en uitchecken.
 
 **Validatie:**
@@ -375,7 +375,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.6: Airside materialen vooraf aanmelden 🟠 ERROR
+#### SEC-1.6: Airside materialen vooraf aanmelden ERROR
 **Beschrijving:** Materialen die airside worden gebracht moeten vooraf worden aangemeld.
 
 **Validatie:**
@@ -385,7 +385,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.7: Bezoekers begeleiden 🟠 ERROR
+#### SEC-1.7: Bezoekers begeleiden ERROR
 **Beschrijving:** Bezoekers moeten altijd worden begeleid door een gecertificeerde medewerker.
 
 **Validatie:**
@@ -395,7 +395,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.8: PBM verplicht 🔴 CRITICAL
+#### SEC-1.8: PBM verplicht CRITICAL
 **Beschrijving:** Persoonlijke beschermingsmiddelen (PBM) zijn verplicht in alle operationele zones.
 
 **Validatie:**
@@ -405,7 +405,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.9: Snelle incident melding 🟠 ERROR
+#### SEC-1.9: Snelle incident melding ERROR
 **Beschrijving:** Incidenten moeten binnen 15 minuten worden gemeld aan de duty manager.
 
 **Validatie:**
@@ -415,7 +415,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### SEC-1.10: Foto's en video's verboden 🟡 WARNING
+#### SEC-1.10: Foto's en video's verboden WARNING
 **Beschrijving:** Foto's en video's zijn verboden zonder expliciete toestemming.
 
 **Validatie:**
@@ -427,7 +427,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### 2. Operations & Maintenance
 
-#### OPS-2.1: Preventief onderhoud binnen SLA 🟠 ERROR
+#### OPS-2.1: Preventief onderhoud binnen SLA ERROR
 **Beschrijving:** Preventief onderhoud moet worden uitgevoerd binnen de SLA-deadlines.
 
 **Validatie:**
@@ -437,7 +437,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.2: Correctief onderhoud responstijd 🟠 ERROR
+#### OPS-2.2: Correctief onderhoud responstijd ERROR
 **Beschrijving:** Correctief onderhoud moet worden opgepakt binnen de afgesproken responstijd.
 
 **Validatie:**
@@ -447,7 +447,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.3: Kwaliteitscontrole voor afsluiten 🟠 ERROR
+#### OPS-2.3: Kwaliteitscontrole voor afsluiten ERROR
 **Beschrijving:** Werkorders mogen alleen worden afgesloten na kwaliteitscontrole.
 
 **Validatie:**
@@ -457,7 +457,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.4: Gecertificeerde elektriciens 🔴 CRITICAL
+#### OPS-2.4: Gecertificeerde elektriciens CRITICAL
 **Beschrijving:** Alleen gecertificeerde technici mogen werken aan elektrische installaties.
 
 **Validatie:**
@@ -467,7 +467,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.5: OEM-specificaties volgen 🟠 ERROR
+#### OPS-2.5: OEM-specificaties volgen ERROR
 **Beschrijving:** Werkzaamheden moeten worden uitgevoerd volgens OEM-specificaties.
 
 **Validatie:**
@@ -477,7 +477,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.6: Jaarlijkse NEN-keuring 🟠 ERROR
+#### OPS-2.6: Jaarlijkse NEN-keuring ERROR
 **Beschrijving:** Alle installaties moeten jaarlijks worden gekeurd volgens NEN‑normen.
 
 **Validatie:**
@@ -487,7 +487,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.7: Afstemming operationele impact 🟠 ERROR
+#### OPS-2.7: Afstemming operationele impact ERROR
 **Beschrijving:** Werkzaamheden met operationele impact moeten vooraf worden afgestemd met Schiphol Operations.
 
 **Validatie:**
@@ -497,7 +497,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.8: PTW voor risicovol werk 🔴 CRITICAL
+#### OPS-2.8: PTW voor risicovol werk CRITICAL
 **Beschrijving:** Werkvergunningen (PTW) zijn verplicht voor risicovolle werkzaamheden.
 
 **Validatie:**
@@ -507,7 +507,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.9: TRA verplicht 🔴 CRITICAL
+#### OPS-2.9: TRA verplicht CRITICAL
 **Beschrijving:** Taken mogen niet worden uitgevoerd zonder goedgekeurde TRA (Taak Risico Analyse).
 
 **Validatie:**
@@ -517,7 +517,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### OPS-2.10: 24-uur vooraf aanmelden kritieke zones 🟠 ERROR
+#### OPS-2.10: 24-uur vooraf aanmelden kritieke zones ERROR
 **Beschrijving:** Werkzaamheden in kritieke zones moeten minimaal 24 uur vooraf worden aangemeld.
 
 **Validatie:**
@@ -529,7 +529,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### 3. Quality & Compliance
 
-#### QUA-3.1: ISO 9001 en ISO 45001 compliance 🟠 ERROR
+#### QUA-3.1: ISO 9001 en ISO 45001 compliance ERROR
 **Beschrijving:** Alle werkzaamheden moeten voldoen aan ISO 9001 en ISO 45001.
 
 **Validatie:**
@@ -539,7 +539,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.2: Documentatie binnen 24 uur bijwerken 🟠 ERROR
+#### QUA-3.2: Documentatie binnen 24 uur bijwerken ERROR
 **Beschrijving:** Documentatie moet binnen 24 uur worden bijgewerkt in het onderhoudssysteem.
 
 **Validatie:**
@@ -549,7 +549,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.3: Afwijkingen registreren 🟠 ERROR
+#### QUA-3.3: Afwijkingen registreren ERROR
 **Beschrijving:** Afwijkingen moeten worden geregistreerd in het kwaliteitsmanagementsysteem.
 
 **Validatie:**
@@ -559,7 +559,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.4: Goedgekeurde materialen en leveranciers 🟠 ERROR
+#### QUA-3.4: Goedgekeurde materialen en leveranciers ERROR
 **Beschrijving:** Alleen goedgekeurde materialen en leveranciers mogen worden gebruikt.
 
 **Validatie:**
@@ -569,7 +569,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.5: Wekelijkse rapportages 🟡 WARNING
+#### QUA-3.5: Wekelijkse rapportages WARNING
 **Beschrijving:** Rapportages moeten wekelijks worden aangeleverd aan de contractmanager.
 
 **Validatie:**
@@ -579,7 +579,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.6: Up-to-date tekeningen 🟠 ERROR
+#### QUA-3.6: Up-to-date tekeningen ERROR
 **Beschrijving:** Alle technische tekeningen moeten up‑to‑date zijn voordat werk start.
 
 **Validatie:**
@@ -589,7 +589,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.7: Auditbevindingen binnen 30 dagen 🟠 ERROR
+#### QUA-3.7: Auditbevindingen binnen 30 dagen ERROR
 **Beschrijving:** Auditbevindingen moeten binnen 30 dagen worden opgelost.
 
 **Validatie:**
@@ -599,7 +599,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.8: RCA voor veiligheidsincidenten 🟠 ERROR
+#### QUA-3.8: RCA voor veiligheidsincidenten ERROR
 **Beschrijving:** Veiligheidsincidenten moeten worden geëvalueerd met een RCA (root cause analysis).
 
 **Validatie:**
@@ -609,7 +609,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.9: Jaarlijkse veiligheidstrainingen 🟠 ERROR
+#### QUA-3.9: Jaarlijkse veiligheidstrainingen ERROR
 **Beschrijving:** Alle medewerkers moeten jaarlijkse veiligheidstrainingen volgen.
 
 **Validatie:**
@@ -619,7 +619,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### QUA-3.10: Geldige certificeringen vereist 🔴 CRITICAL
+#### QUA-3.10: Geldige certificeringen vereist CRITICAL
 **Beschrijving:** Werk mag niet worden uitgevoerd zonder geldige certificeringen.
 
 **Validatie:**
@@ -631,7 +631,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### 4. Logistics & Inventory
 
-#### LOG-4.1: Voorraadniveaus binnen min/max 🟡 WARNING
+#### LOG-4.1: Voorraadniveaus binnen min/max WARNING
 **Beschrijving:** Voorraadniveaus moeten binnen minimum- en maximumwaarden blijven.
 
 **Validatie:**
@@ -641,7 +641,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.2: Materialen op juiste werkorder boeken 🟠 ERROR
+#### LOG-4.2: Materialen op juiste werkorder boeken ERROR
 **Beschrijving:** Materialen moeten worden geboekt op de juiste werkorder.
 
 **Validatie:**
@@ -651,7 +651,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.3: Spoedbestellingen goedkeuring 🟡 WARNING
+#### LOG-4.3: Spoedbestellingen goedkeuring WARNING
 **Beschrijving:** Spoedbestellingen vereisen goedkeuring van de supervisor.
 
 **Validatie:**
@@ -661,7 +661,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.4: Retourmaterialen binnen 48 uur 🟡 WARNING
+#### LOG-4.4: Retourmaterialen binnen 48 uur WARNING
 **Beschrijving:** Retourmaterialen moeten binnen 48 uur worden verwerkt.
 
 **Validatie:**
@@ -671,7 +671,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.5: Afvalscheiding Schiphol regels 🟠 ERROR
+#### LOG-4.5: Afvalscheiding Schiphol regels ERROR
 **Beschrijving:** Afval moet worden gescheiden volgens Schiphol‑milieuregels.
 
 **Validatie:**
@@ -681,7 +681,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.6: Airside leveringen aanmelden 🟠 ERROR
+#### LOG-4.6: Airside leveringen aanmelden ERROR
 **Beschrijving:** Leveringen airside moeten vooraf worden aangemeld bij security.
 
 **Validatie:**
@@ -691,7 +691,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.7: Serienummers registreren 🟠 ERROR
+#### LOG-4.7: Serienummers registreren ERROR
 **Beschrijving:** Materialen met serienummers moeten worden geregistreerd in het systeem.
 
 **Validatie:**
@@ -701,7 +701,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.8: Defecte onderdelen apart opslaan 🟡 WARNING
+#### LOG-4.8: Defecte onderdelen apart opslaan WARNING
 **Beschrijving:** Defecte onderdelen moeten worden gemarkeerd en apart opgeslagen.
 
 **Validatie:**
@@ -711,7 +711,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.9: Realtime magazijnbewegingen 🟡 WARNING
+#### LOG-4.9: Realtime magazijnbewegingen WARNING
 **Beschrijving:** Magazijnbewegingen moeten realtime worden bijgewerkt.
 
 **Validatie:**
@@ -721,7 +721,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### LOG-4.10: Geautoriseerd magazijnpersoneel 🟠 ERROR
+#### LOG-4.10: Geautoriseerd magazijnpersoneel ERROR
 **Beschrijving:** Alleen geautoriseerd personeel mag magazijnsystemen bedienen.
 
 **Validatie:**
@@ -733,7 +733,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### 5. Planning & Workflow
 
-#### PLN-5.1: Planning op basis prioriteit en SLA 🟠 ERROR
+#### PLN-5.1: Planning op basis prioriteit en SLA ERROR
 **Beschrijving:** Werkopdrachten moeten worden ingepland op basis van prioriteit en SLA.
 
 **Validatie:**
@@ -743,7 +743,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.2: Dagelijks uren registreren 🟡 WARNING
+#### PLN-5.2: Dagelijks uren registreren WARNING
 **Beschrijving:** Medewerkers moeten hun uren dagelijks registreren.
 
 **Validatie:**
@@ -753,7 +753,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.3: Werkvergunning vereist voor start 🔴 CRITICAL
+#### PLN-5.3: Werkvergunning vereist voor start CRITICAL
 **Beschrijving:** Werk mag niet starten zonder goedgekeurde werkvergunning.
 
 **Validatie:**
@@ -763,7 +763,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.4: Geen taken overslaan 🟠 ERROR
+#### PLN-5.4: Geen taken overslaan ERROR
 **Beschrijving:** Taken mogen niet worden overgeslagen zonder supervisor‑goedkeuring.
 
 **Validatie:**
@@ -773,7 +773,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.5: Volledige werkorder invulling 🟠 ERROR
+#### PLN-5.5: Volledige werkorder invulling ERROR
 **Beschrijving:** Werkorders moeten volledig worden ingevuld voordat ze worden afgesloten.
 
 **Validatie:**
@@ -783,7 +783,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.6: Taken in juiste volgorde 🟠 ERROR
+#### PLN-5.6: Taken in juiste volgorde ERROR
 **Beschrijving:** Taken met afhankelijkheden moeten in de juiste volgorde worden uitgevoerd.
 
 **Validatie:**
@@ -793,7 +793,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.7: Werk overdragen bij einde shift 🟡 WARNING
+#### PLN-5.7: Werk overdragen bij einde shift WARNING
 **Beschrijving:** Werk dat niet binnen de shift kan worden afgerond moet worden overgedragen.
 
 **Validatie:**
@@ -803,7 +803,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.8: Spoedwerk na escalatie 🟠 ERROR
+#### PLN-5.8: Spoedwerk na escalatie ERROR
 **Beschrijving:** Spoedwerk mag alleen worden uitgevoerd na escalatie.
 
 **Validatie:**
@@ -813,7 +813,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.9: Afstemming passagiersstromen 🟠 ERROR
+#### PLN-5.9: Afstemming passagiersstromen ERROR
 **Beschrijving:** Werk dat impact heeft op passagiersstromen moet worden afgestemd met Operations.
 
 **Validatie:**
@@ -823,7 +823,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### PLN-5.10: Planning 1 week vooruit 🟡 WARNING
+#### PLN-5.10: Planning 1 week vooruit WARNING
 **Beschrijving:** Werkplanning moet minimaal 1 week vooruit worden bijgewerkt.
 
 **Validatie:**
@@ -835,7 +835,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### 6. IT & System Usage
 
-#### IT-6.1: Centrale onderhoudssysteem verplicht 🟠 ERROR
+#### IT-6.1: Centrale onderhoudssysteem verplicht ERROR
 **Beschrijving:** Alle werkorders moeten worden verwerkt in het centrale onderhoudssysteem (bijv. Maximo).
 
 **Validatie:**
@@ -845,7 +845,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.2: Eigen accounts gebruiken 🟠 ERROR
+#### IT-6.2: Eigen accounts gebruiken ERROR
 **Beschrijving:** Medewerkers mogen alleen hun eigen accounts gebruiken.
 
 **Validatie:**
@@ -855,7 +855,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.3: GDPR-richtlijnen 🔴 CRITICAL
+#### IT-6.3: GDPR-richtlijnen CRITICAL
 **Beschrijving:** Data moet worden opgeslagen volgens GDPR‑richtlijnen.
 
 **Validatie:**
@@ -865,7 +865,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.4: Mobiele apparaten vergrendelen 🟡 WARNING
+#### IT-6.4: Mobiele apparaten vergrendelen WARNING
 **Beschrijving:** Mobiele apparaten moeten worden vergrendeld bij het verlaten van de werkplek.
 
 **Validatie:**
@@ -875,7 +875,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.5: Geautoriseerde documentatie wijzigingen 🟠 ERROR
+#### IT-6.5: Geautoriseerde documentatie wijzigingen ERROR
 **Beschrijving:** Alleen geautoriseerde medewerkers mogen technische documentatie wijzigen.
 
 **Validatie:**
@@ -885,7 +885,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.6: IT-beheer voor systeemupdates 🟠 ERROR
+#### IT-6.6: IT-beheer voor systeemupdates ERROR
 **Beschrijving:** Systeemupdates mogen alleen worden uitgevoerd door IT‑beheer.
 
 **Validatie:**
@@ -895,7 +895,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.7: Offline werk binnen 4 uur synchroniseren 🟡 WARNING
+#### IT-6.7: Offline werk binnen 4 uur synchroniseren WARNING
 **Beschrijving:** Offline werk moet binnen 4 uur worden gesynchroniseerd.
 
 **Validatie:**
@@ -905,7 +905,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.8: Foto's toevoegen aan werkorder 🔵 INFO
+#### IT-6.8: Foto's toevoegen aan werkorder INFO
 **Beschrijving:** Foto's van installaties moeten worden toegevoegd aan de werkorder.
 
 **Validatie:**
@@ -915,7 +915,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.9: Onjuiste data binnen 24 uur corrigeren 🟠 ERROR
+#### IT-6.9: Onjuiste data binnen 24 uur corrigeren ERROR
 **Beschrijving:** Onjuiste data moet binnen 24 uur worden gecorrigeerd.
 
 **Validatie:**
@@ -925,7 +925,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### IT-6.10: Toegang intrekken bij inactiviteit 🟡 WARNING
+#### IT-6.10: Toegang intrekken bij inactiviteit WARNING
 **Beschrijving:** Toegang tot systemen wordt ingetrokken bij inactiviteit van 30 dagen.
 
 **Validatie:**
@@ -937,7 +937,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### 7. HR & Workforce
 
-#### HR-7.1: Jaarlijkse veiligheidstrainingen 🟠 ERROR
+#### HR-7.1: Jaarlijkse veiligheidstrainingen ERROR
 **Beschrijving:** Medewerkers moeten jaarlijkse veiligheidstrainingen volgen.
 
 **Validatie:**
@@ -947,7 +947,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.2: Onboarding-proces 🟠 ERROR
+#### HR-7.2: Onboarding-proces ERROR
 **Beschrijving:** Nieuwe medewerkers moeten een onboarding-proces doorlopen.
 
 **Validatie:**
@@ -957,7 +957,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.3: Ziekmeldingen voor dienst 🟡 WARNING
+#### HR-7.3: Ziekmeldingen voor dienst WARNING
 **Beschrijving:** Ziekmeldingen moeten vóór aanvang van de dienst worden doorgegeven.
 
 **Validatie:**
@@ -967,7 +967,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.4: Overuren goedkeuren 🟡 WARNING
+#### HR-7.4: Overuren goedkeuren WARNING
 **Beschrijving:** Overuren moeten vooraf worden goedgekeurd.
 
 **Validatie:**
@@ -977,7 +977,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.5: Schiphol-gedragscode 🟠 ERROR
+#### HR-7.5: Schiphol-gedragscode ERROR
 **Beschrijving:** Medewerkers moeten voldoen aan de Schiphol‑gedragscode.
 
 **Validatie:**
@@ -987,7 +987,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.6: Up-to-date certificeringen 🟠 ERROR
+#### HR-7.6: Up-to-date certificeringen ERROR
 **Beschrijving:** Certificeringen moeten up‑to‑date blijven.
 
 **Validatie:**
@@ -997,7 +997,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.7: Toolboxmeetings 🟡 WARNING
+#### HR-7.7: Toolboxmeetings WARNING
 **Beschrijving:** Medewerkers moeten deelnemen aan toolboxmeetings.
 
 **Validatie:**
@@ -1007,7 +1007,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.8: Alcohol en drugs verboden 🔴 CRITICAL
+#### HR-7.8: Alcohol en drugs verboden CRITICAL
 **Beschrijving:** Alcohol- en drugsgebruik is verboden tijdens werktijd.
 
 **Validatie:**
@@ -1017,7 +1017,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.9: Ongewenst gedrag melden 🟠 ERROR
+#### HR-7.9: Ongewenst gedrag melden ERROR
 **Beschrijving:** Ongewenst gedrag moet worden gemeld bij HR.
 
 **Validatie:**
@@ -1027,7 +1027,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### HR-7.10: Schiphol-pas verlies melden 🔴 CRITICAL
+#### HR-7.10: Schiphol-pas verlies melden CRITICAL
 **Beschrijving:** Medewerkers moeten hun Schiphol-pas direct melden bij verlies.
 
 **Validatie:**
@@ -1039,7 +1039,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### 8. Communication & Reporting
 
-#### COM-8.1: Storingen direct melden 🟠 ERROR
+#### COM-8.1: Storingen direct melden ERROR
 **Beschrijving:** Storingen moeten direct worden gemeld via het officiële meldpunt.
 
 **Validatie:**
@@ -1049,7 +1049,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.2: Klantcommunicatie via contractmanager 🟡 WARNING
+#### COM-8.2: Klantcommunicatie via contractmanager WARNING
 **Beschrijving:** Klantcommunicatie verloopt via de contractmanager of teamleider.
 
 **Validatie:**
@@ -1059,7 +1059,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.3: Dagelijkse voortgang in shiftlog 🟡 WARNING
+#### COM-8.3: Dagelijkse voortgang in shiftlog WARNING
 **Beschrijving:** Dagelijkse voortgang moet worden gerapporteerd in het shiftlog.
 
 **Validatie:**
@@ -1069,7 +1069,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.4: Escalaties volgens escalatiemodel 🟠 ERROR
+#### COM-8.4: Escalaties volgens escalatiemodel ERROR
 **Beschrijving:** Escalaties moeten worden opgevolgd volgens het escalatiemodel.
 
 **Validatie:**
@@ -1079,7 +1079,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.5: Volledige rapportages 🟡 WARNING
+#### COM-8.5: Volledige rapportages WARNING
 **Beschrijving:** Rapportages moeten volledig en foutloos zijn.
 
 **Validatie:**
@@ -1089,7 +1089,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.6: Planning wijzigingen communiceren 🟡 WARNING
+#### COM-8.6: Planning wijzigingen communiceren WARNING
 **Beschrijving:** Wijzigingen in planning moeten worden gecommuniceerd naar alle betrokkenen.
 
 **Validatie:**
@@ -1099,7 +1099,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.7: Incidentrapporten binnen 24 uur 🟠 ERROR
+#### COM-8.7: Incidentrapporten binnen 24 uur ERROR
 **Beschrijving:** Incidentrapporten moeten binnen 24 uur worden ingediend.
 
 **Validatie:**
@@ -1109,7 +1109,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.8: Professionele communicatie 🟡 WARNING
+#### COM-8.8: Professionele communicatie WARNING
 **Beschrijving:** Communicatie moet professioneel en conform bedrijfsrichtlijnen zijn.
 
 **Validatie:**
@@ -1119,7 +1119,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.9: Afwijkingen direct melden 🟠 ERROR
+#### COM-8.9: Afwijkingen direct melden ERROR
 **Beschrijving:** Afwijkingen moeten direct worden gemeld.
 
 **Validatie:**
@@ -1129,7 +1129,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-#### COM-8.10: Klantfeedback registreren 🔵 INFO
+#### COM-8.10: Klantfeedback registreren INFO
 **Beschrijving:** Klantfeedback moet worden geregistreerd en opgevolgd.
 
 **Validatie:**
@@ -1139,7 +1139,7 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ---
 
-## 📊 Rule Statistieken
+## Rule Statistieken
 
 ### Per Categorie
 
@@ -1157,38 +1157,38 @@ def validate_schiphol_pass(data: Dict, context: Dict) -> Optional[RuleViolation]
 
 ### Per Severity
 
-- 🔴 **CRITICAL**: 11 rules (13.75%)
-- 🟠 **ERROR**: 48 rules (60%)
-- 🟡 **WARNING**: 19 rules (23.75%)
-- 🔵 **INFO**: 2 rules (2.5%)
+- **CRITICAL**: 11 rules (13.75%)
+- **ERROR**: 48 rules (60%)
+- **WARNING**: 19 rules (23.75%)
+- **INFO**: 2 rules (2.5%)
 
 ---
 
-## 🔧 Onderhoud
+## Onderhoud
 
 ### Rule Updates
 
 Wanneer rules moeten worden bijgewerkt:
 
 1. **Update `business_rules.py`**
-   - Wijzig rule definitie
-   - Update validation_func indien nodig
-   - Update docstrings
+ - Wijzig rule definitie
+ - Update validation_func indien nodig
+ - Update docstrings
 
 2. **Update Tests**
-   - Pas tests aan in `test_validator.py`
-   - Run test suite
-   - Check coverage
+ - Pas tests aan in `test_validator.py`
+ - Run test suite
+ - Check coverage
 
 3. **Update Documentatie**
-   - Update dit document
-   - Update PROJECT_OVERVIEW.md
-   - Update technisch ontwerp
+ - Update dit document
+ - Update docs/readme-docs.md
+ - Update technisch ontwerp
 
 4. **Communicatie**
-   - Informeer stakeholders
-   - Update training materiaal
-   - Versie bump
+ - Informeer stakeholders
+ - Update training materiaal
+ - Versie bump
 
 ### Versioning
 
@@ -1200,7 +1200,7 @@ Format: `MAJOR.MINOR.PATCH`
 
 ---
 
-## 📞 Contact
+## Contact
 
 Voor vragen over business rules:
 

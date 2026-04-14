@@ -1,41 +1,41 @@
 # Maximo Quick Reference
 ## De 10 Belangrijkste Regels
 
-**Voor:** Developers die werken met Maximo Item Master  
-**Bron:** maximosecrets.com  
+**Voor:** Developers die werken met Maximo Item Master
+**Bron:** maximosecrets.com
 **Datum:** 17 februari 2026
 
 ---
 
-## 🚨 TOP 10 CRITICAL RULES
+## TOP 10 CRITICAL RULES
 
-### 1. ❌ ITEMNUM IS IMMUTABLE
+### 1. ITEMNUM IS IMMUTABLE
 ```
 ITEMNUM kan NOOIT worden gewijzigd na save!
 → Oude item OBSOLETE + nieuwe item maken
 ```
 
-### 2. ❌ NO DELETE ACTION
+### 2. NO DELETE ACTION
 ```
 Er is GEEN delete actie voor items!
 → Gebruik status OBSOLETE om items te retiren
 ```
 
-### 3. ❌ OBSOLETE IS IRREVERSIBLE
+### 3. OBSOLETE IS IRREVERSIBLE
 ```
 OBSOLETE status kan NOOIT meer terug!
 → Requires PENDOBS status eerst
 → Check alle references voordat je OBSOLETE zet
 ```
 
-### 4. ⚠️ MAX FIELD LENGTHS
+### 4. MAX FIELD LENGTHS
 ```
-ITEMNUM:    30 characters (recommend 12 for UI)
+ITEMNUM: 30 characters (recommend 12 for UI)
 DESCRIPTION: 100 characters
-COMMODITY:   8 characters (Group & Code)
+COMMODITY: 8 characters (Group & Code)
 ```
 
-### 5. ✅ ITEMS FIRST, THEN PM/JOBPLAN
+### 5. ITEMS FIRST, THEN PM/JOBPLAN
 ```
 Volgorde is CRITICAL:
 1. Commodities
@@ -44,45 +44,45 @@ Volgorde is CRITICAL:
 4. JobPlan records
 ```
 
-### 6. ✅ STATUS WORKFLOW
+### 6. STATUS WORKFLOW
 ```
 PENDING → PLANNING → ACTIVE → PENDOBS → OBSOLETE
-         ↑ Start here          ↑ Required for OBSOLETE
+ ↑ Start here ↑ Required for OBSOLETE
 ```
 
-### 7. ✅ UPPERCASE ONLY
+### 7. UPPERCASE ONLY
 ```
-ITEMNUM:   UPPERCASE (convention)
+ITEMNUM: UPPERCASE (convention)
 COMMODITY: UPPERCASE (required)
 ```
 
-### 8. ✅ MSG-3 ITEMS ARE NON-STOCKED
+### 8. MSG-3 ITEMS ARE NON-STOCKED
 ```
 STOCKCATEGORY = "NS"
 → Tasks zijn geen fysieke items
 → Geen inventory records
 ```
 
-### 9. ✅ ALWAYS USE COMMODITIES
+### 9. ALWAYS USE COMMODITIES
 ```
 HIGHLY RECOMMENDED (not technically required)
 → Needed voor search in 10,000+ items
 → Needed voor reporting & analysis
 ```
 
-### 10. ✅ VALIDATE BEFORE CREATE
+### 10. VALIDATE BEFORE CREATE
 ```
 Check ALLES voordat je naar Maximo stuurt:
-✓ Field lengths
-✓ Uppercase
-✓ No spaces in ITEMNUM
-✓ Commodity exists
-✓ Organization exists
+ Field lengths
+ Uppercase
+ No spaces in ITEMNUM
+ Commodity exists
+ Organization exists
 ```
 
 ---
 
-## 📊 Field Limits Cheat Sheet
+## Field Limits Cheat Sheet
 
 | Field | Max Length | Type | Notes |
 |-------|------------|------|-------|
@@ -95,10 +95,10 @@ Check ALLES voordat je naar Maximo stuurt:
 
 ---
 
-## 🔄 Status Transitions
+## Status Transitions
 
 ```
-✅ ALLOWED:
+ ALLOWED:
 PENDING → PLANNING
 PENDING → ACTIVE
 PLANNING → ACTIVE
@@ -106,14 +106,14 @@ ACTIVE → PENDOBS
 PENDOBS → OBSOLETE
 (Any → Any except from OBSOLETE)
 
-❌ NOT ALLOWED:
+ NOT ALLOWED:
 Any → OBSOLETE (without PENDOBS first)
 OBSOLETE → Any (irreversible!)
 ```
 
 ---
 
-## 🚀 MSG-3 Mapping Format
+## MSG-3 Mapping Format
 
 ```python
 # ITEMNUM
@@ -134,7 +134,7 @@ Max: 8 chars
 
 ---
 
-## ⚡ Quick Validation Code
+## Quick Validation Code
 
 ```python
 # ITEMNUM
@@ -153,53 +153,53 @@ assert commodity == commodity.upper(), "Commodity must be uppercase!"
 # Status
 assert status in ["PENDING", "PLANNING", "ACTIVE", "PENDOBS", "OBSOLETE"]
 if new_status == "OBSOLETE":
-    assert old_status == "PENDOBS", "Must be PENDOBS first!"
+ assert old_status == "PENDOBS", "Must be PENDOBS first!"
 if old_status == "OBSOLETE":
-    raise ValueError("Cannot change from OBSOLETE!")
+ raise ValueError("Cannot change from OBSOLETE!")
 ```
 
 ---
 
-## 🎯 Creation Checklist
+## Creation Checklist
 
 ```
 Voor ELKE item creation:
-☐ ITEMNUM ≤ 30 chars & uppercase
-☐ ITEMNUM is unique
-☐ Description ≤ 100 chars
-☐ Description is meaningful
-☐ Commodity Group exists (≤ 8 chars, uppercase)
-☐ Commodity Code exists (≤ 8 chars, uppercase)
-☐ Status = "PLANNING" (recommended start)
-☐ STOCKCATEGORY = "NS" (for MSG-3)
-☐ ITEMTYPE = "ITEM"
-☐ ROTATING = FALSE
-☐ ISKIT = FALSE
+ ITEMNUM ≤ 30 chars & uppercase
+ ITEMNUM is unique
+ Description ≤ 100 chars
+ Description is meaningful
+ Commodity Group exists (≤ 8 chars, uppercase)
+ Commodity Code exists (≤ 8 chars, uppercase)
+ Status = "PLANNING" (recommended start)
+ STOCKCATEGORY = "NS" (for MSG-3)
+ ITEMTYPE = "ITEM"
+ ROTATING = FALSE
+ ISKIT = FALSE
 ```
 
 ---
 
-## 🛑 OBSOLETE Checklist
+## OBSOLETE Checklist
 
 ```
 Voor ELKE OBSOLETE operation:
-☐ Current status is PENDOBS (required!)
-☐ No work plan references
-☐ No job plan references
-☐ No desktop requisition lines
-☐ No purchase requisition lines
-☐ No purchase order lines
-☐ No item balance (if inventory level)
-☐ WARNING given to user (irreversible!)
-☐ Rollback plan exists (create new item)
+ Current status is PENDOBS (required!)
+ No work plan references
+ No job plan references
+ No desktop requisition lines
+ No purchase requisition lines
+ No purchase order lines
+ No item balance (if inventory level)
+ WARNING given to user (irreversible!)
+ Rollback plan exists (create new item)
 ```
 
 ---
 
-## 📚 Full Documentation
+## Full Documentation
 
-- **Complete specs:** `docs/maximo-specificaties.md`
-- **All changes:** `docs/MAXIMO-INTEGRATIE-UPDATE.md`
+- **Complete specs:** `docs/technisch-ontwerp/maximo-specificaties.md`
+- **All changes:** `docs/technisch-ontwerp/MAXIMO-INTEGRATIE-UPDATE.md`
 - **Business rules:** `src/validator/business_rules.py`
 - **Mapping code:** `src/mapping/`
 
@@ -229,7 +229,7 @@ Voor ELKE OBSOLETE operation:
 
 ---
 
-**Print dit uit en hang naast je scherm! 📌**
+**Print dit uit en hang naast je scherm! **
 
-**Laatste update:** 17 februari 2026  
+**Laatste update:** 17 februari 2026
 **Auteur:** Pedro Eduardo Cardoso

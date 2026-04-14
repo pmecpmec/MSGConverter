@@ -1,12 +1,12 @@
-# 👥 Team & Contactpersonen
+# Team & Contactpersonen
 ## MSG-3 to Maximo Converter Project
 
-**Datum:** 11 februari 2026  
+**Datum:** 11 februari 2026
 **Student:** Pedro Eduardo Cardoso
 
 ---
 
-## 🏢 Babcock Schiphol (Stagebedrijf)
+## Babcock Schiphol (Stagebedrijf)
 
 ### Stagebegeleiders
 
@@ -14,20 +14,20 @@
 - Functie: Sr. Maintenance Engineer
 - Rol: Stagebegeleider (primair)
 - Verantwoordelijk voor:
-  - Functionele requirements
-  - Business rules definitie
-  - Toegang tot systemen (Maximo)
-  - Feedback op deliverables
-  - Evaluatieformulier invullen
+ - Functionele requirements
+ - Business rules definitie
+ - Toegang tot systemen (Maximo)
+ - Feedback op deliverables
+ - Evaluatieformulier invullen
 
 **Rick Kramer**
 - Functie: Maintenance Service Coordinator
 - Rol: Stagebegeleider (secundair)
 - Verantwoordelijk voor:
-  - Procesondersteuning
-  - Stakeholder management
-  - Feedback op werk
-  - Evaluatieformulier invullen
+ - Procesondersteuning
+ - Stakeholder management
+ - Feedback op werk
+ - Evaluatieformulier invullen
 
 ### Code Support Team
 
@@ -35,21 +35,21 @@
 - Functie: Data Analyst
 - Rol: Code support indien nodig
 - Beschikbaar voor:
-  - Technische vragen over Python/data processing
-  - Code review (op aanvraag)
-  - Tips & tricks
+ - Technische vragen over Python/data processing
+ - Code review (op aanvraag)
+ - Tips & tricks
 
 **Fajjaaz Chandoe**
 - Functie: Data Analyst
 - Rol: Code support indien nodig
 - Beschikbaar voor:
-  - Technische vragen over Python/data processing
-  - Code review (op aanvraag)
-  - Tips & tricks
+ - Technische vragen over Python/data processing
+ - Code review (op aanvraag)
+ - Tips & tricks
 
 ---
 
-## 🎓 Windesheim - Associate Degree Software Developer
+## Windesheim - Associate Degree Software Developer
 
 ### Stage Coach
 
@@ -57,43 +57,43 @@
 - Functie: Stage Coach
 - Rol: Begeleiding vanuit school
 - Verantwoordelijk voor:
-  - Documentatie feedback en tips
-  - Bedrijfsbegeleider bij problemen
-  - Hulp bij bedrijven benaderen (indien nodig)
-  - Coaching tijdens stage
-  - Assessment voorbereiding
+ - Documentatie feedback en tips
+ - Bedrijfsbegeleider bij problemen
+ - Hulp bij bedrijven benaderen (indien nodig)
+ - Coaching tijdens stage
+ - Assessment voorbereiding
 
 ---
 
-## 📞 Contact Momenten
+## Contact Momenten
 
 ### Wekelijks
 - **Babcock check-in:** Met Matthijs en/of Rick
-  - Voortgang bespreken
-  - Vragen stellen
-  - Demo's geven
+ - Voortgang bespreken
+ - Vragen stellen
+ - Demo's geven
 
 ### Per Sprint (2-wekelijks)
 - **Sprint Review:** Met Matthijs en Rick
-  - Demo van nieuwe features
-  - Feedback verzamelen
-  - Planning volgende sprint
+ - Demo van nieuwe features
+ - Feedback verzamelen
+ - Planning volgende sprint
 
 ### Periodiek
 - **Windesheim check-in:** Met Arie Ismael
-  - Documentatie review
-  - Voortgang competenties
-  - Eventuele problemen
+ - Documentatie review
+ - Voortgang competenties
+ - Eventuele problemen
 
 ### Ad-hoc
 - **Code support:** Met Jasper of Fajjaaz
-  - Bij technische blokkades
-  - Voor code review
-  - Specifieke Python/data vragen
+ - Bij technische blokkades
+ - Voor code review
+ - Specifieke Python/data vragen
 
 ---
 
-## 📧 Communicatie
+## Communicatie
 
 ### Voor Technische Vragen (Code)
 1. **Eerst:** Probeer zelf (Google, documentation, AI)
@@ -112,7 +112,7 @@
 
 ---
 
-## 📋 Evaluaties (Week 17-18)
+## Evaluaties (Week 17-18)
 
 ### Evaluatieformulier Opdrachtgever
 **In te vullen door:**
@@ -129,7 +129,7 @@
 
 ---
 
-## 🎯 Verwachtingen Management
+## Verwachtingen Management
 
 ### Van Matthijs & Rick (Babcock)
 - Wekelijkse check-in (30-60 min)
@@ -154,7 +154,7 @@
 
 ---
 
-## 💡 Tips voor Samenwerking
+## Tips voor Samenwerking
 
 ### Met Stagebegeleiders
 - Wees proactief in communicatie
@@ -177,5 +177,5 @@
 
 ---
 
-**Laatst bijgewerkt:** 11 februari 2026  
+**Laatst bijgewerkt:** 11 februari 2026
 **Eigenaar:** Pedro Eduardo Cardoso

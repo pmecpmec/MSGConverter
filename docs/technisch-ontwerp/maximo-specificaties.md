@@ -1,13 +1,13 @@
 # Maximo Specificaties voor MSGConverter
 ## Item Master & Inventory Management
 
-**Bron:** maximosecrets.com - Complete referentie voor Maximo items  
-**Datum:** 17 februari 2026  
+**Bron:** maximosecrets.com - Complete referentie voor Maximo items
+**Datum:** 17 februari 2026
 **Auteur:** Pedro Eduardo Cardoso
 
 ---
 
-## 📋 Inhoudsopgave
+## Inhoudsopgave
 
 1. [Item Structuur](#1-item-structuur)
 2. [Item Statuses](#2-item-statuses)
@@ -48,15 +48,15 @@
 - **COMMODITY (Commodity Code)** - Specifieke code binnen group
 - **Type:** UPPER 8 voor beide
 - **Verplicht:** Nee, maar HIGHLY RECOMMENDED voor:
-  - Zoekbaarheid (10,000+ items)
-  - Purchase Order lines
-  - Reporting & analysis
-  - Vendor associations
+ - Zoekbaarheid (10,000+ items)
+ - Purchase Order lines
+ - Reporting & analysis
+ - Vendor associations
 
 #### Meter Fields
 - **Meter Group** - Alleen voor Rotating Items
 - **Meter** - Voor measured materials (petrol, diesel, oils)
-  - Alleen Continuous type meters toegestaan
+ - Alleen Continuous type meters toegestaan
 
 #### Other Settings
 - **Maximum Quantity Issued** - Limiet voor totaal issued qty per asset
@@ -91,15 +91,15 @@
 
 - **Purpose:** Subassemblies en spare parts voor assets
 - **Restrictions:**
-  - Max 3 levels praktisch (4+ wordt onoverzichtelijk)
-  - Alleen bottom nodes mogen non-rotating zijn
-  - Alle nodes met children moeten rotating zijn
+ - Max 3 levels praktisch (4+ wordt onoverzichtelijk)
+ - Alleen bottom nodes mogen non-rotating zijn
+ - Alle nodes met children moeten rotating zijn
 - **Fields:**
-  - **Quantity** - Hoeveel per level
-  - **Remarks** - Positie indicatie
+ - **Quantity** - Hoeveel per level
+ - **Remarks** - Positie indicatie
 - **Actions:**
-  - Copy Item Assembly Structure
-  - Apply Item Assembly Structure (to Asset/Location)
+ - Copy Item Assembly Structure
+ - Apply Item Assembly Structure (to Asset/Location)
 
 ---
 
@@ -125,39 +125,39 @@ Items hebben status op **3 niveaus:**
 ### 2.3 Status Beperkingen
 
 #### PENDING Status
-- ✅ Kan worden toegevoegd aan storeroom
-- ❌ Niet zichtbaar in lookups
-- ❌ Kan niet worden toegevoegd aan job plan, work order, purchasing docs
+- Kan worden toegevoegd aan storeroom
+- Niet zichtbaar in lookups
+- Kan niet worden toegevoegd aan job plan, work order, purchasing docs
 
 #### PLANNING Status
-- ✅ Zichtbaar in lookups
-- ✅ Kan worden toegevoegd aan job plan
-- ✅ Kan worden toegevoegd aan work order (met reservations)
-- ❌ Kan niet worden issued of transferred
-- ❌ PO approval geblokkeerd
-- ❌ Receiving geblokkeerd
-- ❌ Sommige inventory adjustments geblokkeerd
+- Zichtbaar in lookups
+- Kan worden toegevoegd aan job plan
+- Kan worden toegevoegd aan work order (met reservations)
+- Kan niet worden issued of transferred
+- PO approval geblokkeerd
+- Receiving geblokkeerd
+- Sommige inventory adjustments geblokkeerd
 
 #### ACTIVE Status
-- ✅ Geen restricties
-- ✅ Alle functies beschikbaar
+- Geen restricties
+- Alle functies beschikbaar
 
 #### PENDOBS Status
-- ✅ Issues, returns, transfers mogelijk
-- ❌ Reordering geblokkeerd
-- ❌ PO approval geblokkeerd
+- Issues, returns, transfers mogelijk
+- Reordering geblokkeerd
+- PO approval geblokkeerd
 - **Workflow:** Eerst Inventory → Organization → Item level
 
 #### OBSOLETE Status
-- ❌ Volledig geblokkeerd
-- ❌ IRREVERSIBLE - kan niet terug!
+- Volledig geblokkeerd
+- IRREVERSIBLE - kan niet terug!
 - **Validaties voor OBSOLETE:**
-  - ❌ Geen work plan references
-  - ❌ Geen job plan references
-  - ❌ Geen desktop requisition lines
-  - ❌ Geen purchase requisition lines
-  - ❌ Geen purchase order lines
-  - ❌ Geen item balance
+ - Geen work plan references
+ - Geen job plan references
+ - Geen desktop requisition lines
+ - Geen purchase requisition lines
+ - Geen purchase order lines
+ - Geen item balance
 - **Checkbox:** "Roll New Status to Organizations and Inventory" wordt automatisch set
 
 ### 2.4 Default Status
@@ -210,10 +210,10 @@ Items hebben status op **3 niveaus:**
 
 #### Definitie per Currency
 - **Key Factor:** Base currency
-- **Example:** 
-  - France + Germany + Italy = Same org (Euro)
-  - Poland = Different org (Złoty)
-  - Romania = Different org (Leu)
+- **Example:**
+ - France + Germany + Italy = Same org (Euro)
+ - Poland = Different org (Złoty)
+ - Romania = Different org (Leu)
 
 #### Organization Rules
 - Gebruikt voor **data sharing**
@@ -226,9 +226,9 @@ Items hebben status op **3 niveaus:**
 #### Language Tables
 - Item descriptions kunnen per language
 - **Objects met language support:**
-  - ITEM
-  - CLASSIFICATION (optioneel configureren)
-  - CLASSSTRUCTURE (optioneel configureren)
+ - ITEM
+ - CLASSIFICATION (optioneel configureren)
+ - CLASSSTRUCTURE (optioneel configureren)
 - **Benefit:** Same item set met verschillende languages per org
 
 ### 3.4 Item/Organization Details
@@ -238,10 +238,10 @@ Deze actie in Item Master heeft belangrijke fields:
 #### Receipt Tolerance
 - **Type:** Percentage
 - **Purpose:** Over-receive limiet op PO's
-- **Hierarchy:** 
-  1. Inventory/Vendor record (hoogste priority)
-  2. Inventory record
-  3. Item/Organization level (default)
+- **Hierarchy:**
+ 1. Inventory/Vendor record (hoogste priority)
+ 2. Inventory record
+ 3. Item/Organization level (default)
 
 #### Tax Exempt
 - **Type:** Checkbox
@@ -250,10 +250,10 @@ Deze actie in Item Master heeft belangrijke fields:
 
 #### Tax Code
 - **Priority in Maximo:**
-  1. Ship To Address (hoogste)
-  2. Item/Vendor record
-  3. Companies record
-  4. Item/Organization level (laagste)
+ 1. Ship To Address (hoogste)
+ 2. Item/Vendor record
+ 3. Companies record
+ 4. Item/Organization level (laagste)
 - **Multiple Tax Codes:** Max 27 via Database Configuration
 
 #### Hazard
@@ -266,9 +266,9 @@ Deze actie in Item Master heeft belangrijke fields:
 
 #### Stock Category
 - **Options:**
-  - STK (Stocked) - default
-  - NS (Non-Stocked)
-  - SP (Special Order)
+ - STK (Stocked) - default
+ - NS (Non-Stocked)
+ - SP (Special Order)
 - **Rule:** Gebruik NS als item niet in storerooms
 
 ---
@@ -291,9 +291,9 @@ Deze actie in Item Master heeft belangrijke fields:
 - **Purpose:** Filter services vs materials
 - **Used in:** Service Items application
 - **Service Type Values:**
-  - PROCURE - Commodity codes (procurement)
-  - PROVIDE - Service Groups (providing services)
-  - BOTH - Both procurement and services
+ - PROCURE - Commodity codes (procurement)
+ - PROVIDE - Service Groups (providing services)
+ - BOTH - Both procurement and services
 
 ### 4.3 Gebruik in Maximo
 
@@ -301,9 +301,9 @@ Deze actie in Item Master heeft belangrijke fields:
 - **Item lookups:** Job Plan, Work Order, Asset Spare Parts
 - **Benefit:** Narrow search in 10,000+ items
 - **Search methods:**
-  - Description search
-  - Commodity Group filter
-  - Commodity Code filter
+ - Description search
+ - Commodity Group filter
+ - Commodity Code filter
 
 #### Transacties & Reporting
 Commodity info wordt geschreven naar:
@@ -333,12 +333,12 @@ Commodity info wordt geschreven naar:
 
 #### Contract Applications
 - **Available in:**
-  - Purchase Contracts
-  - Lease/Rental Contracts
-  - Master Contracts
+ - Purchase Contracts
+ - Lease/Rental Contracts
+ - Master Contracts
 - **NOT in:**
-  - Labor Rate Contracts
-  - Warranty Contracts
+ - Labor Rate Contracts
+ - Warranty Contracts
 - **Purpose:** Commodity-based contract structure
 
 ### 4.5 UNSPSC Standard
@@ -356,8 +356,8 @@ Commodity info wordt geschreven naar:
 - **Action:** "Resource Codes"
 - **Purpose:** Default partial GL Account per commodity group
 - **Used in:**
-  - Work Plan Materials
-  - Purchase Order Lines
+ - Work Plan Materials
+ - Purchase Order Lines
 - **Benefit:** Automatic accounting code assignment
 
 ---
@@ -412,48 +412,48 @@ Commodity info wordt geschreven naar:
 #### ITEMNUM Validation
 ```python
 def validate_itemnum(itemnum: str) -> bool:
-    """
-    Validate ITEMNUM field.
-    
-    Rules:
-    - Max 30 characters
-    - Uppercase only
-    - Recommend max 12 for UI
-    - No spaces (best practice)
-    - No special characters (best practice)
-    """
-    if not itemnum:
-        return False
-    if len(itemnum) > 30:
-        return False
-    if itemnum != itemnum.upper():
-        return False
-    if len(itemnum) > 12:
-        # Warning maar niet error
-        logger.warning(f"ITEMNUM {itemnum} > 12 chars, UI scrolling required")
-    return True
+ """
+ Validate ITEMNUM field.
+
+ Rules:
+ - Max 30 characters
+ - Uppercase only
+ - Recommend max 12 for UI
+ - No spaces (best practice)
+ - No special characters (best practice)
+ """
+ if not itemnum:
+ return False
+ if len(itemnum) > 30:
+ return False
+ if itemnum != itemnum.upper():
+ return False
+ if len(itemnum) > 12:
+ # Warning maar niet error
+ logger.warning(f"ITEMNUM {itemnum} > 12 chars, UI scrolling required")
+ return True
 ```
 
 #### Description Validation
 ```python
 def validate_description(description: str, itemnum: str) -> bool:
-    """
-    Validate DESCRIPTION field.
-    
-    Rules:
-    - Required
-    - Max 100 characters
-    - Must be unique (practical requirement)
-    - Should be meaningful for 10,000+ items search
-    """
-    if not description:
-        return False
-    if len(description) > 100:
-        return False
-    if len(description) < 10:
-        # Warning voor te korte descriptions
-        logger.warning(f"ITEMNUM {itemnum}: Description very short")
-    return True
+ """
+ Validate DESCRIPTION field.
+
+ Rules:
+ - Required
+ - Max 100 characters
+ - Must be unique (practical requirement)
+ - Should be meaningful for 10,000+ items search
+ """
+ if not description:
+ return False
+ if len(description) > 100:
+ return False
+ if len(description) < 10:
+ # Warning voor te korte descriptions
+ logger.warning(f"ITEMNUM {itemnum}: Description very short")
+ return True
 ```
 
 ### 6.2 Status Validation Rules
@@ -461,69 +461,69 @@ def validate_description(description: str, itemnum: str) -> bool:
 #### Status Transition Validation
 ```python
 def validate_status_transition(old_status: str, new_status: str) -> bool:
-    """
-    Validate status transitions.
-    
-    Rules:
-    - OBSOLETE requires PENDOBS first
-    - OBSOLETE is irreversible
-    - Others can freely transition
-    """
-    if new_status == "OBSOLETE" and old_status != "PENDOBS":
-        return False
-    if old_status == "OBSOLETE":
-        return False  # Cannot change from OBSOLETE
-    return True
+ """
+ Validate status transitions.
+
+ Rules:
+ - OBSOLETE requires PENDOBS first
+ - OBSOLETE is irreversible
+ - Others can freely transition
+ """
+ if new_status == "OBSOLETE" and old_status != "PENDOBS":
+ return False
+ if old_status == "OBSOLETE":
+ return False # Cannot change from OBSOLETE
+ return True
 ```
 
 #### OBSOLETE Pre-Validation
 ```python
 def validate_obsolete_allowed(itemnum: str, level: str) -> List[str]:
-    """
-    Validate if item can be set to OBSOLETE.
-    
-    Args:
-        itemnum: Item number
-        level: "ITEM" / "ITEMORG" / "INVENTORY"
-    
-    Returns:
-        List of blocking reasons (empty = allowed)
-    
-    Validations:
-    - No work plan references
-    - No job plan references
-    - No desktop requisition lines (MRLINE)
-    - No purchase requisition lines
-    - No purchase order lines
-    - No item balance (for inventory level)
-    """
-    blocking_reasons = []
-    
-    # Check work plans
-    if has_workplan_references(itemnum, level):
-        blocking_reasons.append(f"Item exists on work plan at {level} level")
-    
-    # Check job plans
-    if has_jobplan_references(itemnum, level):
-        blocking_reasons.append(f"Item exists on job plan at {level} level")
-    
-    # Check MRLINE
-    if has_mrline_references(itemnum, level):
-        blocking_reasons.append(f"Item exists on desktop requisition at {level} level")
-    
-    # Check PR lines
-    if has_pr_references(itemnum, level):
-        blocking_reasons.append(f"Item exists on purchase requisition at {level} level")
-    
-    # Check PO lines
-    if has_po_references(itemnum, level):
-        blocking_reasons.append(f"Item exists on purchase order at {level} level")
-    
-    # Check balances (inventory level only)
-    if level == "INVENTORY" and has_balance(itemnum):
-        blocking_reasons.append(f"Item has remaining balance")
-    
-    return blocking_reasons
+ """
+ Validate if item can be set to OBSOLETE.
+
+ Args:
+ itemnum: Item number
+ level: "ITEM" / "ITEMORG" / "INVENTORY"
+
+ Returns:
+ List of blocking reasons (empty = allowed)
+
+ Validations:
+ - No work plan references
+ - No job plan references
+ - No desktop requisition lines (MRLINE)
+ - No purchase requisition lines
+ - No purchase order lines
+ - No item balance (for inventory level)
+ """
+ blocking_reasons = []
+
+ # Check work plans
+ if has_workplan_references(itemnum, level):
+ blocking_reasons.append(f"Item exists on work plan at {level} level")
+
+ # Check job plans
+ if has_jobplan_references(itemnum, level):
+ blocking_reasons.append(f"Item exists on job plan at {level} level")
+
+ # Check MRLINE
+ if has_mrline_references(itemnum, level):
+ blocking_reasons.append(f"Item exists on desktop requisition at {level} level")
+
+ # Check PR lines
+ if has_pr_references(itemnum, level):
+ blocking_reasons.append(f"Item exists on purchase requisition at {level} level")
+
+ # Check PO lines
+ if has_po_references(itemnum, level):
+ blocking_reasons.append(f"Item exists on purchase order at {level} level")
+
+ # Check balances (inventory level only)
+ if level == "INVENTORY" and has_balance(itemnum):
+ blocking_reasons.append(f"Item has remaining balance")
+
+ return blocking_reasons
 ```
 
 ### 6.3 Commodity Validation
@@ -531,80 +531,80 @@ def validate_obsolete_allowed(itemnum: str, level: str) -> List[str]:
 #### Commodity Code Validation
 ```python
 def validate_commodity(commodity: str, is_group: bool, itemsetid: str) -> bool:
-    """
-    Validate commodity group/code.
-    
-    Rules:
-    - Required: No (but HIGHLY recommended)
-    - Max 8 characters
-    - Uppercase only
-    - Must exist in COMMODITIES table
-    - If code, parent group must exist
-    """
-    if not commodity:
-        return True  # Optional maar niet aanbevolen
-    
-    if len(commodity) > 8:
-        return False
-    
-    if commodity != commodity.upper():
-        return False
-    
-    # Check existence
-    if not commodity_exists(commodity, itemsetid):
-        return False
-    
-    # If code, validate parent
-    if not is_group:
-        parent = get_commodity_parent(commodity, itemsetid)
-        if not parent:
-            return False
-    
-    return True
+ """
+ Validate commodity group/code.
+
+ Rules:
+ - Required: No (but HIGHLY recommended)
+ - Max 8 characters
+ - Uppercase only
+ - Must exist in COMMODITIES table
+ - If code, parent group must exist
+ """
+ if not commodity:
+ return True # Optional maar niet aanbevolen
+
+ if len(commodity) > 8:
+ return False
+
+ if commodity != commodity.upper():
+ return False
+
+ # Check existence
+ if not commodity_exists(commodity, itemsetid):
+ return False
+
+ # If code, validate parent
+ if not is_group:
+ parent = get_commodity_parent(commodity, itemsetid)
+ if not parent:
+ return False
+
+ return True
 ```
 
 ### 6.4 Receipt Tolerance Validation
 
 ```python
 def validate_receipt_tolerance(tolerance_pct: float) -> bool:
-    """
-    Validate receipt tolerance percentage.
-    
-    Rules:
-    - Must be >= 0
-    - Typically 0-25%
-    - Warning if > 25%
-    """
-    if tolerance_pct < 0:
-        return False
-    
-    if tolerance_pct > 25:
-        logger.warning(f"Receipt tolerance {tolerance_pct}% is very high")
-    
-    return True
+ """
+ Validate receipt tolerance percentage.
+
+ Rules:
+ - Must be >= 0
+ - Typically 0-25%
+ - Warning if > 25%
+ """
+ if tolerance_pct < 0:
+ return False
+
+ if tolerance_pct > 25:
+ logger.warning(f"Receipt tolerance {tolerance_pct}% is very high")
+
+ return True
 ```
 
 ### 6.5 Stock Category Validation
 
 ```python
 def validate_stock_category(stock_category: str, has_inventory: bool) -> bool:
-    """
-    Validate stock category.
-    
-    Rules:
-    - Must be STK, NS, or SP
-    - If no inventory across all sites → should be NS
-    - SP only for special order items
-    """
-    valid_categories = ["STK", "NS", "SP"]
-    
-    if stock_category not in valid_categories:
-        return False
-    
-    if not has_inventory and stock_category == "STK":
-        logger.warning("Item marked STK but no inventory exists")
-    
-    return True
+ """
+ Validate stock category.
+
+ Rules:
+ - Must be STK, NS, or SP
+ - If no inventory across all sites → should be NS
+ - SP only for special order items
+ """
+ valid_categories = ["STK", "NS", "SP"]
+
+ if stock_category not in valid_categories:
+ return False
+
+ if not has_inventory and stock_category == "STK":
+ logger.warning("Item marked STK but no inventory exists")
+
+ return True
 ```
 
 ---
@@ -636,11 +636,11 @@ def validate_stock_category(stock_category: str, has_inventory: bool) -> bool:
 #### ITEMS-4: Commodity Mapping
 - **Rule:** ALTIJD commodity group/code toewijzen
 - **MSG-3 Mapping:**
-  - ATA Chapter → Commodity Group
-  - ATA System → Commodity Code
-- **Example:** 
-  - ATA 32 (Landing Gear) → Commodity Group: "ATA-32"
-  - System 11 (Doors) → Commodity Code: "32-11"
+ - ATA Chapter → Commodity Group
+ - ATA System → Commodity Code
+- **Example:**
+ - ATA 32 (Landing Gear) → Commodity Group: "ATA-32"
+ - System 11 (Doors) → Commodity Code: "32-11"
 
 ### 7.2 Status Management Rules
 
@@ -652,11 +652,11 @@ def validate_stock_category(stock_category: str, has_inventory: bool) -> bool:
 #### STATUS-2: Activation Workflow
 ```
 PLANNING (initial)
-    ↓ (na review & approval)
+ ↓ (na review & approval)
 ACTIVE (production ready)
-    ↓ (als item wordt vervangen)
+ ↓ (als item wordt vervangen)
 PENDOBS (phasing out)
-    ↓ (na validaties passed)
+ ↓ (na validaties passed)
 OBSOLETE (retired)
 ```
 
@@ -684,29 +684,29 @@ OBSOLETE (retired)
 #### QUALITY-1: No Duplicates
 - **Rule:** Check duplicate items VOORDAT creatie
 - **Check Fields:**
-  - ITEMNUM (exact)
-  - Description (similar)
-  - ATA + Task combination
+ - ITEMNUM (exact)
+ - Description (similar)
+ - ATA + Task combination
 - **Action:** Warning + merge suggestion
 
 #### QUALITY-2: Complete Data
 - **Required Fields Check:**
-  - ITEMNUM ✓
-  - DESCRIPTION ✓
-  - ITEMTYPE = "ITEM" ✓
-  - STATUS = "PLANNING" ✓
-  - STOCKCATEGORY = "NS" ✓
-  - COMMODITY (Group) ✓
-  - COMMODITY (Code) ✓
+ - ITEMNUM
+ - DESCRIPTION
+ - ITEMTYPE = "ITEM"
+ - STATUS = "PLANNING"
+ - STOCKCATEGORY = "NS"
+ - COMMODITY (Group)
+ - COMMODITY (Code)
 
 #### QUALITY-3: Validation Before Create
 - **Pre-Creation Checks:**
-  1. ITEMNUM format valid
-  2. ITEMNUM niet in gebruik
-  3. Description meaningful
-  4. Commodity exists in COMMODITIES table
-  5. Organization exists
-  6. Item Set exists
+ 1. ITEMNUM format valid
+ 2. ITEMNUM niet in gebruik
+ 3. Description meaningful
+ 4. Commodity exists in COMMODITIES table
+ 5. Organization exists
+ 6. Item Set exists
 
 ### 7.5 Change Management Rules
 
@@ -778,38 +778,38 @@ OBSOLETE (retired)
 
 ```python
 def validate_msg3_item_for_maximo(msg3_task: dict) -> tuple[bool, list]:
-    """
-    Validate MSG-3 task kan worden geconverteerd naar Maximo item.
-    
-    Returns:
-        (valid: bool, errors: list)
-    """
-    errors = []
-    
-    # ITEMNUM
-    itemnum = generate_itemnum(msg3_task)
-    if len(itemnum) > 30:
-        errors.append(f"ITEMNUM too long: {itemnum}")
-    if not itemnum.isupper():
-        errors.append(f"ITEMNUM must be uppercase: {itemnum}")
-    
-    # DESCRIPTION
-    desc = msg3_task.get("description", "")
-    if len(desc) > 100:
-        errors.append(f"Description too long: {len(desc)} chars")
-    if len(desc) < 10:
-        errors.append(f"Description too short: {desc}")
-    
-    # COMMODITY
-    ata_chapter = msg3_task.get("ata_chapter")
-    if not ata_chapter:
-        errors.append("ATA Chapter missing for commodity group")
-    
-    ata_system = msg3_task.get("ata_system")
-    if not ata_system:
-        errors.append("ATA System missing for commodity code")
-    
-    return (len(errors) == 0, errors)
+ """
+ Validate MSG-3 task kan worden geconverteerd naar Maximo item.
+
+ Returns:
+ (valid: bool, errors: list)
+ """
+ errors = []
+
+ # ITEMNUM
+ itemnum = generate_itemnum(msg3_task)
+ if len(itemnum) > 30:
+ errors.append(f"ITEMNUM too long: {itemnum}")
+ if not itemnum.isupper():
+ errors.append(f"ITEMNUM must be uppercase: {itemnum}")
+
+ # DESCRIPTION
+ desc = msg3_task.get("description", "")
+ if len(desc) > 100:
+ errors.append(f"Description too long: {len(desc)} chars")
+ if len(desc) < 10:
+ errors.append(f"Description too short: {desc}")
+
+ # COMMODITY
+ ata_chapter = msg3_task.get("ata_chapter")
+ if not ata_chapter:
+ errors.append("ATA Chapter missing for commodity group")
+
+ ata_system = msg3_task.get("ata_system")
+ if not ata_system:
+ errors.append("ATA System missing for commodity code")
+
+ return (len(errors) == 0, errors)
 ```
 
 ---
@@ -860,10 +860,10 @@ def validate_msg3_item_for_maximo(msg3_task: dict) -> tuple[bool, list]:
 
 #### Error: "Cannot set status to OBSOLETE"
 - **Cause:** Item has active references or wrong status transition
-- **Solution:** 
-  1. Check current status (must be PENDOBS)
-  2. Validate no references exist
-  3. Check on correct level (Inventory → Org → Item)
+- **Solution:**
+ 1. Check current status (must be PENDOBS)
+ 2. Validate no references exist
+ 3. Check on correct level (Inventory → Org → Item)
 
 #### Error: "Item not found in lookup"
 - **Cause:** Item status is PENDING or OBSOLETE
@@ -877,20 +877,20 @@ def validate_msg3_item_for_maximo(msg3_task: dict) -> tuple[bool, list]:
 
 ```python
 ERROR_MESSAGES = {
-    "ITEMNUM_TOO_LONG": "ITEMNUM exceeds 30 characters: {itemnum}",
-    "ITEMNUM_NOT_UPPER": "ITEMNUM must be uppercase: {itemnum}",
-    "ITEMNUM_EXISTS": "ITEMNUM already exists: {itemnum}",
-    "DESC_TOO_LONG": "Description exceeds 100 characters",
-    "DESC_TOO_SHORT": "Description too short, recommend min 20 chars",
-    "DESC_EMPTY": "Description is required",
-    "COMMODITY_NOT_FOUND": "Commodity {commodity} not found in set {itemsetid}",
-    "COMMODITY_TOO_LONG": "Commodity exceeds 8 characters: {commodity}",
-    "STATUS_INVALID": "Invalid status: {status}",
-    "STATUS_TRANSITION_INVALID": "Cannot transition from {old} to {new}",
-    "OBSOLETE_HAS_REFERENCES": "Cannot set to OBSOLETE: {blocking_reasons}",
-    "ITEMSET_NOT_FOUND": "Item Set not found: {itemsetid}",
-    "ORG_NOT_FOUND": "Organization not found: {orgid}",
-    "ORG_NOT_IN_ITEMSET": "Organization {orgid} not linked to Item Set {itemsetid}",
+ "ITEMNUM_TOO_LONG": "ITEMNUM exceeds 30 characters: {itemnum}",
+ "ITEMNUM_NOT_UPPER": "ITEMNUM must be uppercase: {itemnum}",
+ "ITEMNUM_EXISTS": "ITEMNUM already exists: {itemnum}",
+ "DESC_TOO_LONG": "Description exceeds 100 characters",
+ "DESC_TOO_SHORT": "Description too short, recommend min 20 chars",
+ "DESC_EMPTY": "Description is required",
+ "COMMODITY_NOT_FOUND": "Commodity {commodity} not found in set {itemsetid}",
+ "COMMODITY_TOO_LONG": "Commodity exceeds 8 characters: {commodity}",
+ "STATUS_INVALID": "Invalid status: {status}",
+ "STATUS_TRANSITION_INVALID": "Cannot transition from {old} to {new}",
+ "OBSOLETE_HAS_REFERENCES": "Cannot set to OBSOLETE: {blocking_reasons}",
+ "ITEMSET_NOT_FOUND": "Item Set not found: {itemsetid}",
+ "ORG_NOT_FOUND": "Organization not found: {orgid}",
+ "ORG_NOT_IN_ITEMSET": "Organization {orgid} not linked to Item Set {itemsetid}",
 }
 ```
 
@@ -903,31 +903,31 @@ ERROR_MESSAGES = {
 ```python
 # Test ITEMNUM validation
 def test_itemnum_validation():
-    assert validate_itemnum("MSG3-32-11-001") == True
-    assert validate_itemnum("msg3-32-11-001") == False  # Not uppercase
-    assert validate_itemnum("A" * 31) == False  # Too long
-    assert validate_itemnum("") == False  # Empty
+ assert validate_itemnum("MSG3-32-11-001") == True
+ assert validate_itemnum("msg3-32-11-001") == False # Not uppercase
+ assert validate_itemnum("A" * 31) == False # Too long
+ assert validate_itemnum("") == False # Empty
 
 # Test Description validation
 def test_description_validation():
-    assert validate_description("Short", "TEST") == False  # Too short
-    assert validate_description("A" * 101, "TEST") == False  # Too long
-    assert validate_description("Good description for test item", "TEST") == True
+ assert validate_description("Short", "TEST") == False # Too short
+ assert validate_description("A" * 101, "TEST") == False # Too long
+ assert validate_description("Good description for test item", "TEST") == True
 
 # Test Status transitions
 def test_status_transitions():
-    assert validate_status_transition("PENDING", "PLANNING") == True
-    assert validate_status_transition("PLANNING", "ACTIVE") == True
-    assert validate_status_transition("ACTIVE", "PENDOBS") == True
-    assert validate_status_transition("PENDOBS", "OBSOLETE") == True
-    assert validate_status_transition("ACTIVE", "OBSOLETE") == False  # Skip PENDOBS
-    assert validate_status_transition("OBSOLETE", "ACTIVE") == False  # Irreversible
+ assert validate_status_transition("PENDING", "PLANNING") == True
+ assert validate_status_transition("PLANNING", "ACTIVE") == True
+ assert validate_status_transition("ACTIVE", "PENDOBS") == True
+ assert validate_status_transition("PENDOBS", "OBSOLETE") == True
+ assert validate_status_transition("ACTIVE", "OBSOLETE") == False # Skip PENDOBS
+ assert validate_status_transition("OBSOLETE", "ACTIVE") == False # Irreversible
 
 # Test Commodity validation
 def test_commodity_validation():
-    assert validate_commodity("ATA-32", True, "MSG3-MAINT") == True
-    assert validate_commodity("TOOLONGCODE", True, "MSG3-MAINT") == False
-    assert validate_commodity("ata-32", True, "MSG3-MAINT") == False  # Not uppercase
+ assert validate_commodity("ATA-32", True, "MSG3-MAINT") == True
+ assert validate_commodity("TOOLONGCODE", True, "MSG3-MAINT") == False
+ assert validate_commodity("ata-32", True, "MSG3-MAINT") == False # Not uppercase
 ```
 
 ### 11.2 Integration Tests
@@ -935,23 +935,23 @@ def test_commodity_validation():
 ```python
 # Test complete item creation workflow
 def test_create_msg3_item():
-    msg3_task = {
-        "task_code": "32-11-001",
-        "description": "Inspection - Landing Gear - Door - Visual Check",
-        "ata_chapter": "32",
-        "ata_system": "11"
-    }
-    
-    # Convert to Maximo format
-    maximo_item = convert_msg3_to_maximo_item(msg3_task)
-    
-    # Validate
-    assert maximo_item["ITEMNUM"] == "MSG3-32-11-001"
-    assert len(maximo_item["DESCRIPTION"]) <= 100
-    assert maximo_item["STATUS"] == "PLANNING"
-    assert maximo_item["STOCKCATEGORY"] == "NS"
-    assert maximo_item["COMMODITY_GROUP"] == "ATA-32"
-    assert maximo_item["COMMODITY_CODE"] == "32-11"
+ msg3_task = {
+ "task_code": "32-11-001",
+ "description": "Inspection - Landing Gear - Door - Visual Check",
+ "ata_chapter": "32",
+ "ata_system": "11"
+ }
+
+ # Convert to Maximo format
+ maximo_item = convert_msg3_to_maximo_item(msg3_task)
+
+ # Validate
+ assert maximo_item["ITEMNUM"] == "MSG3-32-11-001"
+ assert len(maximo_item["DESCRIPTION"]) <= 100
+ assert maximo_item["STATUS"] == "PLANNING"
+ assert maximo_item["STOCKCATEGORY"] == "NS"
+ assert maximo_item["COMMODITY_GROUP"] == "ATA-32"
+ assert maximo_item["COMMODITY_CODE"] == "32-11"
 ```
 
 ---
@@ -960,21 +960,21 @@ def test_create_msg3_item():
 
 ### 12.1 Maximo Secrets Artikelen
 
-1. **Item Master**  
-   URL: https://maximosecrets.com/2026/02/11/item-master/  
-   Datum: 11 februari 2026
+1. **Item Master**
+ URL: https://maximosecrets.com/2026/02/11/item-master/
+ Datum: 11 februari 2026
 
-2. **Item Statuses**  
-   URL: https://maximosecrets.com/2026/02/13/item-statuses-2/  
-   Datum: 13 februari 2026
+2. **Item Statuses**
+ URL: https://maximosecrets.com/2026/02/13/item-statuses-2/
+ Datum: 13 februari 2026
 
-3. **Item Sets and Organizations**  
-   URL: https://maximosecrets.com/2026/02/02/item-sets-and-organizations-and-item-types/  
-   Datum: 2 februari 2026
+3. **Item Sets and Organizations**
+ URL: https://maximosecrets.com/2026/02/02/item-sets-and-organizations-and-item-types/
+ Datum: 2 februari 2026
 
-4. **Commodity Groups and Codes**  
-   URL: https://maximosecrets.com/2026/02/04/commodity-groups-and-codes/  
-   Datum: 4 februari 2026
+4. **Commodity Groups and Codes**
+ URL: https://maximosecrets.com/2026/02/04/commodity-groups-and-codes/
+ Datum: 4 februari 2026
 
 ### 12.2 Maximo Objects
 
@@ -993,7 +993,7 @@ def test_create_msg3_item():
 
 ---
 
-## 📝 Change Log
+## Change Log
 
 | Datum | Auteur | Wijziging |
 |-------|--------|-----------|
@@ -1001,17 +1001,17 @@ def test_create_msg3_item():
 
 ---
 
-## ✅ Authenticiteitsverklaring
+## Authenticiteitsverklaring
 
 **AI-Gebruik:** Dit document is samengesteld met behulp van Cursor AI (Claude Sonnet 4.5).
 
 **Mijn Bijdrage (Pedro):**
-- ✅ Research opdracht gegeven aan AI
-- ✅ Maximo Secrets website aangedragen als bron
-- ✅ Structuur en focus bepaald
-- ✅ Validatie van gegenereerde content
-- ✅ Verificatie dat alle informatie relevant is voor MSGConverter
-- ✅ Goedkeuring voor implementatie in project
+- Research opdracht gegeven aan AI
+- Maximo Secrets website aangedragen als bron
+- Structuur en focus bepaald
+- Validatie van gegenereerde content
+- Verificatie dat alle informatie relevant is voor MSGConverter
+- Goedkeuring voor implementatie in project
 
 **AI Bijdrage:**
 - Content extractie uit Maximo Secrets artikelen
@@ -1022,7 +1022,7 @@ def test_create_msg3_item():
 
 **Verificatie:** Ik heb de content gelezen, begrepen en goedgekeurd voor gebruik in dit project. De informatie is afkomstig van de officiële Maximo Secrets website (maximosecrets.com), een gerenommeerde bron voor Maximo documentatie.
 
-**Datum:** 17 februari 2026  
+**Datum:** 17 februari 2026
 **Student:** Pedro Eduardo Cardoso
 
 ---

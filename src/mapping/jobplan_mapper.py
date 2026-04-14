@@ -125,7 +125,7 @@ class JobPlanMapper:
         # TODO: Add labor (JOBLABOR table)
         # TODO: Add task instructions (JPTASK table)
         
-        logger.debug(f"Mapped MSG-3 task {msg3_task.get('task_code')} → JobPlan {jpnum}")
+        logger.debug(f"Mapped MSG-3 task {msg3_task.get('task_code')} -> JobPlan {jpnum}")
         return jobplan_record
     
     def _generate_jpnum(self, task_code: str) -> str:

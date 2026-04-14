@@ -2,6 +2,9 @@
 """
 Export Plan van Aanpak markdown files to one Word document (.docx).
 
+De volgorde van secties komt uit docs/plan-van-aanpak/word-export-order.txt
+(template-gestuurd; zie PVA-TEMPLATE-BRIGHTSPACE.md).
+
 Usage:
     python scripts/export_pva_to_word.py
 
@@ -31,7 +34,7 @@ def parse_markdown_line(line: str) -> tuple[str | None, int | None, str]:
         return ("empty", None, "")
 
     if stripped.startswith("#"):
-        match = re.match(r"^(#{1,4})\s+(.*)$", stripped)
+        match = re.match(r"^(#{1,6})\s+(.*)$", stripped)
         if match:
             level = len(match.group(1))
             return ("heading", level, match.group(2).strip())
@@ -52,7 +55,7 @@ def add_paragraph_with_inline_format(doc: Document, text: str, style: str | None
     parts = re.split(r"(\*\*[^*]+\*\*)", text)
     for part in parts:
         if part.startswith("**") and part.endswith("**"):
-            run = p.add_run(part[2:-2] + " ")
+            run = p.add_run(part[2:-2])
             run.bold = True
         else:
             p.add_run(part if part else "")
@@ -127,39 +130,66 @@ def md_to_docx_content(doc: Document, md_text: str):
         i += 1
 
 
+def load_export_order(docs_dir: Path, default_order: list[str]) -> list[str]:
+    """
+    Lees exportvolgorde uit word-export-order.txt in docs_dir (template-gestuurd).
+    Regels die met # beginnen of leeg zijn worden overgeslagen.
+    Als het bestand ontbreekt of leeg is, wordt default_order gebruikt.
+    """
+    manifest = docs_dir / "word-export-order.txt"
+    if not manifest.exists():
+        return default_order
+    lines = [
+        line.strip()
+        for line in manifest.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.strip().startswith("#")
+    ]
+    return lines if lines else default_order
+
+
 def main():
     root = get_project_root()
     docs_dir = root / "docs" / "plan-van-aanpak"
     out_path = docs_dir / "Plan-van-Aanpak-MSG3-Maximo-Converter.docx"
 
-    doc = Document()
-    doc.add_heading("Plan van Aanpak – MSG-3 to Maximo Converter", 0)
-    doc.add_paragraph(
-        "Babcock Schiphol | Pedro Eduardo Cardoso | Associate Degree Software Developer (ADSD), Windesheim"
-    )
-    doc.add_paragraph(
-        "Dit document bevat het volledige plan van aanpak: projectaanpak, planning, risicoanalyse, randvoorwaarden en deliverables."
-    )
-    doc.add_paragraph()
-
-    order = [
-        "01-projectaanpak.md",
-        "02-planning.md",
-        "03-risicoanalyse.md",
-        "04-randvoorwaarden.md",
-        "05-deliverables.md",
-    ]
-
-    for filename in order:
-        path = docs_dir / filename
-        if not path.exists():
-            print(f"Warning: {path} not found, skipping.")
-            continue
-        md_text = path.read_text(encoding="utf-8")
-        md_to_docx_content(doc, md_text)
+    # Geconsolideerd: 1 bestand per deliverable
+    src_path = docs_dir / "plan-van-aanpak.md"
+    if src_path.exists():
+        doc = Document()
+        doc.add_heading("Plan van Aanpak – MSG-3 to Maximo Converter", 0)
+        doc.add_paragraph(
+            "Babcock Schiphol | Pedro Eduardo Cardoso | Associate Degree Software Developer (ADSD), Windesheim"
+        )
         doc.add_paragraph()
-        if filename != order[-1]:
-            doc.add_page_break()
+        md_text = src_path.read_text(encoding="utf-8")
+        md_to_docx_content(doc, md_text)
+    else:
+        # Fallback: oude structuur
+        default_order = [
+            "01-projectaanpak.md",
+            "02-planning.md",
+            "03-risicoanalyse.md",
+            "04-probleemstelling-vragen.md",
+            "05-randvoorwaarden.md",
+            "06-deliverables.md",
+        ]
+        order = load_export_order(docs_dir, default_order)
+        doc = Document()
+        doc.add_heading("Plan van Aanpak – MSG-3 to Maximo Converter", 0)
+        doc.add_paragraph(
+            "Babcock Schiphol | Pedro Eduardo Cardoso | Associate Degree Software Developer (ADSD), Windesheim"
+        )
+        doc.add_paragraph()
+        for filename in order:
+            path = docs_dir / filename
+            if not path.exists():
+                print(f"Warning: {path} not found, skipping.")
+                continue
+            md_text = path.read_text(encoding="utf-8")
+            md_to_docx_content(doc, md_text)
+            doc.add_paragraph()
+            if filename != order[-1]:
+                doc.add_page_break()
 
     doc.save(str(out_path))
     print(f"Word document saved: {out_path}")

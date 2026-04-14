@@ -1,88 +1,93 @@
 # Documentatie Overzicht
 
-**MSG-3 to Maximo Converter** — Pedro Eduardo Cardoso, ADSD Windesheim
+**MSG-3 to Maximo Converter**, Pedro Eduardo Cardoso, ADSD Windesheim
 
----
+## Documentatie herschrijven
+
+De deliverable-documenten worden herschreven op basis van **templates uit de lessen** (Brightspace) en **voorbeelden op [hbo-kennisbank.nl](https://hbo-kennisbank.nl/)**. Zie [DOCUMENTATIE-BRONNEN.md](DOCUMENTATIE-BRONNEN.md) voor uitleg en zoektips.
+
+**Prioriteit nu:** Eerst de **projectdefinitie** afmaken en herinleveren. Daarna PvA, onderzoek, FO/Design. Zie [STAPPENPLAN-NU.md](STAPPENPLAN-NU.md) en [FEEDBACK-HERINLEVEREN.md](FEEDBACK-HERINLEVEREN.md).
+
+**SP3-colleges:** Voor correct doorlopen van documentatie en eindopdracht (stakeholderanalyse, Product Goal & Vision, Product backlog) zie [SP3-Colleges-Referentie.md](SP3-Colleges-Referentie.md). Daar staan begrippen, eisen en checklist uit alle zeven colleges.
+
+## Stappenplan nu
+
+**Zie:** [STAPPENPLAN-NU.md](STAPPENPLAN-NU.md): wat doe je nu (volgorde herinleveren: projectdefinitie → PvA → onderzoek → FO/Design).
+**Feedback herinleveren:** [FEEDBACK-HERINLEVEREN.md](FEEDBACK-HERINLEVEREN.md) bevat de docentfeedback en de acties per deliverable (templates, Kennisbank, humaniseren, hoofdvraag onderzoek, SDD-vorm).
 
 ## Mappenstructuur
 
 ```
 docs/
-├── projectdefinitie/        Windesheim deliverable: Projectdefinitie
-├── plan-van-aanpak/         Windesheim deliverable: Plan van Aanpak
-├── technisch-ontwerp/       Architectuur, business rules, Maximo specs
-├── scrum/                   Backlog, sprints, weekly routine
-├── beoordeling/             Checklists, criteria, zelfevaluatie
-├── ai/                      AI-gebruik, transparantie, logboek
-├── reflectie/               Persoonlijke reflectie
-└── TEAM-CONTACTEN.md        Contactgegevens team
+├── projectdefinitie/ Windesheim deliverable: Projectdefinitie
+├── plan-van-aanpak/ Windesheim deliverable: Plan van Aanpak
+├── technisch-ontwerp/ Architectuur, business rules, Maximo specs
+├── onderzoek/ Onderzoeksrapport (MSG-3, Maximo API, POC)
+├── scrum/ Backlog, sprints, weekly routine
+├── beoordeling/ Checklists, criteria, zelfevaluatie
+├── ai/ AI-gebruik, transparantie, logboek
+├── reflectie/ Persoonlijke reflectie
+└── TEAM-CONTACTEN.md Contactgegevens team
 ```
-
----
 
 ## Projectdefinitie (`projectdefinitie/`)
 
-| # | Bestand | Inhoud |
-|---|---------|--------|
-| 0 | `00-START-HIER.md` | Startpunt & leeswijzer |
-| 1 | `01-context-analyse.md` | Babcock Schiphol, MSG-3, Maximo context |
-| 2 | `02-probleemstelling.md` | Huidige situatie & pijnpunten |
-| 3 | `03-doelstellingen.md` | SMART doelstellingen |
-| 4 | `04-scope.md` | In scope / out of scope |
-| 5 | `05-stakeholders.md` | Betrokken partijen & belangen |
-
-**Competentie:** Analyseren
-
-**Word-document:** Vanuit de map kun je één Word-bestand genereren met `python scripts/export_projectdefinitie_to_word.py`. Output: `Projectdefinitie-MSG3-Maximo-Converter.docx` (in deze map). Vereist: `pip install python-docx`.
-
----
-
-## Plan van Aanpak (`plan-van-aanpak/`)
-
-| # | Bestand | Inhoud |
-|---|---------|--------|
-| 0 | `00-START-HIER.md` | Startpunt & leeswijzer |
-| 1 | `01-projectaanpak.md` | Methodiek (Agile/Scrum) |
-| 2 | `02-planning.md` | Tijdlijn, milestones, sprint planning |
-| 3 | `03-risicoanalyse.md` | Risico's + mitigatie strategieën |
-| 4 | `04-randvoorwaarden.md` | Technische & organisatorische voorwaarden |
-| 5 | `05-deliverables.md` | Opleverpunten & acceptatiecriteria |
-
-**Competentie:** Manage & Control
-
-**Word-document:** Genereer één Word-bestand met `python scripts/export_pva_to_word.py`. Output: `Plan-van-Aanpak-MSG3-Maximo-Converter.docx` (in deze map). Vereist: `pip install python-docx`.
-
----
-
-## Technisch Ontwerp (`technisch-ontwerp/`)
+**Geconsolideerd:** 1 bestand per deliverable. Alle inhoud staat in `projectdefinitie.md` (Inleiding, 1–8 volgens Windesheim-template).
 
 | Bestand | Inhoud |
 |---------|--------|
-| `business-rules.md` | Volledige business rules documentatie |
-| `business-rules-quick-reference.md` | Quick reference kaart |
-| `BUSINESS-RULES-FIRST.md` | Business-rules-first aanpak uitleg |
-| `CHANGELOG-business-rules.md` | Wijzigingslog business rules |
-| `MAPPING-FLOW-VISUAL.md` | Visuele mapping flow MSG-3 → Maximo |
-| `maximo-specificaties.md` | Maximo veld specificaties |
-| `MAXIMO-INTEGRATIE-UPDATE.md` | Status Maximo integratie |
+| `projectdefinitie.md` | **Hoofddocument** – Inleiding, context, project, aanpak, organisatie, strategieën, planning, literatuur, bijlagen |
+
+**Competentie:** Analyseren
+
+**Word-document:** `python scripts/export_projectdefinitie_to_word.py` → `Projectdefinitie-MSG3-Maximo-Converter.docx` (in deze map). Vereist: `pip install python-docx`.
+
+## Plan van Aanpak (`plan-van-aanpak/`)
+
+**Geconsolideerd:** 1 bestand per deliverable. Alle inhoud staat in `plan-van-aanpak.md`.
+
+| Bestand | Inhoud |
+|---------|--------|
+| `plan-van-aanpak.md` | **Hoofddocument** – Projectaanpak, planning, risicoanalyse, probleemstelling, randvoorwaarden, deliverables |
+
+**Competentie:** Manage & Control
+
+**Word-document:** `python scripts/export_pva_to_word.py` → `Plan-van-Aanpak-MSG3-Maximo-Converter.docx` (in deze map). Vereist: `pip install python-docx`.
+
+## Technisch Ontwerp / FO design (`technisch-ontwerp/`)
+
+**Geconsolideerd:** 1 bestand per deliverable. Alle inhoud staat in `technisch-ontwerp.md` (SDD, architectuur, business rules, mapping, Maximo specs).
+
+| Bestand | Inhoud |
+|---------|--------|
+| `technisch-ontwerp.md` | **Hoofddocument** – SDD, ontwerp-overzicht, architectuur, business rules, mapping flow, Maximo specificaties |
+
+**Word (voor OnStage):** `python scripts/export_technisch_ontwerp_to_word.py` → `FO-design-MSG3-Maximo-Converter.docx` (in deze map).
 
 **Competentie:** Ontwerpen
 
----
+## Onderzoek (`onderzoek/`)
+
+| Bestand | Inhoud |
+|---------|--------|
+| `00-onderzoeksrapport.md` | **Hoofddocument**, vijf onderzoeksvragen (MSG-3 structuur, Maximo API, technologiekeuzes, alternatieven, POC), conclusie en aanbevelingen |
+
+**Competentie:** Analyseren, Adviseren
+
+**Word-document:** Genereer één Word-bestand met `python scripts/export_onderzoeksrapport_to_word.py`. Output: `Onderzoeksrapport-MSG3-Maximo-Converter.docx` (in deze map). Vereist: `pip install python-docx`.
+
+**OnStage:** Inleveren als dit document (of PDF/Word) en/of ZIP van `docs/onderzoek/`.
 
 ## Scrum (`scrum/`)
 
 | Bestand | Inhoud |
 |---------|--------|
-| `README.md` | Scrum werkwijze overzicht |
+| `README.md` | Scrum werkwijze, routine (Di/Wo/Do, weekly review), backlog-overzicht |
 | `backlog.md` | Product backlog |
 | `sprint-template.md` | Template voor sprint planning |
-| `WEEKLY-ROUTINE.md` | Wekelijkse routine |
 | `sprints/sprint-01-planning.md` | Sprint 1 planning |
 
 **Competentie:** Manage & Control
-
----
 
 ## Beoordeling (`beoordeling/`)
 
@@ -94,9 +99,6 @@ docs/
 | `ACTIEPLAN-8PLUS.md` | Actieplan voor 8+ beoordeling |
 | `ZELFEVALUATIE-TRACKING.md` | Live scorecard (check elke vrijdag) |
 | `CORRECTE-INFORMATIE.md` | Factcheck & correcte gegevens |
-| `INVUL-SESSIE.md` | Sessie-notities voor invullen docs |
-
----
 
 ## AI Documentatie (`ai/`)
 
@@ -104,23 +106,15 @@ docs/
 |---------|--------|
 | `AI-GEBRUIK.md` | Volledige AI-gebruik verantwoording (AIAS) |
 | `AI-AUTHENTICITEITSVERKLARINGEN.md` | Copy-paste verklaringen per deliverable |
-| `AI-DOCUMENTATIE-OVERZICHT.md` | Overzicht alle AI-documentatie |
-| `MIJN-BIJDRAGE-VS-AI.md` | Eigenaarschap: 75% Pedro / 25% AI |
-| `AI-WORKFLOW-DAGELIJKS.md` | Dagelijkse AI workflow |
-| `AI-OVERZICHT-VISUAL.md` | Visueel AI-gebruik overzicht |
-| `AI-SETUP-COMPLEET.md` | AI setup status |
+| `AI-WORKFLOW-DAGELIJKS.md` | Dagelijkse AI workflow + cheat sheet |
 | `AI-LOGBOEK.md` | Chronologisch AI-gebruik logboek |
-| `AI-CHEAT-SHEET.md` | Quick reference AI commando's |
-
----
+| `MIJN-BIJDRAGE-VS-AI.md` | Eigenaarschap: 75% Pedro / 25% AI |
 
 ## Reflectie (`reflectie/`)
 
 | Bestand | Inhoud |
 |---------|--------|
 | `README.md` | Persoonlijke reflectie (in ontwikkeling) |
-
----
 
 ## Root-niveau bestanden
 
@@ -129,9 +123,6 @@ docs/
 | `README.md` | Project README |
 | `QUICKSTART.md` | Snel aan de slag |
 | `CONTRIBUTING.md` | Bijdrage richtlijnen |
-| `PROJECT_OVERVIEW.md` | Project overzicht |
 | `MAXIMO-QUICK-REFERENCE.md` | Maximo quick reference |
 
----
-
-*Laatst bijgewerkt: 18 februari 2026*
+*Laatst bijgewerkt: 24 februari 2026 – Geconsolideerd naar 1 MD-bestand per deliverable*

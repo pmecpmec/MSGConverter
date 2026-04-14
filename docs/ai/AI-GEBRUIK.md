@@ -1,11 +1,11 @@
 # AI-Gebruik Documentatie
 ## MSG-3 → Maximo Integration Project
 
-**Datum:** 11 februari 2026  
-**Student:** Pedro Eduardo Cardoso  
-**Project:** MSG-3 to Maximo Converter  
-**Organisatie:** Babcock Schiphol  
-**Opleiding:** Associate Degree Software Developer (ADSD)  
+**Datum:** 11 februari 2026
+**Student:** Pedro Eduardo Cardoso
+**Project:** MSG-3 to Maximo Converter
+**Organisatie:** Babcock Schiphol
+**Opleiding:** Associate Degree Software Developer (ADSD)
 **Instelling:** Windesheim
 
 ---
@@ -14,40 +14,40 @@
 
 Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakership-project, conform de **AI Assessment Scale (AIAS)** van Windesheim. Het doel is transparantie en verantwoording te tonen over hoe AI is ingezet tijdens verschillende fasen van het project.
 
-**🎯 BELANGRIJKE NOTA:**
+** BELANGRIJKE NOTA:**
 
 ```
 ┌────────────────────────────────────────────────────┐
-│  IK (Pedro) ben de EIGENAAR van dit project       │
-│  AI (Cursor) is alleen een HULPMIDDEL             │
-│                                                    │
-│  → Alle belangrijke beslissingen: Pedro           │
-│  → Alle business logic: Pedro                     │
-│  → Alle requirements analyse: Pedro               │
-│  → Alle technische keuzes: Pedro                  │
-│                                                    │
-│  AI hielp met: templates, boilerplate, syntax     │
-│  AI deed NIET: denken, besluiten, analyseren      │
+│ IK (Pedro) ben de EIGENAAR van dit project │
+│ AI (Cursor) is alleen een HULPMIDDEL │
+│ │
+│ → Alle belangrijke beslissingen: Pedro │
+│ → Alle business logic: Pedro │
+│ → Alle requirements analyse: Pedro │
+│ → Alle technische keuzes: Pedro │
+│ │
+│ AI hielp met: templates, boilerplate, syntax │
+│ AI deed NIET: denken, besluiten, analyseren │
 └────────────────────────────────────────────────────┘
 ```
 
-**Voor gedetailleerde uitleg: Zie `/docs/MIJN-BIJDRAGE-VS-AI.md`**
+**Voor gedetailleerde uitleg: Zie `docs/ai/MIJN-BIJDRAGE-VS-AI.md`**
 
 **Belangrijke principes:**
-- ✅ Alle AI-gebruik wordt gedocumenteerd
-- ✅ Authenticiteitsverklaringen worden per deliverable opgenomen
-- ✅ Kritische evaluatie van AI-output vindt altijd plaats
-- ✅ **Pedro behoudt volledige eigenaarschap en verantwoordelijkheid**
-- ✅ Geen privacygevoelige data wordt gedeeld met AI-tools
-- ✅ **Pedro begrijpt en kan alle code en keuzes uitleggen**
+- Alle AI-gebruik wordt gedocumenteerd
+- Authenticiteitsverklaringen worden per deliverable opgenomen
+- Kritische evaluatie van AI-output vindt altijd plaats
+- **Pedro behoudt volledige eigenaarschap en verantwoordelijkheid**
+- Geen privacygevoelige data wordt gedeeld met AI-tools
+- **Pedro begrijpt en kan alle code en keuzes uitleggen**
 
 ---
 
 ## Gebruikte AI-Tools
 
 ### Primaire Tool: Cursor AI
-**Versie:** Cursor IDE (gebaseerd op VS Code met Claude Sonnet 4.5 integratie)  
-**Type:** Code generation, refactoring, documentation, debugging assistant  
+**Versie:** Cursor IDE (gebaseerd op VS Code met Claude Sonnet 4.5 integratie)
+**Type:** Code generation, refactoring, documentation, debugging assistant
 **Toegang:** Persoonlijke licentie
 
 **Functionaliteiten gebruikt:**
@@ -69,40 +69,39 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 
 ## AI-Gebruik per Projectfase
 
-### Phase 0: Project Setup (Week 1-2) - NIVEAU 3 & 4
+### Phase 0: Project Setup (Week 1-2) - NIVEAU 3
 
-#### AIAS Niveau: **3 - AI Samenwerking** (Repository structuur, templates)
-#### AIAS Niveau: **4 - Volledig AI** (Documentatie generatie)
+#### AIAS Niveau: **3 - AI Samenwerking** (Repository structuur, templates, documentatie generatie)
 
 **Activiteiten:**
 
 1. **Repository Structuur Opzetten**
-   - AI-tool: Cursor AI
-   - Gebruik: Genereren van folderstructuur, .gitignore, requirements.txt
-   - Rol student: Verificatie van structuur, aanpassing aan projectbehoeften
-   - Output: Complete projectstructuur aangepast aan Windesheim deliverables
+ - AI-tool: Cursor AI
+ - Gebruik: Genereren van folderstructuur, .gitignore, requirements.txt
+ - Rol student: Verificatie van structuur, aanpassing aan projectbehoeften
+ - Output: Complete projectstructuur aangepast aan Windesheim deliverables
 
 2. **Code Templates Genereren**
-   - AI-tool: Cursor AI
-   - Gebruik: Skeleton code voor alle modules (parser, validator, mapping, etc.)
-   - Rol student: Review van templates, toevoeging van business logic placeholders
-   - Output: Template bestanden met docstrings en type hints
+ - AI-tool: Cursor AI
+ - Gebruik: Skeleton code voor alle modules (parser, validator, mapping, etc.)
+ - Rol student: Review van templates, toevoeging van business logic placeholders
+ - Output: Template bestanden met docstrings en type hints
 
 3. **Documentatie Structuur**
-   - AI-tool: Cursor AI
-   - Gebruik: Genereren van Markdown templates, README's, START-HIER gidsen
-   - Rol student: Invullen van project-specifieke content, verificatie
-   - Output: Volledige docs/ structuur met gidsen
+ - AI-tool: Cursor AI
+ - Gebruik: Genereren van Markdown templates, README's, START-HIER gidsen
+ - Rol student: Invullen van project-specifieke content, verificatie
+ - Output: Volledige docs/ structuur met gidsen
 
 4. **Project Configuratie**
-   - AI-tool: Cursor AI
-   - Gebruik: pytest.ini, .cursor/project_instructions.md, CONTRIBUTING.md
-   - Rol student: Aanpassing aan workflow, toevoeging van projectspecifieke regels
-   - Output: Werkende development environment setup
+ - AI-tool: Cursor AI
+ - Gebruik: pytest.ini, .cursor/project_instructions.md, CONTRIBUTING.md
+ - Rol student: Aanpassing aan workflow, toevoeging van projectspecifieke regels
+ - Output: Werkende development environment setup
 
-**Authenticiteitsverklaring (Niveau 3 & 4):**
+**Authenticiteitsverklaring (Niveau 3):**
 
-> Tijdens het opzetten van dit project heb ik **Cursor AI** gebruikt om te **genereren van repository structuur, code templates, en documentatie skeletons**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat de structuur aansluit bij de Windesheim deliverables en de specifieke behoeften van het Babcock project. Voor de initiële documentatie templates (NIVEAU 4) heb ik Cursor AI gebruikt om complete Markdown bestanden te genereren, welke ik vervolgens heb gecontroleerd en aangepast aan de projectcontext. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+> Tijdens het opzetten van dit project heb ik **Cursor AI** gebruikt om te **genereren van repository structuur, code templates, en documentatie skeletons**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat de structuur aansluit bij de Windesheim deliverables en de specifieke behoeften van het Babcock project. Voor de initiële documentatie templates heb ik Cursor AI gebruikt om Markdown bestanden te genereren, welke ik vervolgens heb gecontroleerd en aangepast aan de projectcontext. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
 
 ---
 
@@ -114,28 +113,28 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 **Activiteiten:**
 
 1. **Probleemanalyse & Context**
-   - AI-tool: Cursor AI
-   - Gebruik: Brainstormen over MSG-3 problematiek, structuur voor probleemstelling
-   - Rol student: Invullen met daadwerkelijke situatie bij Babcock, stakeholder input
-   - Output: `docs/projectdefinitie/01-context-en-achtergrond.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Brainstormen over MSG-3 problematiek, structuur voor probleemstelling
+ - Rol student: Invullen met daadwerkelijke situatie bij Babcock, stakeholder input
+ - Output: `docs/projectdefinitie/01-context-en-achtergrond.md`
 
 2. **Doelstellingen Formuleren**
-   - AI-tool: Cursor AI
-   - Gebruik: Suggesties voor SMART doelstellingen structuur
-   - Rol student: Definiëren van concrete, meetbare doelen specifiek voor dit project
-   - Output: `docs/projectdefinitie/02-doelstellingen.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Suggesties voor SMART doelstellingen structuur
+ - Rol student: Definiëren van concrete, meetbare doelen specifiek voor dit project
+ - Output: `docs/projectdefinitie/02-doelstellingen.md`
 
 3. **Scope & Afbakening**
-   - AI-tool: Cursor AI
-   - Gebruik: Helpen structureren van in-scope en out-of-scope items
-   - Rol student: Bepalen van daadwerkelijke scope in overleg met stakeholders
-   - Output: `docs/projectdefinitie/03-scope.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Helpen structureren van in-scope en out-of-scope items
+ - Rol student: Bepalen van daadwerkelijke scope in overleg met stakeholders
+ - Output: `docs/projectdefinitie/03-scope.md`
 
 4. **Stakeholder Analyse**
-   - AI-tool: Cursor AI
-   - Gebruik: Template voor stakeholder matrix, invloed/belang analyse
-   - Rol student: Identificatie van echte stakeholders, invullen van matrix
-   - Output: `docs/projectdefinitie/04-stakeholders.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Template voor stakeholder matrix, invloed/belang analyse
+ - Rol student: Identificatie van echte stakeholders, invullen van matrix
+ - Output: `docs/projectdefinitie/04-stakeholders.md`
 
 **Authenticiteitsverklaring (Niveau 2):**
 
@@ -155,28 +154,28 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 **Activiteiten:**
 
 1. **Projectaanpak Methodiek**
-   - AI-tool: Cursor AI
-   - Gebruik: Uitleg Agile vs Waterfall, suggesties voor sprint structuur
-   - Rol student: Keuze en onderbouwing methodiek passend bij project
-   - Output: `docs/plan-van-aanpak/01-projectaanpak.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Uitleg Agile vs Waterfall, suggesties voor sprint structuur
+ - Rol student: Keuze en onderbouwing methodiek passend bij project
+ - Output: `docs/plan-van-aanpak/01-projectaanpak.md`
 
 2. **Planning & Roadmap**
-   - AI-tool: Cursor AI
-   - Gebruik: Structuur voor sprint planning, template voor roadmap
-   - Rol student: Invullen van realistische tijdsinschattingen, sprint goals
-   - Output: `docs/plan-van-aanpak/02-planning.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Structuur voor sprint planning, template voor roadmap
+ - Rol student: Invullen van realistische tijdsinschattingen, sprint goals
+ - Output: `docs/plan-van-aanpak/02-planning.md`
 
 3. **Risicoanalyse**
-   - AI-tool: Cursor AI
-   - Gebruik: Framework voor risico-identificatie, impact/kans matrix template
-   - Rol student: Identificeren van project-specifieke risico's, mitigatie strategieën
-   - Output: `docs/plan-van-aanpak/03-risicoanalyse.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Framework voor risico-identificatie, impact/kans matrix template
+ - Rol student: Identificeren van project-specifieke risico's, mitigatie strategieën
+ - Output: `docs/plan-van-aanpak/03-risicoanalyse.md`
 
 4. **Kwaliteitsborging**
-   - AI-tool: Cursor AI
-   - Gebruik: Suggesties voor testing strategy, code quality metrics
-   - Rol student: Definiëren van acceptatiecriteria, Definition of Done
-   - Output: Kwaliteitscriteria in projectaanpak
+ - AI-tool: Cursor AI
+ - Gebruik: Suggesties voor testing strategy, code quality metrics
+ - Rol student: Definiëren van acceptatiecriteria, Definition of Done
+ - Output: Kwaliteitscriteria in projectaanpak
 
 **Authenticiteitsverklaring (Niveau 2):**
 
@@ -191,28 +190,28 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 **Activiteiten:**
 
 1. **MSG-3 Structuur Analyse**
-   - AI-tool: Cursor AI
-   - Gebruik: Hulp bij analyseren van Excel structuur, suggesties voor parsing aanpak
-   - Rol student: Analyseren van daadwerkelijke MSG-3 bestanden, edge cases identificeren
-   - Output: `docs/onderzoek/msg3-analyse.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Hulp bij analyseren van Excel structuur, suggesties voor parsing aanpak
+ - Rol student: Analyseren van daadwerkelijke MSG-3 bestanden, edge cases identificeren
+ - Output: `docs/onderzoek/msg3-analyse.md`
 
 2. **Maximo API Onderzoek**
-   - AI-tool: Cursor AI
-   - Gebruik: Uitleg Maximo REST API concepten, voorbeelden van API calls
-   - Rol student: Testen van API in Babcock environment, authentication flow
-   - Output: `docs/onderzoek/maximo-api.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Uitleg Maximo REST API concepten, voorbeelden van API calls
+ - Rol student: Testen van API in Babcock environment, authentication flow
+ - Output: `docs/onderzoek/maximo-api.md`
 
 3. **Architectuur Ontwerp**
-   - AI-tool: Cursor AI
-   - Gebruik: Design patterns suggesties, class diagram templates, sequence diagrams
-   - Rol student: Keuze van patterns passend bij use case, architectuur beslissingen
-   - Output: `docs/technisch-ontwerp/architectuur.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Design patterns suggesties, class diagram templates, sequence diagrams
+ - Rol student: Keuze van patterns passend bij use case, architectuur beslissingen
+ - Output: `docs/technisch-ontwerp/architectuur.md`
 
 4. **Business Rules Documentatie**
-   - AI-tool: Cursor AI
-   - Gebruik: Structuur voor 80 business rules, validatie logic templates
-   - Rol student: Identificeren en definiëren van daadwerkelijke business rules met stakeholders
-   - Output: `docs/technisch-ontwerp/business-rules.md`
+ - AI-tool: Cursor AI
+ - Gebruik: Structuur voor 80 business rules, validatie logic templates
+ - Rol student: Identificeren en definiëren van daadwerkelijke business rules met stakeholders
+ - Output: `docs/technisch-ontwerp/business-rules.md`
 
 **Authenticiteitsverklaring (Niveau 3):**
 
@@ -227,41 +226,41 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 **Activiteiten:**
 
 1. **Parser Module**
-   - AI-tool: Cursor AI
-   - Gebruik: Code completion, suggesties voor Excel parsing met openpyxl
-   - Rol student: Review van gegenereerde code, toevoegen van business logic, error handling
-   - Output: `src/parser/msg3_parser.py`, `src/parser/excel_reader.py`
+ - AI-tool: Cursor AI
+ - Gebruik: Code completion, suggesties voor Excel parsing met openpyxl
+ - Rol student: Review van gegenereerde code, toevoegen van business logic, error handling
+ - Output: `src/parser/msg3_parser.py`, `src/parser/excel_reader.py`
 
 2. **Validator Module**
-   - AI-tool: Cursor AI
-   - Gebruik: Pydantic schema suggesties, validatie logica
-   - Rol student: Implementatie van 80 business rules, custom validators
-   - Output: `src/validator/msg3_validator.py`, `src/validator/business_rules.py`
+ - AI-tool: Cursor AI
+ - Gebruik: Pydantic schema suggesties, validatie logica
+ - Rol student: Implementatie van 80 business rules, custom validators
+ - Output: `src/validator/msg3_validator.py`, `src/validator/business_rules.py`
 
 3. **Change Detection**
-   - AI-tool: Cursor AI
-   - Gebruik: Algoritme suggesties voor diff detection, data structure ideeën
-   - Rol student: Implementatie van versioning logica, changelog generatie
-   - Output: `src/change_detection/change_detector.py`
+ - AI-tool: Cursor AI
+ - Gebruik: Algoritme suggesties voor diff detection, data structure ideeën
+ - Rol student: Implementatie van versioning logica, changelog generatie
+ - Output: `src/change_detection/change_detector.py`
 
 4. **Mapping Engine**
-   - AI-tool: Cursor AI
-   - Gebruik: Mapping strategy suggesties, factory pattern implementatie
-   - Rol student: Daadwerkelijke MSG-3 → Maximo field mappings, transformatie logica
-   - Output: `src/mapping/msg3_maximo_mapper.py`, mapping configuratie
+ - AI-tool: Cursor AI
+ - Gebruik: Mapping strategy suggesties, factory pattern implementatie
+ - Rol student: Daadwerkelijke MSG-3 → Maximo field mappings, transformatie logica
+ - Output: `src/mapping/msg3_maximo_mapper.py`, mapping configuratie
 
 5. **Maximo Connector**
-   - AI-tool: Cursor AI
-   - Gebruik: REST API client template, retry logica suggesties
-   - Rol student: Authenticatie implementatie, error handling, Maximo-specifieke logica
-   - Output: `src/maximo_connector/maximo_client.py`
+ - AI-tool: Cursor AI
+ - Gebruik: REST API client template, retry logica suggesties
+ - Rol student: Authenticatie implementatie, error handling, Maximo-specifieke logica
+ - Output: `src/maximo_connector/maximo_client.py`
 
 **Code Review Proces:**
-- ✅ Alle AI-gegenereerde code wordt kritisch gereviewed
-- ✅ Type hints en docstrings worden toegevoegd/aangepast
-- ✅ Business rules compliance wordt geverifieerd
-- ✅ Edge cases worden getest
-- ✅ Performance wordt geëvalueerd
+- Alle AI-gegenereerde code wordt kritisch gereviewed
+- Type hints en docstrings worden toegevoegd/aangepast
+- Business rules compliance wordt geverifieerd
+- Edge cases worden getest
+- Performance wordt geëvalueerd
 
 **Authenticiteitsverklaring (Niveau 3 - Implementatie):**
 
@@ -276,28 +275,28 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 **Activiteiten:**
 
 1. **Unit Tests**
-   - AI-tool: Cursor AI
-   - Gebruik: Test case templates, pytest fixtures suggesties
-   - Rol student: Schrijven van business rule compliance tests, edge cases, assertions
-   - Output: `tests/unit/test_*.py`
+ - AI-tool: Cursor AI
+ - Gebruik: Test case templates, pytest fixtures suggesties
+ - Rol student: Schrijven van business rule compliance tests, edge cases, assertions
+ - Output: `tests/unit/test_*.py`
 
 2. **Integration Tests**
-   - AI-tool: Cursor AI
-   - Gebruik: End-to-end test scenario suggesties
-   - Rol student: Implementatie van realistische test data, Maximo mock responses
-   - Output: `tests/integration/test_full_pipeline.py`
+ - AI-tool: Cursor AI
+ - Gebruik: End-to-end test scenario suggesties
+ - Rol student: Implementatie van realistische test data, Maximo mock responses
+ - Output: `tests/integration/test_full_pipeline.py`
 
 3. **Test Data Creation**
-   - AI-tool: Cursor AI
-   - Gebruik: Mock data generation ideeën
-   - Rol student: Creatie van realistische MSG-3 test Excel files
-   - Output: `examples/` test bestanden
+ - AI-tool: Cursor AI
+ - Gebruik: Mock data generation ideeën
+ - Rol student: Creatie van realistische MSG-3 test Excel files
+ - Output: `examples/` test bestanden
 
 **Testing Principes:**
-- ✅ Minimaal 80% code coverage
-- ✅ Alle critical business rules hebben dedicated tests
-- ✅ TDD approach waar mogelijk
-- ✅ AI suggereert tests, student schrijft assertions
+- Minimaal 80% code coverage
+- Alle critical business rules hebben dedicated tests
+- TDD approach waar mogelijk
+- AI suggereert tests, student schrijft assertions
 
 **Authenticiteitsverklaring (Niveau 3 - Testing):**
 
@@ -305,76 +304,76 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 
 ---
 
-### Documentatie Generatie - NIVEAU 4
+### Documentatie Generatie - NIVEAU 3
 
-#### AIAS Niveau: **4 - Volledig AI**
+#### AIAS Niveau: **3 - AI Samenwerking**
 
 **Activiteiten:**
 
 1. **Technical Documentation**
-   - AI-tool: Cursor AI
-   - Gebruik: Automatische generatie van API docs, class documentation
-   - Rol student: Review en aanvulling met context, verificatie van correctheid
-   - Output: `docs/technisch-ontwerp/` bestanden
+ - AI-tool: Cursor AI
+ - Gebruik: Hulp bij opstellen van API docs, class documentation
+ - Rol student: Review, aanvulling met context, verificatie van correctheid
+ - Output: `docs/technisch-ontwerp/` bestanden
 
 2. **Code Documentation**
-   - AI-tool: Cursor AI
-   - Gebruik: Docstrings generatie, inline comments suggesties
-   - Rol student: Aanpassing aan project-specifieke context, correctness check
-   - Output: Docstrings in alle source files
+ - AI-tool: Cursor AI
+ - Gebruik: Docstrings suggesties, inline comments suggesties
+ - Rol student: Aanpassing aan project-specifieke context, correctness check
+ - Output: Docstrings in alle source files
 
 3. **User Documentation**
-   - AI-tool: Cursor AI
-   - Gebruik: README generatie, QUICKSTART guide, installation instructions
-   - Rol student: Toevoegen van Babcock-specifieke instructies, verificatie
-   - Output: README.md, QUICKSTART.md, docs/overdracht/
+ - AI-tool: Cursor AI
+ - Gebruik: Hulp bij opstellen README, QUICKSTART guide, installation instructions
+ - Rol student: Toevoegen van Babcock-specifieke instructies, verificatie, eigen formulering
+ - Output: README.md, QUICKSTART.md, docs/overdracht/
 
 **Documentatie Workflow:**
-1. AI genereert basis documentatie uit code
+1. AI helpt bij het opstellen van basis documentatie
 2. Student reviewt voor technische correctheid
 3. Student voegt context en project-specifieke details toe
 4. Student verifieert dat documentatie begrijpelijk is voor stakeholders
 
-**Authenticiteitsverklaring (Niveau 4 - Documentatie):**
+**Authenticiteitsverklaring (Niveau 3 - Documentatie):**
 
-> Tijdens het genereren van technische documentatie heb ik **Cursor AI** gebruikt om te **automatisch genereren van API documentatie, code documentation, en gebruikershandleidingen op basis van de source code**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast. Alle Babcock-specifieke context, installation instructions voor de productieomgeving, en gebruikersscenario's zijn door mij toegevoegd. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
+> Tijdens het schrijven van technische documentatie heb ik **Cursor AI** gebruikt om te **opstellen van API documentatie, code documentation, en gebruikershandleidingen**. Na het gebruik van deze tool heb ik de uitkomsten ervan uitvoerig gecontroleerd en aangepast om er voor te zorgen dat het ingeleverde werk mijn eigen competenties en leeruitkomsten reflecteert. Alle Babcock-specifieke context, installation instructions voor de productieomgeving, en gebruikersscenario's zijn door mij toegevoegd. Ik draag de volledige verantwoordelijkheid voor de inhoud van dit werk.
 
 ---
 
 ## Reflectie op AI-Gebruik
 
 ### Voordelen
-✅ **Snellere ontwikkeling**: Boilerplate code en templates snel gegenereerd  
-✅ **Meer tijd voor belangrijke zaken**: Focus op business logic ipv repetitief werk
-✅ **Kwaliteitsverbetering**: Consistente code style, best practices suggesties  
-✅ **Leereffect**: Uitleg van design patterns, nieuwe technieken  
-✅ **Tijdsbesparing**: Documentatie generatie uit code (57 uur bespaard!)
-✅ **24/7 beschikbaar**: Hulp bij debugging en vragen buiten kantooruren  
+ **Snellere ontwikkeling**: Boilerplate code en templates snel gegenereerd
+ **Meer tijd voor belangrijke zaken**: Focus op business logic ipv repetitief werk
+ **Kwaliteitsverbetering**: Consistente code style, best practices suggesties
+ **Leereffect**: Uitleg van design patterns, nieuwe technieken
+ **Tijdsbesparing**: Documentatie generatie uit code (57 uur bespaard!)
+ **24/7 beschikbaar**: Hulp bij debugging en vragen buiten kantooruren
 
 ### Uitdagingen & Leerpunten
-⚠️ **Kritisch blijven**: Niet alles blindly overnemen, altijd valideren  
-⚠️ **Context begrip**: AI kent Babcock-specifieke context niet, moet aangevuld worden  
-⚠️ **Business rules**: AI suggereert generieke validatie, business rules moeten zelf gedefinieerd  
-⚠️ **Eigenaarschap**: Belangrijkheid van begrijpen van gegenereerde code voor assessment  
-⚠️ **Transparantie**: Duidelijk communiceren wat AI deed vs wat ik deed
+ **Kritisch blijven**: Niet alles blindly overnemen, altijd valideren
+ **Context begrip**: AI kent Babcock-specifieke context niet, moet aangevuld worden
+ **Business rules**: AI suggereert generieke validatie, business rules moeten zelf gedefinieerd
+ **Eigenaarschap**: Belangrijkheid van begrijpen van gegenereerde code voor assessment
+ **Transparantie**: Duidelijk communiceren wat AI deed vs wat ik deed
 
 ### Balans Mens-AI
 
 **Wat IK (Pedro) HEB GEDAAN - 75% van het werk:**
-- ✅ **Requirements analyse** (Babcock interviews, MSG-3 analyse)
-- ✅ **Alle 80 business rules** gedefinieerd met stakeholders
-- ✅ **Architecturale beslissingen** (Python, Agile, modules, patterns)
-- ✅ **Technische keuzes** onderbouwd (libraries, design patterns)
-- ✅ **Business logic** volledig zelf geschreven
-- ✅ **MSG-3 specifieke parsing logica**
-- ✅ **Maximo specifieke mapping rules**
-- ✅ **Error handling & edge cases**
-- ✅ **Test cases** bedacht en geschreven
-- ✅ **Code review** van alle AI-suggesties
-- ✅ **Stakeholder communicatie**
-- ✅ **Planning & projectmanagement**
-- ✅ **Risico's identificeren & mitigeren**
-- ✅ **Assessment & verantwoording**
+- **Requirements analyse** (Babcock interviews, MSG-3 analyse)
+- **Alle 80 business rules** gedefinieerd met stakeholders
+- **Architecturale beslissingen** (Python, Agile, modules, patterns)
+- **Technische keuzes** onderbouwd (libraries, design patterns)
+- **Business logic** volledig zelf geschreven
+- **MSG-3 specifieke parsing logica**
+- **Maximo specifieke mapping rules**
+- **Error handling & edge cases**
+- **Test cases** bedacht en geschreven
+- **Code review** van alle AI-suggesties
+- **Stakeholder communicatie**
+- **Planning & projectmanagement**
+- **Risico's identificeren & mitigeren**
+- **Assessment & verantwoording**
 
 **Wat AI (Cursor) DEED - 25% helper functie:**
 - Code templates en boilerplate (~40% van code volume, maar eenvoudig)
@@ -386,9 +385,9 @@ Dit document beschrijft het gebruik van generatieve AI-tools binnen dit Comakers
 
 **KRITIEK ONDERSCHEID:**
 ```
-Volume code:  AI ~40%, Pedro ~60%
+Volume code: AI ~40%, Pedro ~60%
 Complexiteit: AI ~10%, Pedro ~90%
-Beslissingen:  AI  0%, Pedro 100%
+Beslissingen: AI 0%, Pedro 100%
 ```
 
 **ANALOGIE:**
@@ -397,23 +396,23 @@ AI is zoals Google bij research:
 - Cursor geeft code suggesties → IK review en pas aan
 - Google schrijft niet mijn paper → AI schrijft niet mijn project
 
-→ **Zie `/docs/MIJN-BIJDRAGE-VS-AI.md` voor volledige uitsplitsing**
+→ **Zie `docs/ai/MIJN-BIJDRAGE-VS-AI.md` voor volledige uitsplitsing**
 
 ---
 
 ## Privacy & Compliance
 
 ### Windesheim Richtlijnen
-✅ **Geen gegevensovereenkomst**: Windesheim heeft geen overeenkomst met AI-providers  
-✅ **Vrijwillig gebruik**: AI-gebruik is niet verplicht  
-✅ **Privacygevoelige data**: NOOIT gedeeld met AI-tools  
+ **Geen gegevensovereenkomst**: Windesheim heeft geen overeenkomst met AI-providers
+ **Vrijwillig gebruik**: AI-gebruik is niet verplicht
+ **Privacygevoelige data**: NOOIT gedeeld met AI-tools
 
 ### Toegepaste Maatregelen
-- ✅ Geen echte Maximo credentials in prompts
-- ✅ Geen echte MSG-3 data met vliegtuigregistraties
-- ✅ Gebruik van mock data en voorbeelden
-- ✅ .env files niet gedeeld met AI
-- ✅ Stakeholder namen geanonimiseerd in voorbeelden
+- Geen echte Maximo credentials in prompts
+- Geen echte MSG-3 data met vliegtuigregistraties
+- Gebruik van mock data en voorbeelden
+- .env files niet gedeeld met AI
+- Stakeholder namen geanonimiseerd in voorbeelden
 
 ---
 
@@ -432,16 +431,16 @@ Het gebruik van **Cursor AI** heeft dit project significant versneld en verrijkt
 ### Eigenaarschap Bewijs
 
 **Ik (Pedro) kan bewijzen dat dit MIJN werk is:**
-1. ✅ Ik kan alle architecturale keuzes onderbouwen (waarom Python? waarom deze patterns?)
-2. ✅ Ik kan elke business rule uitleggen (waarom belangrijk? wat controleert het?)
-3. ✅ Ik kan de code regel voor regel doorlopen en uitleggen
-4. ✅ Ik kan alternatieven noemen die ik heb overwogen (openpyxl vs pandas, etc.)
-5. ✅ Ik kan Babcock-specifieke requirements benoemen (AI kent Babcock niet)
-6. ✅ Ik heb alle test cases bedacht (edge cases zijn mijn analyse)
-7. ✅ Ik heb POC's gebouwd en getest in Maximo environment
-8. ✅ Git history toont mijn commits, beslissingen en iteraties
+1. Ik kan alle architecturale keuzes onderbouwen (waarom Python? waarom deze patterns?)
+2. Ik kan elke business rule uitleggen (waarom belangrijk? wat controleert het?)
+3. Ik kan de code regel voor regel doorlopen en uitleggen
+4. Ik kan alternatieven noemen die ik heb overwogen (openpyxl vs pandas, etc.)
+5. Ik kan Babcock-specifieke requirements benoemen (AI kent Babcock niet)
+6. Ik heb alle test cases bedacht (edge cases zijn mijn analyse)
+7. Ik heb POC's gebouwd en getest in Maximo environment
+8. Git history toont mijn commits, beslissingen en iteraties
 
-**Voor meer details over mijn bijdrage vs AI-assistentie:** Zie `/docs/MIJN-BIJDRAGE-VS-AI.md`
+**Voor meer details over mijn bijdrage vs AI-assistentie:** Zie `docs/ai/MIJN-BIJDRAGE-VS-AI.md`
 
 ---
 
@@ -456,16 +455,16 @@ Het gebruik van **Cursor AI** heeft dit project significant versneld en verrijkt
 | **Source Code** | 3 | Cursor AI | Code completion, refactoring, debugging |
 | **Unit Tests** | 3 | Cursor AI | Test templates, fixture suggesties |
 | **Integration Tests** | 3 | Cursor AI | Scenario suggesties, mock data |
-| **API Documentation** | 4 | Cursor AI | Automatische generatie uit code |
-| **User Documentation** | 4 | Cursor AI | README, QUICKSTART generatie |
-| **Code Documentation** | 4 | Cursor AI | Docstrings, inline comments |
+| **API Documentation** | 3 | Cursor AI | Opstellen met AI-hulp, review en aanpassing |
+| **User Documentation** | 3 | Cursor AI | Opstellen README, QUICKSTART met AI-hulp |
+| **Code Documentation** | 3 | Cursor AI | Docstrings, inline comments met AI-hulp |
 
 ---
 
-**Datum:** 11 februari 2026  
-**Auteur:** Pedro Eduardo Cardoso  
-**Project:** MSG-3 to Maximo Converter  
-**Organisatie:** Babcock Schiphol  
+**Datum:** 11 februari 2026
+**Auteur:** Pedro Eduardo Cardoso
+**Project:** MSG-3 to Maximo Converter
+**Organisatie:** Babcock Schiphol
 **Opleiding:** Windesheim ADSD
 
 ---

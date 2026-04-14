@@ -1,23 +1,23 @@
-# 🚨 BUSINESS RULES FIRST - Critical Development Guideline
+# BUSINESS RULES FIRST - Critical Development Guideline
 
-**⚠️ LEES DIT EERST VOORDAT JE BEGINT MET DEVELOPMENT**
+** LEES DIT EERST VOORDAT JE BEGINT MET DEVELOPMENT**
 
 ---
 
-## 📋 Core Principle
+## Core Principle
 
 > **"Alle ontwikkeling moet compliant zijn met de 80 Babcock @ Schiphol business rules"**
 
 Dit is **NIET OPTIONEEL**. De business rules zijn de basis van:
-- ✅ Alle validaties
-- ✅ Alle data transformaties
-- ✅ Alle workflows
-- ✅ Alle integraties
-- ✅ Alle beslissingen
+- Alle validaties
+- Alle data transformaties
+- Alle workflows
+- Alle integraties
+- Alle beslissingen
 
 ---
 
-## 🎯 Waarom Dit Zo Belangrijk Is
+## Waarom Dit Zo Belangrijk Is
 
 ### Veiligheid
 - **11 CRITICAL rules** die directe veiligheidsrisico's blokkeren
@@ -42,7 +42,7 @@ Dit is **NIET OPTIONEEL**. De business rules zijn de basis van:
 
 ---
 
-## 📚 Business Rules Locaties
+## Business Rules Locaties
 
 ### 1. Implementation
 ```
@@ -70,7 +70,7 @@ docs/technisch-ontwerp/business-rules-quick-reference.md
 
 ---
 
-## 🔴 11 Critical Rules - ALTIJD CHECKEN
+## 11 Critical Rules - ALTIJD CHECKEN
 
 Deze rules blokkeren processing en MOETEN worden gevalideerd:
 
@@ -90,11 +90,11 @@ Deze rules blokkeren processing en MOETEN worden gevalideerd:
 
 ---
 
-## 💻 Development Workflow
+## Development Workflow
 
 ### Bij Elk Development Task
 
-#### ✅ STAP 1: Identificeer Relevante Rules
+#### STAP 1: Identificeer Relevante Rules
 ```python
 # Vraag jezelf af:
 # - Welke business rules zijn van toepassing?
@@ -102,7 +102,7 @@ Deze rules blokkeren processing en MOETEN worden gevalideerd:
 # - Zijn er critical rules die ik moet checken?
 ```
 
-#### ✅ STAP 2: Implementeer Validatie
+#### STAP 2: Implementeer Validatie
 ```python
 from src.validator.business_rules import BusinessRulesValidator, RuleCategory
 
@@ -115,35 +115,35 @@ violations = validator.validate(data)
 violations = validator.validate_by_category(data, RuleCategory.SECURITY)
 ```
 
-#### ✅ STAP 3: Handle Violations
+#### STAP 3: Handle Violations
 ```python
 if violations:
-    critical_violations = [v for v in violations 
-                          if v.rule.severity == RuleSeverity.CRITICAL]
-    
-    if critical_violations:
-        # BLOKKEER PROCESSING
-        raise CriticalRuleViolation(critical_violations)
-    
-    # Log andere violations
-    for violation in violations:
-        logger.warning(f"{violation.rule.rule_id}: {violation.message}")
+ critical_violations = [v for v in violations
+ if v.rule.severity == RuleSeverity.CRITICAL]
+
+ if critical_violations:
+ # BLOKKEER PROCESSING
+ raise CriticalRuleViolation(critical_violations)
+
+ # Log andere violations
+ for violation in violations:
+ logger.warning(f"{violation.rule.rule_id}: {violation.message}")
 ```
 
-#### ✅ STAP 4: Documenteer Compliance
+#### STAP 4: Documenteer Compliance
 ```python
 # In je code documentatie:
 """
 Business Rules Compliance:
-- SEC-1.1: Schiphol-pas validated ✅
-- SEC-1.2: VGB-screening checked ✅
-- OPS-2.8: PTW verification implemented ✅
+- SEC-1.1: Schiphol-pas validated
+- SEC-1.2: VGB-screening checked
+- OPS-2.8: PTW verification implemented
 """
 ```
 
 ---
 
-## 🏗️ Per Module Guidelines
+## Per Module Guidelines
 
 ### Parser Module
 **Relevante Rules:** IT-6.1, QUA-3.2, IT-6.8
@@ -198,7 +198,7 @@ Business Rules Compliance:
 
 ---
 
-## 📝 Code Review Checklist
+## Code Review Checklist
 
 Bij elke code review, check:
 
@@ -212,168 +212,168 @@ Bij elke code review, check:
 
 ---
 
-## 🧪 Testing Requirements
+## Testing Requirements
 
 ### Elke Feature MOET Tests Hebben Voor:
 
 1. **Happy Path met Rule Compliance**
 ```python
 def test_work_order_with_valid_ptw():
-    """Test OPS-2.8: PTW voor risicovol werk"""
-    work_order = create_work_order(has_ptw=True)
-    violations = validator.validate(work_order)
-    assert len(violations) == 0
+ """Test OPS-2.8: PTW voor risicovol werk"""
+ work_order = create_work_order(has_ptw=True)
+ violations = validator.validate(work_order)
+ assert len(violations) == 0
 ```
 
 2. **Rule Violations**
 ```python
 def test_work_order_without_ptw_fails():
-    """Test OPS-2.8: PTW ontbreekt"""
-    work_order = create_work_order(has_ptw=False)
-    violations = validator.validate(work_order)
-    assert any(v.rule.rule_id == "OPS-2.8" for v in violations)
+ """Test OPS-2.8: PTW ontbreekt"""
+ work_order = create_work_order(has_ptw=False)
+ violations = validator.validate(work_order)
+ assert any(v.rule.rule_id == "OPS-2.8" for v in violations)
 ```
 
 3. **Critical Rule Blocking**
 ```python
 def test_critical_violation_blocks_processing():
-    """Test dat critical violations processing blokkeren"""
-    data_without_schiphol_pass = {...}
-    with pytest.raises(CriticalRuleViolation):
-        process_employee_access(data_without_schiphol_pass)
+ """Test dat critical violations processing blokkeren"""
+ data_without_schiphol_pass = {...}
+ with pytest.raises(CriticalRuleViolation):
+ process_employee_access(data_without_schiphol_pass)
 ```
 
 ---
 
-## 🎯 Praktische Voorbeelden
+## Praktische Voorbeelden
 
 ### Voorbeeld 1: MSG-3 Parsing
 
 ```python
 def parse_msg3_file(file_path: str) -> Dict[str, Any]:
-    """
-    Parse MSG-3 Excel file.
-    
-    Business Rules Compliance:
-    - IT-6.1: Output voor Maximo systeem
-    - QUA-3.2: Parsing binnen 24 uur na ontvangst
-    - IT-6.8: Foto's van source file toevoegen
-    """
-    validator = BusinessRulesValidator()
-    
-    # Parse file
-    data = excel_reader.read(file_path)
-    
-    # Validate parsed data
-    violations = validator.validate(data)
-    
-    # Check for critical violations
-    critical = [v for v in violations 
-                if v.rule.severity == RuleSeverity.CRITICAL]
-    
-    if critical:
-        raise ParseError(f"Critical rules violated: {critical}")
-    
-    # Add metadata for IT-6.8 (photos)
-    data['attachments'] = get_source_file_metadata(file_path)
-    
-    return data
+ """
+ Parse MSG-3 Excel file.
+
+ Business Rules Compliance:
+ - IT-6.1: Output voor Maximo systeem
+ - QUA-3.2: Parsing binnen 24 uur na ontvangst
+ - IT-6.8: Foto's van source file toevoegen
+ """
+ validator = BusinessRulesValidator()
+
+ # Parse file
+ data = excel_reader.read(file_path)
+
+ # Validate parsed data
+ violations = validator.validate(data)
+
+ # Check for critical violations
+ critical = [v for v in violations
+ if v.rule.severity == RuleSeverity.CRITICAL]
+
+ if critical:
+ raise ParseError(f"Critical rules violated: {critical}")
+
+ # Add metadata for IT-6.8 (photos)
+ data['attachments'] = get_source_file_metadata(file_path)
+
+ return data
 ```
 
 ### Voorbeeld 2: Work Order Creation
 
 ```python
 def create_work_order(task_data: Dict) -> WorkOrder:
-    """
-    Create Maximo work order from MSG-3 task.
-    
-    Business Rules Compliance:
-    - PLN-5.3: Werkvergunning vereist voor start
-    - OPS-2.8: PTW voor risicovol werk
-    - QUA-3.10: Geldige certificeringen
-    """
-    validator = BusinessRulesValidator()
-    
-    # Validate task data
-    violations = validator.validate(task_data)
-    
-    # Check critical security rules
-    security_violations = validator.validate_by_category(
-        task_data, 
-        RuleCategory.SECURITY
-    )
-    
-    if security_violations:
-        logger.error(f"Security violations: {security_violations}")
-        raise SecurityException(security_violations)
-    
-    # Check operations rules
-    ops_violations = validator.validate_by_category(
-        task_data,
-        RuleCategory.OPERATIONS
-    )
-    
-    # Create work order
-    work_order = WorkOrder(**task_data)
-    
-    # Add compliance metadata
-    work_order.compliance_check = {
-        'validated_at': datetime.now(),
-        'rules_checked': 80,
-        'violations': len(violations)
-    }
-    
-    return work_order
+ """
+ Create Maximo work order from MSG-3 task.
+
+ Business Rules Compliance:
+ - PLN-5.3: Werkvergunning vereist voor start
+ - OPS-2.8: PTW voor risicovol werk
+ - QUA-3.10: Geldige certificeringen
+ """
+ validator = BusinessRulesValidator()
+
+ # Validate task data
+ violations = validator.validate(task_data)
+
+ # Check critical security rules
+ security_violations = validator.validate_by_category(
+ task_data,
+ RuleCategory.SECURITY
+ )
+
+ if security_violations:
+ logger.error(f"Security violations: {security_violations}")
+ raise SecurityException(security_violations)
+
+ # Check operations rules
+ ops_violations = validator.validate_by_category(
+ task_data,
+ RuleCategory.OPERATIONS
+ )
+
+ # Create work order
+ work_order = WorkOrder(**task_data)
+
+ # Add compliance metadata
+ work_order.compliance_check = {
+ 'validated_at': datetime.now(),
+ 'rules_checked': 80,
+ 'violations': len(violations)
+ }
+
+ return work_order
 ```
 
 ### Voorbeeld 3: Employee Access Validation
 
 ```python
 def validate_employee_access(employee: Employee, zone: str) -> bool:
-    """
-    Validate employee can access zone.
-    
-    Business Rules Compliance:
-    - SEC-1.1: Geldige Schiphol-pas
-    - SEC-1.2: VGB-screening voor airside
-    - SEC-1.4: Beperkte toegang technische ruimtes
-    """
-    validator = BusinessRulesValidator()
-    
-    # Prepare validation data
-    data = {
-        'employee': employee.to_dict(),
-        'zone': zone,
-        'access_type': 'entry'
-    }
-    
-    # Validate security rules only
-    violations = validator.validate_by_category(
-        data,
-        RuleCategory.SECURITY
-    )
-    
-    # Critical security violations MUST block
-    critical = [v for v in violations 
-                if v.rule.severity == RuleSeverity.CRITICAL]
-    
-    if critical:
-        logger.critical(
-            f"Access DENIED for {employee.name} to {zone}: {critical}"
-        )
-        return False
-    
-    # Log warnings but allow access
-    for violation in violations:
-        if violation.rule.severity == RuleSeverity.WARNING:
-            logger.warning(f"Access warning: {violation.message}")
-    
-    return True
+ """
+ Validate employee can access zone.
+
+ Business Rules Compliance:
+ - SEC-1.1: Geldige Schiphol-pas
+ - SEC-1.2: VGB-screening voor airside
+ - SEC-1.4: Beperkte toegang technische ruimtes
+ """
+ validator = BusinessRulesValidator()
+
+ # Prepare validation data
+ data = {
+ 'employee': employee.to_dict(),
+ 'zone': zone,
+ 'access_type': 'entry'
+ }
+
+ # Validate security rules only
+ violations = validator.validate_by_category(
+ data,
+ RuleCategory.SECURITY
+ )
+
+ # Critical security violations MUST block
+ critical = [v for v in violations
+ if v.rule.severity == RuleSeverity.CRITICAL]
+
+ if critical:
+ logger.critical(
+ f"Access DENIED for {employee.name} to {zone}: {critical}"
+ )
+ return False
+
+ # Log warnings but allow access
+ for violation in violations:
+ if violation.rule.severity == RuleSeverity.WARNING:
+ logger.warning(f"Access warning: {violation.message}")
+
+ return True
 ```
 
 ---
 
-## 🔄 Continuous Compliance
+## Continuous Compliance
 
 ### Daily
 - Review nieuwe violations
@@ -392,7 +392,7 @@ def validate_employee_access(employee: Employee, zone: str) -> bool:
 
 ---
 
-## 📊 Monitoring & Metrics
+## Monitoring & Metrics
 
 Track deze metrics:
 
@@ -412,7 +412,7 @@ operations_compliance = calculate_compliance(RuleCategory.OPERATIONS)
 
 ---
 
-## 🚨 Escalation Path
+## Escalation Path
 
 Bij rule violations:
 
@@ -423,7 +423,7 @@ Bij rule violations:
 
 ---
 
-## 📞 Support
+## Support
 
 ### Vragen over Business Rules?
 
@@ -436,35 +436,35 @@ Bij rule violations:
 
 ---
 
-## ✅ Remember
+## Remember
 
 > **"If you're not sure if a business rule applies, IT PROBABLY DOES. Check it!"**
 
 ### Golden Rules:
-1. 🔴 **CRITICAL rules ALWAYS block**
-2. 📝 **ALWAYS validate before processing**
-3. 📊 **ALWAYS log violations**
-4. 🧪 **ALWAYS test rule compliance**
-5. 📚 **ALWAYS document compliance**
+1. **CRITICAL rules ALWAYS block**
+2. **ALWAYS validate before processing**
+3. **ALWAYS log violations**
+4. **ALWAYS test rule compliance**
+5. **ALWAYS document compliance**
 
 ---
 
-## 🎓 Voor Pedro's Comakership
+## Voor Pedro's Comakership
 
 Deze business-rules-first approach laat zien:
-- ✅ **Analyseren**: Begrip van business requirements
-- ✅ **Ontwerpen**: Compliance-driven architecture
-- ✅ **Realiseren**: Rule-based implementation
-- ✅ **Professioneel handelen**: Safety & compliance first
+- **Analyseren**: Begrip van business requirements
+- **Ontwerpen**: Compliance-driven architecture
+- **Realiseren**: Rule-based implementation
+- **Professioneel handelen**: Safety & compliance first
 
 ---
 
-**🚀 ALWAYS THINK: "Is this compliant with our business rules?"**
+** ALWAYS THINK: "Is this compliant with our business rules?"**
 
 ---
 
-**Last Updated:** 5 februari 2026  
-**Status:** MANDATORY READING  
+**Last Updated:** 5 februari 2026
+**Status:** MANDATORY READING
 **Version:** 1.0
 
 ---

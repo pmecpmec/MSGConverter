@@ -71,9 +71,9 @@ class ChangeReport:
         """Genereer tekstuele samenvatting."""
         return (
             f"Change Detection Rapport:\n"
-            f"  ✚ {self.added_count} toegevoegd\n"
-            f"  ✎ {self.modified_count} gewijzigd\n"
-            f"  ✖ {self.deleted_count} verwijderd\n"
+            f"  + {self.added_count} toegevoegd\n"
+            f"  ~ {self.modified_count} gewijzigd\n"
+            f"  - {self.deleted_count} verwijderd\n"
             f"  = {len(self.changes)} totaal aantal wijzigingen"
         )
 

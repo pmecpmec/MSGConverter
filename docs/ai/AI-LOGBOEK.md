@@ -1,15 +1,15 @@
-# 🤖 AI-Gebruik Logboek
+# AI-Gebruik Logboek
 ## MSG-3 → Maximo Project
 
-**Student:** Pedro Eduardo Cardoso  
-**Opleiding:** Associate Degree Software Developer (ADSD)  
-**Instelling:** Windesheim  
-**Project Start:** 4 februari 2026  
+**Student:** Pedro Eduardo Cardoso
+**Opleiding:** Associate Degree Software Developer (ADSD)
+**Instelling:** Windesheim
+**Project Start:** 4 februari 2026
 **Doel:** Dagelijkse tracking van AI-gebruik voor transparantie en reflectie
 
 ---
 
-## 📋 Instructies
+## Instructies
 
 **Hoe te gebruiken:**
 1. Vul dit logboek DAGELIJKS in
@@ -20,22 +20,22 @@
 
 **Template per sessie:**
 ```
-⏰ [Tijd] | 🤖 AI-[2/3/4] | 📝 [Activiteit]
+ [Tijd] | AI-[2/3] | [Activiteit]
 ↳ Output: [Wat AI genereerde]
 ↳ Review: [Wat ik aanpaste]
-↳ ✅ Begrijp? [Ja/Nee] | Test? [Ja/Nee] | Compliant? [Ja/Nee]
+↳ Begrijp? [Ja/Nee] | Test? [Ja/Nee] | Compliant? [Ja/Nee]
 ```
 
 ---
 
-## 📅 Week 1 (4 feb - 8 feb 2026)
+## Week 1 (4 feb - 8 feb 2026)
 
 ### Maandag 4 februari 2026
 
 **Projectfase:** Setup & Repository Structuur
 
 #### Sessie 1: Repository Setup
-⏰ 09:00-11:00 | 🤖 AI-3 & 4 | 📝 Complete repository structuur opzetten
+ 09:00-11:00 | AI-3 | Complete repository structuur opzetten
 
 **Activiteit:**
 - Wat: Repository structuur, code templates, documentatie skeletons
@@ -47,16 +47,16 @@
 - Ik heb aangepast: Aangepast aan Windesheim structure, toegevoegd business rules placeholders
 
 **Review:**
-- ✅ Begrijp ik het? Ja - folder structuur logisch en duidelijk
-- ✅ Getest? Ja - pytest werkt, imports werken
-- ✅ Compliant? Ja - Privacy check gedaan, geen credentials
+- Begrijp ik het? Ja - folder structuur logisch en duidelijk
+- Getest? Ja - pytest werkt, imports werken
+- Compliant? Ja - Privacy check gedaan, geen credentials
 
-**Deliverable:** Repository structuur ✅ - Authenticiteitsverklaring toegevoegd in README
+**Deliverable:** Repository structuur - Authenticiteitsverklaring toegevoegd in README
 
 ---
 
 #### Sessie 2: Documentatie Templates
-⏰ 14:00-16:00 | 🤖 AI-4 | 📝 Genereren documentatie templates
+ 14:00-16:00 | AI-3 | Genereren documentatie templates
 
 **Activiteit:**
 - Wat: Markdown templates voor projectdefinitie, PvA, etc.
@@ -68,11 +68,11 @@
 - Ik heb aangepast: Toegevoegd Babcock-specifieke context, stakeholders
 
 **Review:**
-- ✅ Begrijp ik het? Ja - documentatie structuur duidelijk
-- ✅ Getest? Ja - alle links werken, formatting correct
-- ✅ Compliant? N/A - geen code
+- Begrijp ik het? Ja - documentatie structuur duidelijk
+- Getest? Ja - alle links werken, formatting correct
+- Compliant? N/A - geen code
 
-**Deliverable:** Documentatie structuur ✅ - Authenticiteitsverklaring toegevoegd
+**Deliverable:** Documentatie structuur - Authenticiteitsverklaring toegevoegd
 
 ---
 
@@ -88,7 +88,7 @@
 **Projectfase:** Projectdefinitie
 
 #### Sessie 1: Context & Probleemstelling
-⏰ 09:30-11:00 | 🤖 AI-2 | 📝 Brainstormen structuur projectdefinitie
+ 09:30-11:00 | AI-2 | Brainstormen structuur projectdefinitie
 
 **Activiteit:**
 - Wat: Structuur voor context analyse en probleemstelling
@@ -100,9 +100,9 @@
 - Ik heb aangepast: Alle content zelf geschreven gebaseerd op Babcock situatie
 
 **Review:**
-- ✅ Begrijp ik het? Ja - eigen analyse
-- ✅ Getest? N/A - geen code
-- ✅ Compliant? Ja - geen AI-gegenereerde tekst, alleen structuur
+- Begrijp ik het? Ja - eigen analyse
+- Getest? N/A - geen code
+- Compliant? Ja - geen AI-gegenereerde tekst, alleen structuur
 
 **Deliverable:** Context analyse document (WIP)
 
@@ -117,7 +117,7 @@
 **Projectfase:** [Vul in]
 
 #### Sessie 1: [Titel]
-⏰ [Tijd] | 🤖 AI-[2/3/4] | 📝 [Activiteit]
+ [Tijd] | AI-[2/3] | [Activiteit]
 
 **Activiteit:**
 - Wat: [Beschrijving]
@@ -133,14 +133,14 @@
 - [ ] Getest? [Ja/Nee/N/A]
 - [ ] Compliant? [Ja/Nee - Privacy check]
 
-**Deliverable:** [Naam] - Authenticiteitsverklaring: [✅/❌]
+**Deliverable:** [Naam] - Authenticiteitsverklaring: [/]
 
 ---
 
 **Einde Dag Reflectie:**
-- Wat ging goed: 
-- Wat kan beter: 
-- Morgen: 
+- Wat ging goed:
+- Wat kan beter:
+- Morgen:
 
 ---
 
@@ -156,19 +156,18 @@
 
 ---
 
-## 📊 Week 1 - Summary
+## Week 1 - Summary
 
 **AI-Gebruik deze week:**
 - Totaal sessies: [Aantal]
 - Meest gebruikt voor: [Code/Docs/Planning/etc.]
 - AIAS niveaus gebruikt:
-  - Niveau 2 (Exploratie): [X] sessies
-  - Niveau 3 (Samenwerking): [Y] sessies
-  - Niveau 4 (Volledig AI): [Z] sessies
+ - Niveau 2 (Exploratie): [X] sessies
+ - Niveau 3 (Samenwerking): [Y] sessies
 
 **Deliverables afgerond:**
-- ✅ [Deliverable 1] - Niveau [X] - Verklaring toegevoegd
-- ✅ [Deliverable 2] - Niveau [Y] - Verklaring toegevoegd
+- [Deliverable 1] - Niveau [X] - Verklaring toegevoegd
+- [Deliverable 2] - Niveau [Y] - Verklaring toegevoegd
 
 **Reflectie:**
 - **Voordelen:** [Wat ging goed met AI deze week]
@@ -184,7 +183,7 @@
 
 ---
 
-## 📅 Week 2 (11 feb - 15 feb 2026)
+## Week 2 (11 feb - 15 feb 2026)
 
 ### Maandag 11 februari 2026
 
@@ -198,28 +197,27 @@
 
 ---
 
-## 📅 Week 3 ([Datum range])
+## Week 3 ([Datum range])
 
 [... Template ...]
 
 ---
 
-## 📅 Week 4 ([Datum range])
+## Week 4 ([Datum range])
 
 [... Template ...]
 
 ---
 
-## 🎯 Maandelijkse Review - Februari 2026
+## Maandelijkse Review - Februari 2026
 
 **Periode:** 4 feb - 29 feb 2026
 
 ### Overall Statistics
 - **Totaal AI-sessies:** [Aantal]
 - **AIAS niveau verdeling:**
-  - Niveau 2: [X]% (Exploratie)
-  - Niveau 3: [Y]% (Samenwerking)
-  - Niveau 4: [Z]% (Volledig AI)
+ - Niveau 2: [X]% (Exploratie)
+ - Niveau 3: [Y]% (Samenwerking)
 
 ### Most Used For
 1. [Activiteit 1] - [Aantal] keer
@@ -227,8 +225,8 @@
 3. [Activiteit 3] - [Aantal] keer
 
 ### Deliverables Met AI
-- ✅ [Deliverable] - Niveau [X]
-- ✅ [Deliverable] - Niveau [Y]
+- [Deliverable] - Niveau [X]
+- [Deliverable] - Niveau [Y]
 [... lijst ...]
 
 ### Reflectie Maand
@@ -247,18 +245,18 @@
 ### Compliance Status
 - [ ] Alle deliverables gedocumenteerd: [XX/XX]
 - [ ] Alle verklaringen compleet: [XX/XX]
-- [ ] Privacy checks consistent: [✅/❌]
-- [ ] AI-GEBRUIK.md up-to-date: [✅/❌]
+- [ ] Privacy checks consistent: [/]
+- [ ] AI-GEBRUIK.md up-to-date: [/]
 
 ---
 
-## 🎯 Maandelijkse Review - Maart 2026
+## Maandelijkse Review - Maart 2026
 
 [... Herhaal template ...]
 
 ---
 
-## 🏆 Project Totaal - Eindreflectie
+## Project Totaal - Eindreflectie
 
 **Project periode:** 4 februari - [Einddatum] 2026
 
@@ -300,20 +298,19 @@
 
 ---
 
-## 📝 Quick Reference
+## Quick Reference
 
 ### AIAS Niveaus
 - **Niveau 2:** AI voor brainstorming, planning, structuur (geen AI-tekst in output)
 - **Niveau 3:** AI als co-auteur, kritisch gereviewed en aangepast
-- **Niveau 4:** AI genereert volledige output, student controleert en past aan
 
 ### Activiteit → Niveau Mapping
 - Planning/Brainstorming → Niveau 2
 - Code development → Niveau 3
 - Testing → Niveau 3
 - Technisch ontwerp → Niveau 3
-- API documentation → Niveau 4
-- README files → Niveau 4
+- API documentation → Niveau 3
+- README files → Niveau 3
 
 ### Privacy Checklist (ALTIJD!)
 - [ ] Geen echte Maximo credentials
@@ -340,8 +337,8 @@
 
 ---
 
-**Laatste update:** 11 februari 2026  
-**Eigenaar:** Pedro Eduardo Cardoso  
+**Laatste update:** 11 februari 2026
+**Eigenaar:** Pedro Eduardo Cardoso
 **Status:** Actief tracking
 
 ---

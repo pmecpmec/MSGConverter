@@ -108,7 +108,7 @@ class MSG3MaximoMapper:
         Raises:
             ValueError: Als verplichte data ontbreekt of validatie faalt
         """
-        logger.info("=== Starting MSG-3 → Maximo mapping ===")
+        logger.info("=== Starting MSG-3 -> Maximo mapping ===")
         
         # Valideer input
         if not msg3_data or 'tasks' not in msg3_data:
@@ -138,7 +138,7 @@ class MSG3MaximoMapper:
         try:
             commodities = self._extract_commodities(tasks)
             maximo_objects["commodities"] = commodities
-            logger.info(f"  ✓ Extracted {len(commodities)} unique commodities")
+            logger.info(f"  Extracted {len(commodities)} unique commodities")
         except Exception as e:
             error_msg = f"Failed to extract commodities: {e}"
             logger.error(error_msg)
@@ -155,7 +155,7 @@ class MSG3MaximoMapper:
                 logger.error(error_msg)
                 mapping_errors.append(error_msg)
         
-        logger.info(f"  ✓ Mapped {len(maximo_objects['items'])} Item Master records")
+        logger.info(f"  Mapped {len(maximo_objects['items'])} Item Master records")
         
         # Step 3: Map taken naar Item/Organization records
         if self.org_id:
@@ -169,7 +169,7 @@ class MSG3MaximoMapper:
                     logger.error(error_msg)
                     mapping_errors.append(error_msg)
             
-            logger.info(f"  ✓ Mapped {len(maximo_objects['item_orgs'])} Item/Org records")
+            logger.info(f"  Mapped {len(maximo_objects['item_orgs'])} Item/Org records")
         else:
             logger.warning("Step 3: Skipping Item/Org mapping (no org_id configured)")
         
@@ -177,13 +177,13 @@ class MSG3MaximoMapper:
         logger.info("Step 4: Mapping to PM records...")
         pm_records = self.pm_mapper.map_tasks(tasks)
         maximo_objects["pm"] = pm_records
-        logger.info(f"  ✓ Mapped {len(maximo_objects['pm'])} PM records")
+        logger.info(f"  Mapped {len(maximo_objects['pm'])} PM records")
         
         # Step 5: Map taken naar JobPlan records
         logger.info("Step 5: Mapping to JobPlan records...")
         jobplan_records = self.jobplan_mapper.map_tasks(tasks)
         maximo_objects["jobplan"] = jobplan_records
-        logger.info(f"  ✓ Mapped {len(maximo_objects['jobplan'])} JobPlan records")
+        logger.info(f"  Mapped {len(maximo_objects['jobplan'])} JobPlan records")
         
         # Summary
         total_objects = sum(len(v) for v in maximo_objects.values())

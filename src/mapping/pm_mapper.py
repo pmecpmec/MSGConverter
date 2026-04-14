@@ -169,7 +169,7 @@ class PMMapper:
             "PLUSCMSG3SYSTEM": msg3_task.get("ata_system"),
         }
         
-        logger.debug(f"Mapped MSG-3 task {msg3_task.get('task_code')} → PM {pmnum}")
+        logger.debug(f"Mapped MSG-3 task {msg3_task.get('task_code')} -> PM {pmnum}")
         return pm_record
     
     def _validate_required_fields(self, msg3_task: Dict[str, Any]) -> None:

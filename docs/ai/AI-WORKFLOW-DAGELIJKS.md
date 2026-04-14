@@ -1,16 +1,29 @@
-# 🔄 AI-Documentatie Workflow - Dagelijkse Routine
-## Maak het een Gewoonte!
+# AI-Documentatie Workflow – Dagelijkse routine
 
-**Doel:** AI-documentatie integreren in je dagelijkse werkwijze, zodat het automatisch gebeurt.
+**Doel:** AI-documentatie integreren in je dagelijkse werkwijze.
 
 ---
 
-## 🎯 Kernprincipe
+## Cheat sheet (kort)
+
+**Elke dag:** Start: check AI-LOGBOEK. Werk: log elke AI-sessie. Klaar: voeg verklaring toe. Einde: review logboek.
+
+**AIAS-niveaus:** Brainstorm/planning = 2 (Verklaring A/C). Code/design/tests/docs = 3 (D/E/F/G/H).
+
+**Log-template:** `[HH:MM] | AI-[2/3] | [activiteit]` + output + review.
+
+**Triggers:** Cursor open → check niveau. Suggestie accepteren → log in LOGBOEK. Deliverable klaar → verklaring. Commit → vermeld AI. Einde dag → review. Vrijdag → weekly review.
+
+Verklaringen: `docs/ai/AI-AUTHENTICITEITSVERKLARINGEN.md`. Nooit delen: credentials, .env, echte vliegtuigdata.
+
+---
+
+## Kernprincipe
 
 ```
 ┌─────────────────────────────────────────────┐
-│  AI-Documentatie is GEEN eenmalige taak    │
-│  AI-Documentatie is een DAGELIJKSE habit   │
+│ AI-Documentatie is GEEN eenmalige taak │
+│ AI-Documentatie is een DAGELIJKSE habit │
 └─────────────────────────────────────────────┘
 ```
 
@@ -18,9 +31,9 @@
 
 ---
 
-## 📅 Dagelijkse Routine: Morning → Evening
+## Dagelijkse Routine: Morning → Evening
 
-### 🌅 Start van de Dag (5 minuten)
+### Start van de Dag (5 minuten)
 
 **VOOR je begint met werken:**
 
@@ -28,11 +41,10 @@
 □ Open je TODO voor vandaag
 □ Check welke deliverables je vandaag maakt
 □ Bepaal welk AIAS-niveau je vandaag zult gebruiken:
-  
-  Planning/Brainstorm vandaag?     → Niveau 2
-  Code/Design vandaag?             → Niveau 3
-  Documentatie genereren vandaag?  → Niveau 4
-  
+
+ Planning/Brainstorm vandaag? → Niveau 2
+ Code/Design/Docs vandaag? → Niveau 3
+
 □ Open AI-AUTHENTICITEITSVERKLARINGEN.md als reference
 □ Maak mentale notitie: "Vandaag gebruik ik AI voor: [X]"
 ```
@@ -47,7 +59,7 @@
 
 **AI-Gebruik vandaag:**
 - Tool: Cursor AI
-- Niveau: [2/3/4]
+- Niveau: [2/3]
 - Voor: [Brainstorm/Code/Docs/etc.]
 
 **Let op:**
@@ -56,55 +68,54 @@
 
 ---
 
-### 💻 Tijdens het Werk: AI-Gebruik Momenten
+### Tijdens het Werk: AI-Gebruik Momenten
 
 **ELKE KEER** dat je Cursor AI gebruikt:
 
 #### Moment 1: Voor AI-Gebruik
 ```
 1. Vraag jezelf af:
-   "Wat ga ik AI vragen/laten doen?"
-   
+ "Wat ga ik AI vragen/laten doen?"
+
 2. Bepaal AIAS-niveau:
-   Brainstorm?  → Niveau 2
-   Code help?   → Niveau 3
-   Docs maken?  → Niveau 4
-   
+ Brainstorm? → Niveau 2
+ Code help/Docs? → Niveau 3
+
 3. Maak notitie in je logboek (zie template hieronder)
 ```
 
 #### Moment 2: Na AI-Gebruik
 ```
 1. Review de output:
-   □ Klopt het?
-   □ Begrijp ik het?
-   □ Kan ik het uitleggen?
-   
+ □ Klopt het?
+ □ Begrijp ik het?
+ □ Kan ik het uitleggen?
+
 2. Pas aan indien nodig:
-   □ Business logic toevoegen
-   □ Project-specifieke context
-   □ Correcties maken
-   
+ □ Business logic toevoegen
+ □ Project-specifieke context
+ □ Correcties maken
+
 3. Update je logboek:
-   "✅ AI-output gereviewed en aangepast"
+ " AI-output gereviewed en aangepast"
 ```
 
 #### Moment 3: Bij Afronding Taak
 ```
 1. Als je een deliverable afrondt:
-   □ DIRECT authenticiteitsverklaring toevoegen
-   □ NIET wachten tot inleveren!
-   
+ □ DIRECT authenticiteitsverklaring toevoegen
+ □ NIET wachten tot inleveren!
+
 2. Check CHECKLIST-VOOR-INLEVEREN.md
-   □ Quick scan relevante secties
-   
+ □ Quick scan relevante secties
+
 3. Commit met duidelijke message:
-   "feat: [feature] - AI level [2/3/4] used for [activity]"
+ "feat: [feature] - AI level [2/3] used for [activity]"
 ```
 
 ---
 
-### 📝 AI-Gebruik Logboek Template
+### AI-Gebruik Logboek Template
 
 **Kopieer dit naar een `AI-LOGBOEK.md` bestand in je project:**
 
@@ -123,23 +134,23 @@
 #### AI-Gebruik Sessie 1
 - **Tijd:** 09:00 - 10:30
 - **Tool:** Cursor AI
-- **AIAS Niveau:** [2/3/4]
-- **Activiteit:** 
-  - Wat: [Bijv. "Code suggesties voor parser module"]
-  - Hoe: [Bijv. "Vraag om Excel parsing code, review en aanpassen"]
+- **AIAS Niveau:** [2/3]
+- **Activiteit:**
+ - Wat: [Bijv. "Code suggesties voor parser module"]
+ - Hoe: [Bijv. "Vraag om Excel parsing code, review en aanpassen"]
 - **Output:**
-  - AI genereerde: [Kort beschrijven]
-  - Ik heb aangepast: [Wat heb je veranderd]
+ - AI genereerde: [Kort beschrijven]
+ - Ik heb aangepast: [Wat heb je veranderd]
 - **Review:**
-  - Begrijp ik het? [✅/❌]
-  - Getest? [✅/❌]
-  - Business rules compliant? [✅/❌]
+ - Begrijp ik het? [/]
+ - Getest? [/]
+ - Business rules compliant? [/]
 
 #### AI-Gebruik Sessie 2
 [... herhaal voor elke sessie ...]
 
 **Deliverables vandaag afgerond:**
-- [ ] [Document/Code] - Authenticiteitsverklaring toegevoegd? [✅/❌]
+- [ ] [Document/Code] - Authenticiteitsverklaring toegevoegd? [/]
 
 **Reflectie:**
 - Wat ging goed met AI-gebruik vandaag?
@@ -153,7 +164,7 @@
 
 ---
 
-### 🌙 Einde van de Dag (10 minuten)
+### Einde van de Dag (10 minuten)
 
 **VOOR je stopt met werken:**
 
@@ -163,7 +174,7 @@
 □ Update AI-GEBRUIK.md indien nodig (nieuwe activiteit?)
 □ Commit & push je werk
 □ Maak notities voor morgen:
-  "Morgen verder met [X], AI nodig voor [Y]"
+ "Morgen verder met [X], AI nodig voor [Y]"
 ```
 
 **End-of-day template:**
@@ -171,13 +182,13 @@
 ## Einde Dag [Datum]
 
 **Gedaan vandaag:**
-- ✅ [Taak 1] - AI gebruikt: [Ja/Nee]
-- ✅ [Taak 2] - Authenticiteitsverklaring: [Ja/Nee]
+- [Taak 1] - AI gebruikt: [Ja/Nee]
+- [Taak 2] - Authenticiteitsverklaring: [Ja/Nee]
 
 **AI-Documentatie status:**
-- Logboek bijgewerkt? [✅]
-- Verklaringen toegevoegd? [✅]
-- Commits gedaan? [✅]
+- Logboek bijgewerkt? []
+- Verklaringen toegevoegd? []
+- Commits gedaan? []
 
 **Morgen:**
 - [ ] [Taak voor morgen]
@@ -186,7 +197,7 @@
 
 ---
 
-## 📆 Wekelijkse Routine (Vrijdag 30 min)
+## Wekelijkse Routine (Vrijdag 30 min)
 
 ### End-of-Week Review
 
@@ -194,12 +205,12 @@
 □ Review volledige week in AI-LOGBOEK.md
 □ Update AI-GEBRUIK.md met nieuwe inzichten
 □ Check alle deliverables van deze week:
-  □ Allemaal authenticiteitsverklaring?
-  □ Allemaal correct AIAS-niveau?
+ □ Allemaal authenticiteitsverklaring?
+ □ Allemaal correct AIAS-niveau?
 □ Reflecteer:
-  Wat heb ik geleerd over AI-gebruik deze week?
-  Waar was AI het meest nuttig?
-  Waar had ik problemen?
+ Wat heb ik geleerd over AI-gebruik deze week?
+ Waar was AI het meest nuttig?
+ Waar had ik problemen?
 ```
 
 **Weekly summary template:**
@@ -209,11 +220,11 @@
 **AI-Gebruik deze week:**
 - Totaal sessies: [Aantal]
 - Meest gebruikt voor: [Code/Docs/Planning/etc.]
-- AIAS niveaus: Niveau 2: [X], Niveau 3: [Y], Niveau 4: [Z]
+- AIAS niveaus: Niveau 2: [X], Niveau 3: [Y]
 
 **Deliverables afgerond:**
-- [Deliverable 1] - Niveau [X] - ✅ Verklaring toegevoegd
-- [Deliverable 2] - Niveau [Y] - ✅ Verklaring toegevoegd
+- [Deliverable 1] - Niveau [X] - Verklaring toegevoegd
+- [Deliverable 2] - Niveau [Y] - Verklaring toegevoegd
 
 **Reflectie:**
 - **Voordelen:** [Wat ging goed met AI]
@@ -229,7 +240,7 @@
 
 ---
 
-## 🔔 Reminders & Triggers
+## Reminders & Triggers
 
 ### Automatische Triggers
 
@@ -257,7 +268,7 @@ TRIGGER 6: Als het vrijdag is
 
 ---
 
-## 📋 Checklists voor Gewoontevorming
+## Checklists voor Gewoontevorming
 
 ### Week 1: Bewustwording
 ```
@@ -294,35 +305,35 @@ Doel: Het wordt automatisch
 
 ---
 
-## 🎯 Anti-Procrastinatie Tips
+## Anti-Procrastinatie Tips
 
 ### "Ik vergeet het steeds!"
 
 **Oplossing:**
 
 1. **Visuele reminder:**
-   ```
-   Maak een post-it op je scherm:
-   
-   ┌─────────────────────┐
-   │  AI GEBRUIKT?       │
-   │  → LOGBOEK!         │
-   │  → VERKLARING!      │
-   └─────────────────────┘
-   ```
+ ```
+ Maak een post-it op je scherm:
+
+ ┌─────────────────────┐
+ │ AI GEBRUIKT? │
+ │ → LOGBOEK! │
+ │ → VERKLARING! │
+ └─────────────────────┘
+ ```
 
 2. **Desktop achtergrond:**
-   ```
-   Zet een tekst op je achtergrond:
-   "AI-Logboek bijwerken?"
-   ```
+ ```
+ Zet een tekst op je achtergrond:
+ "AI-Logboek bijwerken?"
+ ```
 
 3. **Alarm instellen:**
-   ```
-   - 12:00: "Middag check - AI-logboek up-to-date?"
-   - 16:30: "Einde dag - Review AI-gebruik"
-   - Vrijdag 16:00: "Week review AI-documentatie"
-   ```
+ ```
+ - 12:00: "Middag check - AI-logboek up-to-date?"
+ - 16:30: "Einde dag - Review AI-gebruik"
+ - Vrijdag 16:00: "Week review AI-documentatie"
+ ```
 
 ### "Het kost te veel tijd!"
 
@@ -330,15 +341,15 @@ Doel: Het wordt automatisch
 
 ```
 ┌────────────────────────────────────────────┐
-│ Tijd per dag: 15 minuten                  │
-│ - Morning: 5 min                           │
-│ - Tijdens werk: 5 min (1 min per sessie)  │
-│ - Evening: 5 min                           │
-│                                            │
-│ Tijd die je BESPAART door geen problemen  │
-│ bij assessment: UREN                       │
-│                                            │
-│ ROI: 15 min/dag = Bescherming waard!      │
+│ Tijd per dag: 15 minuten │
+│ - Morning: 5 min │
+│ - Tijdens werk: 5 min (1 min per sessie) │
+│ - Evening: 5 min │
+│ │
+│ Tijd die je BESPAART door geen problemen │
+│ bij assessment: UREN │
+│ │
+│ ROI: 15 min/dag = Bescherming waard! │
 └────────────────────────────────────────────┘
 ```
 
@@ -361,14 +372,14 @@ Review: "Begrijp ik het? [Ja], Getest? [Ja]"
 
 Voorbeeld:
 "Ik heb AI gevraagd om Excel parsing code (Wat).
-AI genereerde code met openpyxl, ik paste aan voor 
-MSG-3 specifieke structuur (Hoe). 
+AI genereerde code met openpyxl, ik paste aan voor
+MSG-3 specifieke structuur (Hoe).
 Begrijp ik het? Ja. Getest? Ja. (Review)"
 ```
 
 ---
 
-## 📱 Workflow in Actie: Voorbeeld Dag
+## Workflow in Actie: Voorbeeld Dag
 
 ### Voorbeeld: Woensdag Development Dag
 
@@ -383,82 +394,82 @@ Begrijp ik het? Ja. Getest? Ja. (Review)"
 09:00 - AI Sessie 1: Validator skeleton
 ├─ Cursor AI: Genereer class structure
 ├─ Review: Type hints toevoegen, docstrings aanpassen
-├─ Logboek: "✅ Validator skeleton - AI Niveau 3"
+├─ Logboek: " Validator skeleton - AI Niveau 3"
 └─ Commit: "feat(validator): Add validator class skeleton - AI L3"
 
 10:30 - AI Sessie 2: Business rules implementatie
 ├─ Cursor AI: Suggesties voor validatie logica
 ├─ Review: Business rules 1-10 implementeren (eigen werk)
-├─ Logboek: "✅ Business rules - AI suggesties, eigen implementatie"
+├─ Logboek: " Business rules - AI suggesties, eigen implementatie"
 └─ Commit: "feat(validator): Implement business rules 1-10 - AI L3"
 
 12:00 - Middag check
-└─ Logboek up-to-date? ✅
+└─ Logboek up-to-date?
 
 14:00 - AI Sessie 3: Unit tests
 ├─ Cursor AI: Test templates genereren
 ├─ Review: Assertions toevoegen, edge cases testen
-├─ Logboek: "✅ Unit tests - AI templates, eigen test cases"
+├─ Logboek: " Unit tests - AI templates, eigen test cases"
 └─ Commit: "test(validator): Add unit tests - AI L3"
 
 16:00 - Deliverable afmaken
 ├─ validator.py klaar
 ├─ DIRECT: Authenticiteitsverklaring toevoegen in docs
-└─ Check: Verklaring E (Source Code - Niveau 3) ✅
+└─ Check: Verklaring E (Source Code - Niveau 3)
 
 16:30 - Einde dag review
-├─ Logboek volledig? ✅
-├─ Alle commits gedaan? ✅
-├─ Authenticiteitsverklaring? ✅
+├─ Logboek volledig?
+├─ Alle commits gedaan?
+├─ Authenticiteitsverklaring?
 └─ Notitie morgen: "Tests afmaken, documenten updaten"
 ```
 
 ---
 
-## 🏆 Habit Streaks & Motivatie
+## Habit Streaks & Motivatie
 
 ### Track Je Streak
 
 ```markdown
 ## AI-Documentatie Streak
 
-Week 1: ✅✅✅✅✅ (5/5 dagen compleet!)
-Week 2: ✅✅✅✅✅ (5/5 dagen compleet!)
-Week 3: ✅✅✅__ (3/5 dagen)  ← Verbeter dit!
+Week 1: (5/5 dagen compleet!)
+Week 2: (5/5 dagen compleet!)
+Week 3: __ (3/5 dagen) ← Verbeter dit!
 Week 4: ____________
 
-Longest streak: 10 dagen 🏆
-Current streak: 10 dagen 🔥
+Longest streak: 10 dagen
+Current streak: 10 dagen
 
-Doel: 20 dagen streak! 💪
+Doel: 20 dagen streak!
 ```
 
 ### Beloningen
 
 ```
-✅ 5 dagen streak  → Trakteer jezelf op koffie ☕
-✅ 10 dagen streak → Geef jezelf een compliment 👏
-✅ 20 dagen streak → Het is een gewoonte! 🎉
-✅ Heel project    → Trots op jezelf zijn! 🏆
+ 5 dagen streak → Trakteer jezelf op koffie
+ 10 dagen streak → Geef jezelf een compliment
+ 20 dagen streak → Het is een gewoonte!
+ Heel project → Trots op jezelf zijn!
 ```
 
 ---
 
-## 🔧 Tools & Templates
+## Tools & Templates
 
 ### Quick Copy-Paste Templates
 
 **Daily Log Entry (1 minuut):**
 ```
-⏰ [Tijd] | 🤖 AI-[2/3/4] | 📝 [Activiteit]
+ [Tijd] | AI-[2/3] | [Activiteit]
 ↳ Output: [Kort wat AI deed]
 ↳ Review: [Aanpassingen]
-↳ ✅ [Begrijp/Test/Compliant]
+↳ [Begrijp/Test/Compliant]
 ```
 
 **Commit Message (30 seconden):**
 ```
-feat/fix/docs: [Beschrijving] - AI L[2/3/4] for [activity]
+feat/fix/docs: [Beschrijving] - AI L[2/3] for [activity]
 ```
 
 **Authenticiteitsverklaring (2 minuten):**
@@ -468,82 +479,82 @@ feat/fix/docs: [Beschrijving] - AI L[2/3/4] for [activity]
 3. Copy verklaring
 4. Paste onderaan document
 5. Vervang <<placeholders>>
-6. Klaar! ✅
+6. Klaar!
 ```
 
 ---
 
-## 📊 Metrics: Meet Je Voortgang
+## Metrics: Meet Je Voortgang
 
 ### Wekelijkse Metrics
 
 ```
 Week [Nummer] - AI-Documentatie Score
 
-✅ Logboek bijgewerkt elke dag?        [5/5] 100%
-✅ Authenticiteitsverklaringen compleet? [4/4] 100%
-✅ Geen privacy-issues?                  [✅]  100%
-✅ Alle code gereviewed?                 [✅]  100%
-✅ Weekly review gedaan?                 [✅]  100%
+ Logboek bijgewerkt elke dag? [5/5] 100%
+ Authenticiteitsverklaringen compleet? [4/4] 100%
+ Geen privacy-issues? [] 100%
+ Alle code gereviewed? [] 100%
+ Weekly review gedaan? [] 100%
 
-TOTAAL SCORE: 100% 🎉
+TOTAAL SCORE: 100%
 
 Target: >90% elke week
 ```
 
 ---
 
-## 🎓 Lange Termijn: Maand & Project
+## Lange Termijn: Maand & Project
 
 ### Maandelijkse Review (laatste vrijdag, 1 uur)
 
 ```
 □ Review alle wekelijkse summaries
 □ Identificeer patronen:
-  Welke AI-activiteit komt het meest voor?
-  Waar had ik de meeste waarde van AI?
-  Waar was AI minder nuttig?
+ Welke AI-activiteit komt het meest voor?
+ Waar had ik de meeste waarde van AI?
+ Waar was AI minder nuttig?
 □ Update AI-GEBRUIK.md met nieuwe inzichten
 □ Check compliance:
-  Alle deliverables correct gedocumenteerd?
-  Privacy checks consistent toegepast?
+ Alle deliverables correct gedocumenteerd?
+ Privacy checks consistent toegepast?
 □ Plan voor volgende maand:
-  Hoe kan ik AI nog beter gebruiken?
+ Hoe kan ik AI nog beter gebruiken?
 ```
 
 ### Einde Project (Assessment Voorbereiding)
 
 ```
 □ Alle AI-documentatie compleet?
-  □ AI-GEBRUIK.md finalized
-  □ Alle deliverables hebben verklaringen
-  □ Logboek compleet (of samenvatting)
+ □ AI-GEBRUIK.md finalized
+ □ Alle deliverables hebben verklaringen
+ □ Logboek compleet (of samenvatting)
 □ Presentatie voorbereiden:
-  □ AI-OVERZICHT-VISUAL.md gebruiken
-  □ Q&A voorbeeld vragen oefenen
+ □ AI-GEBRUIK.md of AI-WORKFLOW-DAGELIJKS.md als bron voor AI-slides
+ □ Q&A voorbeeld vragen oefenen
 □ Reflectie schrijven:
-  Wat heb ik geleerd over AI-gebruik?
-  Hoe heeft AI mijn project beïnvloed?
+ Wat heb ik geleerd over AI-gebruik?
+ Hoe heeft AI mijn project beïnvloed?
 ```
 
 ---
 
-## ✅ Samenvatting: De Gewoonte
+## Samenvatting: De Gewoonte
 
 ```
 ┌─────────────────────────────────────────────┐
-│  AI-Documentatie Gewoonte in 3 Stappen:    │
+│ AI-Documentatie Gewoonte in 3 Stappen: │
 ├─────────────────────────────────────────────┤
-│                                             │
-│  1️⃣  VOOR AI-gebruik:                       │
-│     → Bepaal AIAS-niveau                    │
-│                                             │
-│  2️⃣  TIJDENS AI-gebruik:                    │
-│     → Noteer in logboek (1 min)            │
-│                                             │
-│  3️⃣  NA deliverable:                        │
-│     → Voeg authenticiteitsverklaring toe    │
-│                                             │
+│ │
+│ 1. VOOR AI-gebruik: │
+│ → Bepaal AIAS-niveau │
+│ │
+│ 2. TIJDENS AI-gebruik: │
+│ → Noteer in logboek (1 min) │
+│ │
+│ 3. NA deliverable: │
+│ → Voeg authenticiteitsverklaring toe │
+│ │
 └─────────────────────────────────────────────┘
 ```
 
@@ -552,11 +563,11 @@ Target: >90% elke week
 
 ---
 
-**Datum:** 11 februari 2026  
-**Auteur:** Pedro Eduardo Cardoso  
-**Opleiding:** Associate Degree Software Developer (ADSD)  
-**Project:** MSG-3 to Maximo Converter  
+**Datum:** 11 februari 2026
+**Auteur:** Pedro Eduardo Cardoso
+**Opleiding:** Associate Degree Software Developer (ADSD)
+**Project:** MSG-3 to Maximo Converter
 
 ---
 
-*Print deze workflow uit en hang hem naast je scherm! 📌*
+*Print deze workflow uit en hang hem naast je scherm! *
