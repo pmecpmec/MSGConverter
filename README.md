@@ -184,11 +184,11 @@ python src/main.py
 **Windesheim** - Associate Degree Software Development (ADSD)
 
 ### Competenties
-- ✅ **Analyseren**: Requirements analyse MSG-3 en Maximo
-- ✅ **Adviseren**: Technische keuzes en architectuur beslissingen
-- ✅ **Ontwerpen**: Systeem architectuur en datamodellen
-- ✅ **Realiseren**: Implementatie van de integratie
-- ✅ **Manage & Control**: Projectmanagement en kwaliteitsborging
+-  **Analyseren**: Requirements analyse MSG-3 en Maximo
+-  **Adviseren**: Technische keuzes en architectuur beslissingen
+-  **Ontwerpen**: Systeem architectuur en datamodellen
+- **Realiseren**: Implementatie van de integratie
+-  **Manage & Control**: Projectmanagement en kwaliteitsborging
 
 ### Student
 **Pedro Eduardo Cardoso** - Associate Degree Software Developer
@@ -201,7 +201,7 @@ Februari - Juni 2026
 - **Code Support:** Jasper van Polen & Fajjaaz Chandoe
 - **Windesheim:** Arie Ismael (Stage Coach)
 
-## 📋 Status & Roadmap
+##  Status & Roadmap
 
 ### Phase 1: Analyse & Ontwerp ✅
 - [x] Projectdefinitie
@@ -250,19 +250,19 @@ Februari - Juni 2026
 - [ ] Oplevering & presentatie
 - [ ] Reflectie
 
-## 🤖 AI-Gebruik & Transparantie
+## AI-Gebruik & Transparantie
 
 Dit project maakt gebruik van **Cursor AI** als development assistant, conform de **AI Assessment Scale (AIAS)** van Windesheim.
 
 **Gebruikte niveaus:**
-- 🔵 **Niveau 2 (AI Exploratie)**: Planning, brainstorming, onderzoek
-- 🟢 **Niveau 3 (AI Samenwerking)**: Code development, testing, refinement  
+-  **Niveau 2 (AI Exploratie)**: Planning, brainstorming, onderzoek
+-  **Niveau 3 (AI Samenwerking)**: Code development, testing, refinement  
 
 **BELANGRIJK - Eigenaarschap:**
-- ✅ **~75% van het werk door Pedro** (business rules, architectuur, logica)
-- ✅ **~25% AI-assistentie** (templates, boilerplate, documentatie generatie)
-- ✅ **100% begrip en verantwoordelijkheid** bij Pedro
-- ✅ **AI = HULPMIDDEL** (zoals Google), geen medeauteur
+-  **~75% van het werk door Pedro** (business rules, architectuur, logica)
+-  **~25% AI-assistentie** (templates, boilerplate, documentatie generatie)
+-  **100% begrip en verantwoordelijkheid** bij Pedro
+-  **AI = HULPMIDDEL** (zoals Google), geen medeauteur
 
 **Verantwoordelijkheid:** Pedro draagt volledige verantwoordelijkheid voor alle deliverables en kan alles uitleggen.
 
@@ -272,20 +272,16 @@ Dit project maakt gebruik van **Cursor AI** als development assistant, conform d
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Dit is een Comakership project. Voor vragen of suggesties, neem contact op met Pedro.
 
-## 📄 License
+##  License
 
 Dit project is ontwikkeld in opdracht van Babcock Schiphol voor educatieve doeleinden.
 
-## 🔗 Links
+##  Links
 
 - [Maximo REST API Documentation](https://www.ibm.com/docs/en/mam/7.6.1?topic=api-maximo-rest)
 - [MSG-3 Specification (ATA)](https://www.ata.org/)
 - [Windesheim ADSD](https://www.windesheim.nl/)
-
----
-
-*Laatste update: 4 februari 2026*
